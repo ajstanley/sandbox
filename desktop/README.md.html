@@ -5,7 +5,7 @@
 Welcome to the Islandora Community! 
 
 > Note that all communication in Islandora is subject to our
-> [code of conduct](https://islandora.ca/codeofconduct).
+> [code of conduct]([https://islandora.ca/codeofconduct](https://www.islandora.ca/code-of-conduct)).
 
 This demo is loaded with sample content and configurations to demonstrate
 features of Islandora and provide a starting point for exploration. Additional
@@ -40,6 +40,10 @@ graphical user interface for all major platforms.
 Follow the link above and select the appropriate system and follow the
 installation instructions.
 
+**If you already have Docker Desktop installed,** make sure that the **Extensions** 
+feature is listed in the left sidebar. If it is not, you need to update to the newest 
+version of Docker Desktop. This is required to add the Portainer extension.
+
 Portainer Extension
 --------------------------------------------------------------
 
@@ -56,7 +60,7 @@ the [Portainer](https://portainer.io/) extension:
 ![install-portainer](./images/install-portainer.gif)
 
 For more information on Portainer refer to its
-[documentation](https://docs.portainer.io/)
+[documentation](https://docs.portainer.io/).
 
 Setup
 ==============================================================
@@ -78,6 +82,8 @@ click** on the appropriate script for your platform:
 [Table [states]: Platform specific setup script.]
 
 This will install a local certificate and generate a `docker-compose.yml` file.
+During execution of the script, you will be **prompted for your admin password**, 
+in order to install the local certificate.
 
 Create Stack
 --------------------------------------------------------------
