@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: b53f8405-945a-4a23-b559-60d05e924139
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: newspaper_sample_2_tn.png
+uri:
+  -
+    value: 'fedora://2022-05/newspaper_sample_2_tn.png'
+    url: /_flysystem/fedora/2022-05/newspaper_sample_2_tn.png
+filemime:
+  -
+    value: image/png
+filesize:
+  -
+    value: 5620177
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:36:45+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:36:47+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

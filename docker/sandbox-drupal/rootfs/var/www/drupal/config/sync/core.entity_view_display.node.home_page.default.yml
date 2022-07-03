@@ -1,0 +1,124 @@
+uuid: 66304b80-b6b1-4270-88b6-c96a9b6fc628
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.home_page.body
+    - field.field.node.home_page.field_display_title
+    - field.field.node.home_page.field_main_banner
+    - field.field.node.home_page.layout_builder__layout
+    - node.type.home_page
+  module:
+    - layout_builder
+    - layout_discovery
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Main
+        components:
+          246ef0cf-cislandora_install_profile_democ-495a-bc56-c7468b172a81:
+            uuid: 246ef0cf-cislandora_install_profile_democ-495a-bc56-c7468b172a81
+            region: content
+            configuration:
+              id: 'field_block:node:home_page:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 13
+            additional: {  }
+          7ffe5cc9-a1fb-4f73-b28a-623377c74864:
+            uuid: 7ffe5cc9-a1fb-4f73-b28a-623377c74864
+            region: content
+            configuration:
+              id: 'extra_field_block:node:home_page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 14
+            additional: {  }
+          8e46cbbc-9475-4ce6-8def-9cdf32e9ad55:
+            uuid: 8e46cbbc-9475-4ce6-8def-9cdf32e9ad55
+            region: content
+            configuration:
+              id: 'extra_field_block:node:home_page:video_media_evas_entity_view_1'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 15
+            additional: {  }
+          026c9105-bf25-4753-add3-ee027606e4b3:
+            uuid: 026c9105-bf25-4753-add3-ee027606e4b3
+            region: content
+            configuration:
+              id: 'extra_field_block:node:home_page:video_media_evas_entity_view_2'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 16
+            additional: {  }
+          7d3e962e-3496-40fe-9dd4-28a749e24fd4:
+            uuid: 7d3e962e-3496-40fe-9dd4-28a749e24fd4
+            region: content
+            configuration:
+              id: 'extra_field_block:node:home_page:video_media_evas_service_file'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 17
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: LM18le53tXp9jLGmxgtp0sXoer_C8fVXMfpaDGlOND8
+id: node.home_page.default
+targetEntityType: node
+bundle: home_page
+mode: default
+content:
+  video_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  video_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  video_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  addtoany: true
+  body: true
+  display_media_entity_view_1: true
+  display_media_entity_view_2: true
+  display_media_service_file: true
+  display_media_thumbnail: true
+  field_display_title: true
+  field_main_banner: true
+  langcode: true
+  layout_builder__layout: true
+  links: true
+  mirador_evas_entity_view_1: true
+  mirador_evas_entity_view_2: true
+  mirador_evas_entity_view_3: true
+  openseadragon_media_evas_entity_view_1: true
+  openseadragon_media_evas_entity_view_2: true
+  openseadragon_media_evas_service_file: true
+  pdfjs_media_evas_entity_view_1: true
+  pdfjs_media_evas_entity_view_2: true
+  pdfjs_media_evas_service_file: true
+  search_api_excerpt: true

@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: 90d15f77-605f-40bd-bc8b-9ea2bd62d868
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: '18-Extracted Text.txt'
+uri:
+  -
+    value: 'fedora://2022-05/18-Extracted Text.txt'
+    url: /_flysystem/fedora/2022-05/18-Extracted%20Text.txt
+filemime:
+  -
+    value: 'text/plain; charset=UTF-8'
+filesize:
+  -
+    value: 20791
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:30:36+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:30:36+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

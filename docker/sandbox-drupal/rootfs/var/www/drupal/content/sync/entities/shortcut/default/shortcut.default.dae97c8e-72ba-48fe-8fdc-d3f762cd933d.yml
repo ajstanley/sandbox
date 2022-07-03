@@ -1,0 +1,32 @@
+uuid:
+  -
+    value: dae97c8e-72ba-48fe-8fdc-d3f762cd933d
+langcode:
+  -
+    value: en
+shortcut_set:
+  -
+    target_id: default
+    target_type: shortcut_set
+    target_uuid: 3f534c1d-b30e-44f7-8ea9-663ae638e748
+title:
+  -
+    value: 'All content'
+weight:
+  -
+    value: -19
+link:
+  -
+    uri: 'internal:/admin/content'
+    title: null
+    options: {  }
+default_langcode:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/node/1'
+    title: '| Default'
+_content_sync:
+  entity_type: shortcut
+  entity_dependencies: {  }

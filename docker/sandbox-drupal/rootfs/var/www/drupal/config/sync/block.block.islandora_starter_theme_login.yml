@@ -1,0 +1,22 @@
+uuid: 54c3e244-7b3c-417d-8f5d-7a2391c9dc2d
+langcode: en
+status: false
+dependencies:
+  module:
+    - user
+  theme:
+    - islandora_starter_theme
+_core:
+  default_config_hash: fwLpFCcz_-j1SGP47V_2jJEbL7QlrpoZ4fYneJILJNw
+id: islandora_starter_theme_login
+theme: islandora_starter_theme
+region: footer_third
+weight: -9
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  label_display: visible
+  provider: user
+visibility: {  }

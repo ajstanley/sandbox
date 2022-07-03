@@ -1,0 +1,25 @@
+uuid: 52a60803-9616-4be9-95de-870b4c9714b3
+langcode: en
+status: false
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.carapace_fb_disclaimer
+  module:
+    - fixed_block_content
+  theme:
+    - adminimal_theme
+_core:
+  default_config_hash: hbFVEYx9IHM6rVaVrpSeVh-tpX_L0FGNXyZbiIYm-BI
+id: adminimal_theme_disclaimer
+theme: adminimal_theme
+region: header
+weight: -9
+provider: null
+plugin: 'fixed_block_content:carapace_fb_disclaimer'
+settings:
+  id: 'fixed_block_content:carapace_fb_disclaimer'
+  label: Disclaimer
+  label_display: '0'
+  provider: fixed_block_content
+  view_mode: ''
+visibility: {  }

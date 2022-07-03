@@ -1,0 +1,49 @@
+uuid: bbef640a-612e-4477-9f52-d6735d2bbdc3
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - jsonld
+    - jwt
+    - media
+    - serialization
+    - user
+  enforced:
+    module:
+      - islandora_core_feature
+_core:
+  default_config_hash: LAXfMf8h4I_9PeBg9fKGZckigM15VPcRnOc3wCYMDe0
+id: entity.media
+plugin_id: 'entity:media'
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - jsonld
+      - json
+    supported_auth:
+      - basic_auth
+      - jwt_auth
+      - cookie
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth
+      - jwt_auth
+      - cookie
+  DELETE:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth
+      - jwt_auth
+      - cookie
+  PATCH:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth
+      - jwt_auth
+      - cookie

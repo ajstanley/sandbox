@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: 7c10c9f2-a472-4c7a-b0c3-ee0b59e8eb9e
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: noah-smiths-docker-session.mp4
+uri:
+  -
+    value: 'fedora://2022-05/noah-smiths-docker-session.mp4'
+    url: /_flysystem/fedora/2022-05/noah-smiths-docker-session.mp4
+filemime:
+  -
+    value: video/mp4
+filesize:
+  -
+    value: 85648900
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:31:40+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:31:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

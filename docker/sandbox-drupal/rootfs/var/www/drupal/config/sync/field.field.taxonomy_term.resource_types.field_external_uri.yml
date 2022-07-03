@@ -1,0 +1,25 @@
+uuid: 89cd6eac-46d9-4673-a053-b0b566bc032a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_external_uri
+    - taxonomy.vocabulary.resource_types
+  module:
+    - link
+_core:
+  default_config_hash: QpAuhG0TCDy_nQpF1lRPlQuReK7J3-avG4kH2KkKGEU
+id: taxonomy_term.resource_types.field_external_uri
+field_name: field_external_uri
+entity_type: taxonomy_term
+bundle: resource_types
+label: 'External URI'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

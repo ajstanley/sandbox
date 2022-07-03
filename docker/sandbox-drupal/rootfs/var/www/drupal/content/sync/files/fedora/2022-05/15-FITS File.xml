@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fits xmlns="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hul.harvard.edu/ois/xml/ns/fits/fits_output http://hul.harvard.edu/ois/xml/xsd/fits/fits_output.xsd" version="1.5.0" timestamp="5/18/22 1:30 PM">
+  <identification status="CONFLICT">
+    <identity format="Portable Network Graphics" mimetype="image/png" toolname="FITS" toolversion="1.5.0">
+      <tool toolname="Droid" toolversion="6.4" />
+      <tool toolname="ffident" toolversion="0.2" />
+      <tool toolname="Tika" toolversion="1.21" />
+      <version toolname="Droid" toolversion="6.4">1.2</version>
+      <externalIdentifier toolname="Droid" toolversion="6.4" type="puid">fmt/13</externalIdentifier>
+    </identity>
+    <identity format="PNG EXIF" mimetype="image/png" toolname="FITS" toolversion="1.5.0">
+      <tool toolname="Exiftool" toolversion="11.54" />
+    </identity>
+  </identification>
+  <fileinfo>
+    <filepath toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">/opt/tomcat/webapps/fits/upload/1652880621938/sample_2.png</filepath>
+    <filename toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">sample_2.png</filename>
+    <size toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">1579065</size>
+    <md5checksum toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">b17a8498089c900423e1b8bbc5efd8e5</md5checksum>
+    <fslastmodified toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">1652880621000</fslastmodified>
+  </fileinfo>
+  <filestatus />
+  <metadata>
+    <image>
+      <imageHeight toolname="Tika" toolversion="1.21" status="SINGLE_RESULT">796</imageHeight>
+      <compressionScheme toolname="Tika" toolversion="1.21" status="SINGLE_RESULT">Deflate</compressionScheme>
+      <imageWidth toolname="Tika" toolversion="1.21" status="SINGLE_RESULT">1175</imageWidth>
+      <orientation toolname="Tika" toolversion="1.21" status="SINGLE_RESULT">normal*</orientation>
+      <standard>
+        <mix:mix xmlns:mix="http://www.loc.gov/mix/v20">
+          <mix:BasicDigitalObjectInformation>
+            <mix:Compression>
+              <mix:compressionScheme>Deflate</mix:compressionScheme>
+            </mix:Compression>
+          </mix:BasicDigitalObjectInformation>
+          <mix:BasicImageInformation>
+            <mix:BasicImageCharacteristics>
+              <mix:imageWidth>1175</mix:imageWidth>
+              <mix:imageHeight>796</mix:imageHeight>
+              <mix:PhotometricInterpretation />
+            </mix:BasicImageCharacteristics>
+          </mix:BasicImageInformation>
+          <mix:ImageCaptureMetadata>
+            <mix:GeneralCaptureInformation />
+            <mix:orientation>normal*</mix:orientation>
+          </mix:ImageCaptureMetadata>
+          <mix:ImageAssessmentMetadata>
+            <mix:SpatialMetrics />
+            <mix:ImageColorEncoding />
+          </mix:ImageAssessmentMetadata>
+        </mix:mix>
+      </standard>
+    </image>
+  </metadata>
+  <statistics fitsExecutionTime="2982">
+    <tool toolname="MediaInfo" toolversion="20.09" status="did not run" />
+    <tool toolname="OIS Audio Information" toolversion="0.1" status="did not run" />
+    <tool toolname="ADL Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="VTT Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="Droid" toolversion="6.4" executionTime="285" />
+    <tool toolname="Jhove" toolversion="1.20.1" executionTime="2953" />
+    <tool toolname="file utility" toolversion="5.39" executionTime="571" />
+    <tool toolname="Exiftool" toolversion="11.54" executionTime="700" />
+    <tool toolname="NLNZ Metadata Extractor" toolversion="3.6GA" status="did not run" />
+    <tool toolname="OIS File Information" toolversion="1.0" executionTime="75" />
+    <tool toolname="OIS XML Metadata" toolversion="0.2" status="did not run" />
+    <tool toolname="ffident" toolversion="0.2" executionTime="292" />
+    <tool toolname="Tika" toolversion="1.21" executionTime="301" />
+  </statistics>
+</fits>
+
+

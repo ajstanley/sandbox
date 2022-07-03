@@ -1,0 +1,28 @@
+uuid: 2992cb3d-540b-4575-be77-ce7f2517d01b
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+_core:
+  default_config_hash: 2raLhW0l00GP743UnCWPRUtrxVvUv4Dy9awjpjDdvOM
+label: 'Open Seadragon'
+name: open_seadragon
+group: Display
+description: 'Open Seadragon viewer for Images'
+requireAllConditions: false
+disabled: false
+conditions:
+  node_has_term:
+    id: node_has_term
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uri: 'http://openseadragon.github.io'
+    logic: and
+reactions:
+  view_mode_alter:
+    id: view_mode_alter
+    mode: node.open_seadragon
+    saved: false
+weight: -6

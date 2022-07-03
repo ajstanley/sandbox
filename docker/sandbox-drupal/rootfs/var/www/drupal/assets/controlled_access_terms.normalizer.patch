@@ -1,0 +1,54 @@
+diff --git a/controlled_access_terms.services.yml b/controlled_access_terms.services.yml
+new file mode 100644
+index 0000000..31f77c1
+--- /dev/null
++++ b/controlled_access_terms.services.yml
+@@ -0,0 +1,10 @@
++services:
++  controlled_access_terms.normalizer.typed_relation:
++    class: Drupal\controlled_access_terms\Normalizer\TypedRelationNormalizer
++    tags:
++      # Set the priority lower than the hal entity reference field item
++      # normalizer, so that we do not replace that for hal_json but higher than
++      # this modules generic field item normalizer.
++      # @todo Find a better way for this in https://www.drupal.org/node/2575761.
++      - { name: normalizer, priority: 10 }
++    arguments: ['@entity.repository']
+\ No newline at end of file
+diff --git a/src/Normalizer/TypedRelationNormalizer.php b/src/Normalizer/TypedRelationNormalizer.php
+new file mode 100644
+index 0000000..9c3df4f
+--- /dev/null
++++ b/src/Normalizer/TypedRelationNormalizer.php
+@@ -0,0 +1,31 @@
++<?php
++
++namespace Drupal\controlled_access_terms\Normalizer;
++
++use Drupal\controlled_access_terms\Plugin\Field\FieldType\TypedRelation;
++use Drupal\serialization\Normalizer\EntityReferenceFieldItemNormalizer;
++
++/**
++ * Normalize TypedRelation fields.
++ */
++class TypedRelationNormalizer extends EntityReferenceFieldItemNormalizer {
++
++  /**
++   * {@inheritdoc}
++   */
++  protected $supportedInterfaceOrClass = TypedRelation::class;
++
++  /**
++   * {@inheritdoc}
++   */
++  protected function constructValue($data, $context) {
++    $denormalized_data = parent::constructValue($data, $context);
++    foreach (['rel_type'] as $field) {
++      if (!empty($data[$field])) {
++        $denormalized_data[$field] = $data[$field];
++      }
++    }
++    return $denormalized_data;
++  }
++
++}

@@ -1,0 +1,25 @@
+uuid: 86ff7d4b-4c21-46ce-8317-3a0a90e11983
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.carapace_fb_footer_contact
+  module:
+    - fixed_block_content
+  theme:
+    - seven
+_core:
+  default_config_hash: nCl6mXR7ZvZIB6kL-rw7puYfPmk17i5C8Mun8sVK3XA
+id: seven_footercontact
+theme: seven
+region: header
+weight: -7
+provider: null
+plugin: 'fixed_block_content:carapace_fb_footer_contact'
+settings:
+  id: 'fixed_block_content:carapace_fb_footer_contact'
+  label: 'Footer: Contact'
+  label_display: '0'
+  provider: fixed_block_content
+  view_mode: ''
+visibility: {  }

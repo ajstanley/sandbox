@@ -1,0 +1,25 @@
+uuid: 34a7e418-3df6-476d-8e21-1cf03908e279
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_file_size
+    - media.type.video
+_core:
+  default_config_hash: yWER0KjiA0CWvvkVsYucPNMiSZxt9nwh4HV4eIyBjjI
+id: media.video.field_file_size
+field_name: field_file_size
+entity_type: media
+bundle: video
+label: 'File size'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

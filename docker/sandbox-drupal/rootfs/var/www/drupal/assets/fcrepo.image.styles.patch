@@ -1,0 +1,20 @@
+diff --git a/core/modules/image/src/Controller/ImageStyleDownloadController.php b/core/modules/image/src/Controller/ImageStyleDownloadController.php
+index 6ded44fab6..f929211378 100644
+--- a/core/modules/image/src/Controller/ImageStyleDownloadController.php
++++ b/core/modules/image/src/Controller/ImageStyleDownloadController.php
+@@ -138,6 +138,15 @@ public function deliver(Request $request, $scheme, ImageStyleInterface $image_st
+     }
+ 
+     $derivative_uri = $image_style->buildUri($image_uri);
++    // Unfortunately anonymous users cannot derive image styles, because fedora
++    // does not allow anonymous users to create content. So if no one logs in
++    // and views an image with a specific style as a 'fedoraAdmin' user, then it
++    // doesn't show up for anonymous users. Unfortunately you cannot configure
++    // the location of styles to be in the public / private directory, so this hack.
++    // Though in the nearish future this may change: 
++    // https://www.drupal.org/project/drupal/issues/1358896
++    $derivative_uri = str_replace("fedora://", "public://", $derivative_uri);
++
+     $headers = [];
+ 
+     // If using the private scheme, let other modules provide headers and

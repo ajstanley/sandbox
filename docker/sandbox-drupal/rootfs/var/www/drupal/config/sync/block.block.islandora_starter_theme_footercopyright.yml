@@ -1,0 +1,25 @@
+uuid: 880b0bfe-0eb6-4af7-a65b-6a30ed926629
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.carapace_fb_copyright
+  module:
+    - fixed_block_content
+  theme:
+    - islandora_starter_theme
+_core:
+  default_config_hash: pJ2vUbQfFyA19OcUIp3j4ZOmcLKUoehyEPt-pR_7_rs
+id: islandora_starter_theme_footercopyright
+theme: islandora_starter_theme
+region: footer_first
+weight: -6
+provider: null
+plugin: 'fixed_block_content:carapace_fb_copyright'
+settings:
+  id: 'fixed_block_content:carapace_fb_copyright'
+  label: 'Footer: Copyright'
+  label_display: '0'
+  provider: fixed_block_content
+  view_mode: ''
+visibility: {  }

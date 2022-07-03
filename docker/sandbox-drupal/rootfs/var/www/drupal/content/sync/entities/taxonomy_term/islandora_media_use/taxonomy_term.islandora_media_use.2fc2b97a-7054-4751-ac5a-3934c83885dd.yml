@@ -1,0 +1,78 @@
+uuid:
+  -
+    value: 2fc2b97a-7054-4751-ac5a-3934c83885dd
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: islandora_media_use
+    target_type: taxonomy_vocabulary
+    target_uuid: ee3c22d6-7b18-4354-ba15-9e51f4785f02
+revision_created:
+  -
+    value: '2022-05-18T13:24:26+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: 'FITS File'
+description:
+  -
+    value: 'Technical Metadata associated with an original media file'
+    format: null
+    processed: |
+      <p>Technical Metadata associated with an original media file</p>
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2022-05-18T13:24:26+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/term/islandora-media-use/fits-file'
+    title: 'FITS File | Default'
+    description: 'Technical Metadata associated with an original media file'
+path:
+  -
+    alias: /term/islandora-media-use/fits-file
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+content_translation_uid:
+  -
+    target_id: 0
+    target_type: user
+    target_uuid: bd530a2b-ec6c-4e98-8b66-2621c688440b
+content_translation_created:
+  -
+    value: '2022-05-18T13:24:26+00:00'
+    format: 'Y-m-d\TH:i:sP'
+field_external_uri:
+  -
+    uri: 'https://projects.iq.harvard.edu/fits'
+    title: null
+    options: {  }
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    user:
+      - user.user.bd530a2b-ec6c-4e98-8b66-2621c688440b

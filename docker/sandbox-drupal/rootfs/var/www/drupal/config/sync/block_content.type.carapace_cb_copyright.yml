@@ -1,0 +1,10 @@
+uuid: a14d55de-b357-4117-ae26-0cc7075ff1df
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: BPsaeCuXyaDMREuzvPJWnTrBUc35cGzeI3cmgcqoA0I
+id: carapace_cb_copyright
+label: 'Footer: Copyright'
+revision: 0
+description: 'Site copyright information'

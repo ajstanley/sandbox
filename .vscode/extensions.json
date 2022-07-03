@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "marvhen.reflow-markdown",
+    "redhat.vscode-yaml",
+    "ssigwart.reflow-paragraph",
+    "streetsidesoftware.code-spell-checker",
+    "yzhang.markdown-all-in-one",
+    "wholroyd.hcl",
+    "coolbear.systemd-unit-file"
+  ]
+}

@@ -1,0 +1,25 @@
+uuid: 552b909d-d17f-427f-bb66-12edd9fa36bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.carapace_fb_footer_social_media
+  module:
+    - fixed_block_content
+  theme:
+    - seven
+_core:
+  default_config_hash: kBax3_zuYOmSfYmUAV44D6bWKLaG6tTqJZAvRAPHuZA
+id: seven_footersocialmedia
+theme: seven
+region: header
+weight: -8
+provider: null
+plugin: 'fixed_block_content:carapace_fb_footer_social_media'
+settings:
+  id: 'fixed_block_content:carapace_fb_footer_social_media'
+  label: 'Footer: Social Media'
+  label_display: '0'
+  provider: fixed_block_content
+  view_mode: ''
+visibility: {  }

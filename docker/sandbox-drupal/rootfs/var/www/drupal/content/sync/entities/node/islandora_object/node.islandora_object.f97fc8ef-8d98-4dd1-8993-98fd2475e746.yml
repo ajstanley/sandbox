@@ -1,0 +1,141 @@
+uuid:
+  -
+    value: f97fc8ef-8d98-4dd1-8993-98fd2475e746
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: islandora_object
+    target_type: node_type
+    target_uuid: b892aa80-baa5-4e6d-b955-4a6eaa0f0357
+revision_timestamp:
+  -
+    value: '2022-05-18T13:36:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+revision_log: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+title:
+  -
+    value: 'The Cadre (Volume 1., No. 08)'
+created:
+  -
+    value: '2022-05-18T13:36:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:36:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: true
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/islandora/cadre-volume-1-no-08'
+    title: 'The Cadre (Volume 1., No. 08) | Default'
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+field_display_title:
+  -
+    value: 'The Cadre (Volume 1., No. 08)'
+field_abstract: {  }
+field_access_terms: {  }
+field_alternative_title: {  }
+field_alt_title: {  }
+field_classification: {  }
+field_coordinates: {  }
+field_coordinates_text: {  }
+field_copyright_date: {  }
+field_date_captured: {  }
+field_date_modified: {  }
+field_date_valid: {  }
+field_description:
+  -
+    value: 'Council holds record meet! Students will advise departments, and MacKay walks out of senate'
+field_description_long: {  }
+field_dewey_classification: {  }
+field_display_hints: {  }
+field_edition: {  }
+field_edtf_date: {  }
+field_edtf_date_created: {  }
+field_edtf_date_issued:
+  -
+    value: '1969-12-05'
+field_extent:
+  -
+    value: '1 item'
+field_frequency: {  }
+field_full_title: {  }
+field_genre: {  }
+field_geographic_subject: {  }
+field_identifier:
+  -
+    value: '19691205'
+field_isbn: {  }
+field_language: {  }
+field_lcc_classification: {  }
+field_linked_agent: {  }
+field_local_identifier: {  }
+field_main_banner: {  }
+field_member_of:
+  -
+    target_type: node
+    target_uuid: 0c833f4d-3811-4af6-88d6-14151ee46cc0
+field_model:
+  -
+    target_type: taxonomy_term
+    target_uuid: 04bfc32b-f285-4843-b7fd-9dc81f8c35f5
+field_mode_of_issuance: {  }
+field_note: {  }
+field_oclc_number: {  }
+field_physical_form: {  }
+field_pid: {  }
+field_place_published: {  }
+field_place_published_country: {  }
+field_resource_type:
+  -
+    target_type: taxonomy_term
+    target_uuid: 2e52ade4-c9ce-474b-a9c1-6ed3ce8f36a5
+field_rights: {  }
+field_subject: {  }
+field_subjects_name: {  }
+field_subject_general: {  }
+field_table_of_contents: {  }
+field_temporal_subject: {  }
+field_weight: {  }
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0
+    node:
+      - node.islandora_object.0c833f4d-3811-4af6-88d6-14151ee46cc0
+    taxonomy_term:
+      - taxonomy_term.islandora_models.04bfc32b-f285-4843-b7fd-9dc81f8c35f5
+      - taxonomy_term.resource_types.2e52ade4-c9ce-474b-a9c1-6ed3ce8f36a5
+path:
+  -
+    alias: /islandora/cadre-volume-1-no-08

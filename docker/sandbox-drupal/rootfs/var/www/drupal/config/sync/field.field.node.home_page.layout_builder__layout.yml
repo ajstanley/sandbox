@@ -1,0 +1,23 @@
+uuid: 7a8cfafd-2e63-4e91-89a3-ed7ba8e12266
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.home_page
+  module:
+    - layout_builder
+_core:
+  default_config_hash: I_KlDDbUkYx33SbvVPB6nJHKLI3QqqAlivxhaiHaIx8
+id: node.home_page.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: home_page
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

@@ -1,0 +1,71 @@
+uuid:
+  -
+    value: 8f506aaa-9de2-4e88-9d1f-31efaa60c4e7
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: islandora_display
+    target_type: taxonomy_vocabulary
+    target_uuid: 609b32ea-ebf6-4067-bc1a-aeb8efe1931d
+revision_created:
+  -
+    value: '2022-05-18T13:29:41+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: Binary
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2022-05-18T13:29:41+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/term/islandora-display/binary'
+    title: 'Binary | Default'
+path:
+  -
+    alias: /term/islandora-display/binary
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+content_translation_uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+content_translation_created:
+  -
+    value: '2022-05-18T13:29:41+00:00'
+    format: 'Y-m-d\TH:i:sP'
+field_external_uri: {  }
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

@@ -1,0 +1,109 @@
+uuid: 7d623390-2114-4777-8d72-4b30080aef4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carapace_cb_footer_social_media
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_facebook
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_flickr
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_instagram
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_linkedin
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_pinterest
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_twitter
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_youtube
+  module:
+    - link
+_core:
+  default_config_hash: 1gzUd_WsHR5oTK9wnSgwyZLfm_Ac_9zolMSXxYZ7mvU
+id: block_content.carapace_cb_footer_social_media.default
+targetEntityType: block_content
+bundle: carapace_cb_footer_social_media
+mode: default
+content:
+  field_carapace_cb_facebook:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_carapace_cb_flickr:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_carapace_cb_instagram:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_carapace_cb_linkedin:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_carapace_cb_pinterest:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_carapace_cb_twitter:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_carapace_cb_youtube:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

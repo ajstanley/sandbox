@@ -1,0 +1,10 @@
+uuid: 66e1843a-01d5-4f54-a71c-cf219610c605
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: o8t703CN07c5KfqDf-29eFiueh6oxo8t3UhvbK4dH78
+id: footer_logo
+label: 'Footer: Logo'
+revision: 0
+description: ''

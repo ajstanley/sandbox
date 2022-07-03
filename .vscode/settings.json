@@ -1,0 +1,29 @@
+{
+  "cSpell.words": [
+    "buildkit",
+    "docroot",
+    "drush",
+    "fcos",
+    "fcrepo",
+    "gnutls",
+    "homarus",
+    "iiif",
+    "islandora",
+    "matomo",
+    "mkpasswd",
+    "nids",
+    "openseadragon",
+    "opensslcnf",
+    "Portainer",
+    "printk",
+    "Pubkey",
+    "publickey",
+    "tids",
+    "traefik",
+    "updatedb",
+    "updb"
+  ],
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "cSpell.enabled": true
+}

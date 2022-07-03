@@ -1,0 +1,74 @@
+variant: fcos
+version: 1.4.0
+passwd:
+  users:
+    - name: core
+      groups:
+        - docker
+      # Paste the contents of packer public key in this field.
+      ssh_authorized_keys:
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC92mfUd/zMuzWqAod/xuqrE2to4ae1cRiknK81uMHfVHpXoxx2xM7PkmMsO9ShQtWsu0V0q4A9kozzv22HVDL51iVapESrM4q2KWiDHnE45U8RH/DDRX5NdW3+GvNQk2ITyHR4CVpvwYXCYfI4bha4R4jF7oc7pDmLcgcYN+9OSptUnWUbxqiWqfuwWSmux9N1HHiVDTt/2W8qgszAzwXI64ooK5pkU7KSXQ9A/w4Ra/xmZioCKAB4MZh5HIwNoVgZ8OCXLBL66cQTJEQnmkCc3rVeHikBhvUxCnKWGmdjcBG/XGxqHIQ1HVn7GSlclJ8hGISZZcBaB4RVFCUK4i8tvKbM1dHNyNnZGAWJUCMQDH8Dkx8wnOAWdq4ed1cd16Jt3y4cEcHEUSXmZmViYMNHbqqL+yaj3nhCDIwa7CzoVLZ4Vj8xOvn/X2JMaLPhJFY//5Y6Dep01Nm+4d0Xf4gYo3H6Hmo/jBeXO/VRPHKbbZIMlA04mrlClosgUqkm+cE=
+systemd:
+  units:
+    - name: rake.service
+      enabled: true
+      contents: |
+        [Unit]
+        Description=Rake Sandbox
+        Requires=docker.service
+        After=docker.service
+
+        [Service]
+        Type=oneshot
+        ExecStart=/usr/bin/systemctl try-restart sandbox.service
+
+        [Install]
+        WantedBy=multi-user.target
+    - name: rake.timer
+      enabled: true
+      contents: |
+        [Unit]
+        Description=Rake Sandbox Timer
+
+        [Timer]
+        OnCalendar=*-*-* 1:00:00 America/Halifax
+        Persistent=True
+
+        [Install]
+        WantedBy=timers.target
+    - name: sandbox.service
+      enabled: true
+      contents: |
+        [Unit]
+        Description= Islandora Sandbox
+        PartOf=docker.service
+        After=docker.service
+
+        [Service]
+        User=core
+        Group=core
+        WorkingDirectory=/opt/sandbox
+        ExecStartPre=/usr/bin/docker compose down -v
+        ExecStart=/usr/bin/docker compose up
+        ExecStop=/usr/bin/docker compose down -v
+
+        [Install]
+        WantedBy=multi-user.target
+storage:
+  files:
+    # Disable auto-updates.
+    - path: /etc/zincati/config.d/90-disable-auto-updates.toml
+      mode: 0644
+      contents:
+        inline: |
+          [updates]
+          enabled = false
+    - path: /etc/ssh/sshd_config.d/60-packer.conf
+      mode: 0600
+      contents:
+        inline: |
+          PermitRootLogin no
+          AllowUsers core
+          AuthenticationMethods publickey
+          PubkeyAcceptedKeyTypes +ssh-rsa
+          PubkeyAcceptedAlgorithms +ssh-rsa

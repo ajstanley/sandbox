@@ -1,0 +1,52 @@
+uuid: 0b6385a7-e33b-4e9a-820c-df92a85974ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - context
+    - islandora
+    - system
+  theme:
+    - islandora_starter_theme
+third_party_settings:
+  block_class:
+    classes: site__islandora_breadcrumbs
+_core:
+  default_config_hash: 1QiJ8i9ybnXWpAbAliL6KnnV8YF6Vkt6q4IYuW8_KWY
+id: islandora_starter_theme_breadcrumbs
+theme: islandora_starter_theme
+region: breadcrumb
+weight: -9
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  node_has_implicit_parent:
+    id: node_has_implicit_parent
+    negate: false
+    context_mapping: {  }
+    model_uri: null
+    parent_reference_field: field_member_of
+    uri: null
+    logic: and
+    tid: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    context_mapping: {  }
+    view_inclusion: {  }
+  request_path_exclusion:
+    id: request_path_exclusion
+    negate: null
+    context_mapping: {  }
+    pages: ''
+  media_source_mimetype:
+    id: media_source_mimetype
+    negate: false
+    context_mapping: {  }
+    mimetype: ''

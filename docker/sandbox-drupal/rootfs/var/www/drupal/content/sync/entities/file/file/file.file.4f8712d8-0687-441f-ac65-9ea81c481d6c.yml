@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: 4f8712d8-0687-441f-ac65-9ea81c481d6c
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: '77-FITS File.xml'
+uri:
+  -
+    value: 'fedora://2022-05/77-FITS File.xml'
+    url: /_flysystem/fedora/2022-05/77-FITS%20File.xml
+filemime:
+  -
+    value: application/xml
+filesize:
+  -
+    value: 8064
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:39:11+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:39:11+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

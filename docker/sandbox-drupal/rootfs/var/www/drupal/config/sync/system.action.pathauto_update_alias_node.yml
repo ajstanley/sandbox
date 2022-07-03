@@ -1,0 +1,16 @@
+uuid: 5854c6c5-f9d6-416c-b802-9b5093dca5cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - pathauto
+  enforced:
+    module:
+      - node
+_core:
+  default_config_hash: 4M_oXPGDGGfvJzX_O_N2e-sLsdbI-JgY93qVPX7TQx0
+id: pathauto_update_alias_node
+label: 'Update URL alias'
+type: node
+plugin: pathauto_update_alias
+configuration: {  }

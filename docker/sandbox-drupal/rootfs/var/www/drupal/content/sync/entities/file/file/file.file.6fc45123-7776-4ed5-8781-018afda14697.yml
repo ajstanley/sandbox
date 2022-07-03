@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: 6fc45123-7776-4ed5-8781-018afda14697
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: sample_excel_file.xlsx
+uri:
+  -
+    value: 'fedora://2022-05/sample_excel_file.xlsx'
+    url: /_flysystem/fedora/2022-05/sample_excel_file.xlsx
+filemime:
+  -
+    value: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+filesize:
+  -
+    value: 2817560
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:30:08+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:30:10+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

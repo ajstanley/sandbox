@@ -1,0 +1,139 @@
+uuid:
+  -
+    value: 2cb4c2fa-efbd-46b2-ae96-9b9772de7863
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: islandora_object
+    target_type: node_type
+    target_uuid: b892aa80-baa5-4e6d-b955-4a6eaa0f0357
+revision_timestamp:
+  -
+    value: '2022-05-18T13:29:46+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+revision_log: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+title:
+  -
+    value: 'Sample Simple Image without Cataloguing'
+created:
+  -
+    value: '2022-05-18T13:29:46+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:29:46+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: true
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/islandora/sample-simple-image-without-cataloguing'
+    title: 'Sample Simple Image without Cataloguing | Default'
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+field_display_title:
+  -
+    value: 'Sample Simple Image without Cataloguing'
+field_abstract: {  }
+field_access_terms: {  }
+field_alternative_title: {  }
+field_alt_title: {  }
+field_classification: {  }
+field_coordinates: {  }
+field_coordinates_text: {  }
+field_copyright_date: {  }
+field_date_captured: {  }
+field_date_modified: {  }
+field_date_valid: {  }
+field_description:
+  -
+    value: 'This is an uncatalogued image used to demonstrate editorial workflows around cataloguing.'
+field_description_long: {  }
+field_dewey_classification: {  }
+field_display_hints: {  }
+field_edition: {  }
+field_edtf_date: {  }
+field_edtf_date_created: {  }
+field_edtf_date_issued: {  }
+field_extent:
+  -
+    value: '1 item'
+field_frequency: {  }
+field_full_title: {  }
+field_genre: {  }
+field_geographic_subject: {  }
+field_identifier: {  }
+field_isbn: {  }
+field_language: {  }
+field_lcc_classification: {  }
+field_linked_agent: {  }
+field_local_identifier: {  }
+field_main_banner: {  }
+field_member_of:
+  -
+    target_type: node
+    target_uuid: 5931b77a-5996-4558-be28-45f53b383135
+field_model:
+  -
+    target_type: taxonomy_term
+    target_uuid: 6871ec38-a6cd-49b0-8327-9f7365ba4e15
+field_mode_of_issuance: {  }
+field_note: {  }
+field_oclc_number: {  }
+field_physical_form: {  }
+field_pid: {  }
+field_place_published: {  }
+field_place_published_country: {  }
+field_resource_type:
+  -
+    target_type: taxonomy_term
+    target_uuid: 00393320-0936-4f1f-bbd5-ddb9a49322d9
+field_rights:
+  -
+    value: 'Provided to demonstrate function of Islandora only. All rights reserved.'
+field_subject: {  }
+field_subjects_name: {  }
+field_subject_general: {  }
+field_table_of_contents: {  }
+field_temporal_subject: {  }
+field_weight: {  }
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0
+    node:
+      - node.islandora_object.5931b77a-5996-4558-be28-45f53b383135
+    taxonomy_term:
+      - taxonomy_term.islandora_models.6871ec38-a6cd-49b0-8327-9f7365ba4e15
+      - taxonomy_term.resource_types.00393320-0936-4f1f-bbd5-ddb9a49322d9
+path:
+  -
+    alias: /islandora/sample-simple-image-without-cataloguing

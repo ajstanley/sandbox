@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: baab19c3-3465-4635-a092-a3eaaa53bcf7
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: 49.jpg
+uri:
+  -
+    value: 'fedora://2022-05/49.jpg'
+    url: /_flysystem/fedora/2022-05/49.jpg
+filemime:
+  -
+    value: image/jpeg
+filesize:
+  -
+    value: 38990
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:35:15+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:35:15+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

@@ -1,0 +1,19 @@
+uuid: 135aff81-82a7-46a3-b95c-bbf574046192
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: XpMdKtOS-r4CvtC_epXd599vslKdZU7mr1TlwISzVXQ
+name: 'Home Page'
+type: home_page
+description: 'Content Type used to generate dynamic home pages'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

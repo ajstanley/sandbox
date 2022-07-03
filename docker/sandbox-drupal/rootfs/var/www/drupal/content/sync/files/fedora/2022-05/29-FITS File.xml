@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fits xmlns="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hul.harvard.edu/ois/xml/ns/fits/fits_output http://hul.harvard.edu/ois/xml/xsd/fits/fits_output.xsd" version="1.5.0" timestamp="5/18/22 1:32 PM">
+  <identification>
+    <identity format="JPEG EXIF" mimetype="image/jpeg" toolname="FITS" toolversion="1.5.0">
+      <tool toolname="file utility" toolversion="5.39" />
+      <tool toolname="Exiftool" toolversion="11.54" />
+      <version toolname="file utility" toolversion="5.39">1746</version>
+    </identity>
+  </identification>
+  <fileinfo>
+    <size toolname="Jhove" toolversion="1.20.1">2428206</size>
+    <filepath toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">/opt/tomcat/webapps/fits/upload/1652880746255/3360.jpeg</filepath>
+    <filename toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">3360.jpeg</filename>
+    <md5checksum toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">e2207d23f936801d62865adfbb035ffd</md5checksum>
+    <fslastmodified toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">1652880746000</fslastmodified>
+  </fileinfo>
+  <filestatus />
+  <metadata>
+    <image>
+      <imageWidth toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">1746</imageWidth>
+      <imageHeight toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">1190</imageHeight>
+      <YCbCrSubSampling toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">1 1</YCbCrSubSampling>
+      <bitsPerSample toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">8 8 8</bitsPerSample>
+      <standard>
+        <mix:mix xmlns:mix="http://www.loc.gov/mix/v20">
+          <mix:BasicDigitalObjectInformation />
+          <mix:BasicImageInformation>
+            <mix:BasicImageCharacteristics>
+              <mix:imageWidth>1746</mix:imageWidth>
+              <mix:imageHeight>1190</mix:imageHeight>
+              <mix:PhotometricInterpretation>
+                <mix:YCbCr>
+                  <mix:YCbCrSubSampling>
+                    <mix:yCbCrSubsampleHoriz>1</mix:yCbCrSubsampleHoriz>
+                    <mix:yCbCrSubsampleVert>1</mix:yCbCrSubsampleVert>
+                  </mix:YCbCrSubSampling>
+                </mix:YCbCr>
+              </mix:PhotometricInterpretation>
+            </mix:BasicImageCharacteristics>
+          </mix:BasicImageInformation>
+          <mix:ImageCaptureMetadata>
+            <mix:GeneralCaptureInformation />
+          </mix:ImageCaptureMetadata>
+          <mix:ImageAssessmentMetadata>
+            <mix:SpatialMetrics />
+            <mix:ImageColorEncoding>
+              <mix:BitsPerSample>
+                <mix:bitsPerSampleValue>8</mix:bitsPerSampleValue>
+                <mix:bitsPerSampleValue>8</mix:bitsPerSampleValue>
+                <mix:bitsPerSampleValue>8</mix:bitsPerSampleValue>
+                <mix:bitsPerSampleUnit>integer</mix:bitsPerSampleUnit>
+              </mix:BitsPerSample>
+            </mix:ImageColorEncoding>
+          </mix:ImageAssessmentMetadata>
+        </mix:mix>
+      </standard>
+    </image>
+  </metadata>
+  <statistics fitsExecutionTime="1469">
+    <tool toolname="MediaInfo" toolversion="20.09" status="did not run" />
+    <tool toolname="OIS Audio Information" toolversion="0.1" status="did not run" />
+    <tool toolname="ADL Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="VTT Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="Droid" toolversion="6.4" executionTime="671" />
+    <tool toolname="Jhove" toolversion="1.20.1" executionTime="1116" />
+    <tool toolname="file utility" toolversion="5.39" executionTime="1449" />
+    <tool toolname="Exiftool" toolversion="11.54" executionTime="1408" />
+    <tool toolname="NLNZ Metadata Extractor" toolversion="3.6GA" executionTime="991" />
+    <tool toolname="OIS File Information" toolversion="1.0" executionTime="404" />
+    <tool toolname="OIS XML Metadata" toolversion="0.2" status="did not run" />
+    <tool toolname="ffident" toolversion="0.2" executionTime="564" />
+    <tool toolname="Tika" toolversion="1.21" executionTime="495" />
+  </statistics>
+</fits>
+
+

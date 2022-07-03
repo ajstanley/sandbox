@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 18336eb8-424e-4181-8d9e-de774d0a2157
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: islandora_media_use
+    target_type: taxonomy_vocabulary
+    target_uuid: ee3c22d6-7b18-4354-ba15-9e51f4785f02
+revision_created:
+  -
+    value: '2022-05-18T13:28:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Preservation Master File'
+description:
+  -
+    value: 'Best quality representation of the Object appropriate for long-term preservation'
+    format: null
+    processed: |
+      <p>Best quality representation of the Object appropriate for long-term preservation</p>
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2022-05-18T13:28:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/term/islandora-media-use/preservation-master-file'
+    title: 'Preservation Master File | Default'
+    description: 'Best quality representation of the Object appropriate for long-term preservation'
+path:
+  -
+    alias: /term/islandora-media-use/preservation-master-file
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+content_translation_uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+content_translation_created:
+  -
+    value: '2022-05-18T13:28:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+field_external_uri:
+  -
+    uri: 'http://pcdm.org/use#PreservationMasterFile'
+    title: null
+    options: {  }
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

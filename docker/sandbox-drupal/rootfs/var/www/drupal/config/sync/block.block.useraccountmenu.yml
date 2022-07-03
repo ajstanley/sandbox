@@ -1,0 +1,41 @@
+uuid: f965f18d-2f90-43aa-9f43-8994c9cee1bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - islandora
+    - system
+  theme:
+    - islandora_starter_theme
+_core:
+  default_config_hash: Xav0sST1k0ULKzzuB7P8IDNU55RpbUsyCQh12MAV1Js
+id: useraccountmenu
+theme: islandora_starter_theme
+region: footer_third
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  media_source_mimetype:
+    id: media_source_mimetype
+    mimetype: ''
+    negate: false
+    context_mapping: {  }
+  node_has_implicit_parent:
+    id: node_has_implicit_parent
+    negate: false
+    context_mapping: {  }
+    model_uri: null
+    parent_reference_field: field_member_of
+    uri: null
+    logic: and

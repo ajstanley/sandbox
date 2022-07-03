@@ -1,0 +1,18 @@
+uuid: c3c5b309-5f05-4f94-9b90-f3f54d4fa824
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+  enforced:
+    module:
+      - islandora_core_feature
+_core:
+  default_config_hash: 1uspcb6-oyvVAgCeJjMTlJX6BDN5s6t5hSHYaZmmvSw
+id: index_node_in_fedora
+label: 'Index Node in Fedora'
+type: node
+plugin: emit_node_event
+configuration:
+  queue: islandora-indexing-fcrepo-content
+  event: Update

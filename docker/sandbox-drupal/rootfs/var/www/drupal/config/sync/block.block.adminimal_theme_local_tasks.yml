@@ -1,0 +1,22 @@
+uuid: 38ffc743-4611-4d11-a165-c755c559c0fc
+langcode: en
+status: true
+dependencies:
+  theme:
+    - adminimal_theme
+_core:
+  default_config_hash: GJ2RVVK-t03OxtkogWYTH-NTyrmfbDiHLJUKpb8Eu0I
+id: adminimal_theme_local_tasks
+theme: adminimal_theme
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

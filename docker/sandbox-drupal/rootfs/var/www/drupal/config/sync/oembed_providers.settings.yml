@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: Vo_frWSAK95s0p5hOaGl3nIGKoaaaDPeNfNFTOlVLhc
+external_fetch: true
+allowed_providers:
+  - SoundCloud
+  - Vimeo
+  - YouTube

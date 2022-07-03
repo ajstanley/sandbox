@@ -1,0 +1,40 @@
+uuid: effbf29c-6817-4311-87ce-7cec2bbc291b
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_terms
+label: 'Taxonomy Terms'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'term/[term:vocabulary]/[term:name]'
+selection_criteria:
+  124fc52b-d3be-4caf-b856-03e4836004a2:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 124fc52b-d3be-4caf-b856-03e4836004a2
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      corporate_body: corporate_body
+      country: country
+      family: family
+      frequencies: frequencies
+      genre: genre
+      geo_location: geo_location
+      islandora_access: islandora_access
+      islandora_display: islandora_display
+      islandora_media_use: islandora_media_use
+      islandora_models: islandora_models
+      issuance_modes: issuance_modes
+      language: language
+      person: person
+      physical_form: physical_form
+      resource_types: resource_types
+      subject: subject
+      tags: tags
+      temporal: temporal
+      temporal_subjects: temporal_subjects
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,76 @@
+uuid:
+  -
+    value: f6c8a181-58c9-4bde-bf1d-ea05784f98c0
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: corporate_body
+    target_type: taxonomy_vocabulary
+    target_uuid: a54d8c91-ae5f-4390-a73e-34f74fa105e6
+revision_created:
+  -
+    value: '2022-05-18T13:29:37+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Gorsebrook Research Institute, St. Mary''s University'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2022-05-18T13:29:37+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/term/corporate-body/gorsebrook-research-institute-st-marys-university'
+    title: 'Gorsebrook Research Institute, St. Mary''s University | Default'
+path:
+  -
+    alias: /term/corporate-body/gorsebrook-research-institute-st-marys-university
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+content_translation_uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+content_translation_created:
+  -
+    value: '2022-05-18T13:29:37+00:00'
+    format: 'Y-m-d\TH:i:sP'
+field_authority_link: {  }
+field_cat_date_begin: {  }
+field_cat_date_end: {  }
+field_corp_alt_name: {  }
+field_relationships: {  }
+field_type: {  }
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

@@ -1,0 +1,16 @@
+uuid: 73978f40-4c92-4899-acbd-96bbf219ad64
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.fedoraadmin
+  module:
+    - user
+_core:
+  default_config_hash: dilaao80VFeq27i-wqw51sSTm9NsrW4ts1i7pGfLIm4
+id: user_remove_role_action.fedoraadmin
+label: 'Remove the fedoraAdmin role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: fedoraadmin

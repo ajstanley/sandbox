@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: 429a7c9d-7b95-4651-beee-5734ac6b7ee7
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: '59-FITS File.xml'
+uri:
+  -
+    value: 'fedora://2022-05/59-FITS File.xml'
+    url: /_flysystem/fedora/2022-05/59-FITS%20File.xml
+filemime:
+  -
+    value: application/xml
+filesize:
+  -
+    value: 4238
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:36:15+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:36:15+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

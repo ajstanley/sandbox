@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: e3cc4b44-dee1-4a9b-b4ea-6a4443bd7741
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: wildflowersofwes0000mcca_page_002.jp2
+uri:
+  -
+    value: 'fedora://2022-05/wildflowersofwes0000mcca_page_002.jp2'
+    url: /_flysystem/fedora/2022-05/wildflowersofwes0000mcca_page_002.jp2
+filemime:
+  -
+    value: image/jp2
+filesize:
+  -
+    value: 55127
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:33:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:33:02+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

@@ -1,0 +1,78 @@
+uuid:
+  -
+    value: 2e52ade4-c9ce-474b-a9c1-6ed3ce8f36a5
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: resource_types
+    target_type: taxonomy_vocabulary
+    target_uuid: 761673cf-24f3-407c-872c-8d88fc56a6bf
+revision_created:
+  -
+    value: '2022-05-18T13:28:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: Collection
+description:
+  -
+    value: 'An aggregation of resources'
+    format: null
+    processed: |
+      <p>An aggregation of resources</p>
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2022-05-18T13:28:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/term/resource-types/collection'
+    title: 'Collection | Default'
+    description: 'An aggregation of resources'
+path:
+  -
+    alias: /term/resource-types/collection
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+content_translation_uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+content_translation_created:
+  -
+    value: '2022-05-18T13:28:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+field_authority_link: {  }
+field_external_uri:
+  -
+    uri: 'http://purl.org/dc/dcmitype/Collection'
+    title: null
+    options: {  }
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

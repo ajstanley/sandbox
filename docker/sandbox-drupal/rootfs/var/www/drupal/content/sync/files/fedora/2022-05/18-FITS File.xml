@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fits xmlns="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hul.harvard.edu/ois/xml/ns/fits/fits_output http://hul.harvard.edu/ois/xml/xsd/fits/fits_output.xsd" version="1.5.0" timestamp="5/18/22 1:30 PM">
+  <identification>
+    <identity format="Portable Document Format" mimetype="application/pdf" toolname="FITS" toolversion="1.5.0">
+      <tool toolname="Droid" toolversion="6.4" />
+      <tool toolname="Jhove" toolversion="1.20.1" />
+      <tool toolname="file utility" toolversion="5.39" />
+      <tool toolname="Exiftool" toolversion="11.54" />
+      <tool toolname="NLNZ Metadata Extractor" toolversion="3.6GA" />
+      <tool toolname="ffident" toolversion="0.2" />
+      <tool toolname="Tika" toolversion="1.21" />
+      <version toolname="Droid" toolversion="6.4" status="CONFLICT">1.3</version>
+      <version toolname="Jhove" toolversion="1.20.1" status="CONFLICT">1.4</version>
+      <externalIdentifier toolname="Droid" toolversion="6.4" type="puid">fmt/17</externalIdentifier>
+    </identity>
+  </identification>
+  <fileinfo>
+    <size toolname="Jhove" toolversion="1.20.1">1005950</size>
+    <creatingApplicationName toolname="NLNZ Metadata Extractor" toolversion="3.6GA">macOS Version 10.14.4 (Build 18E226) Quartz PDFContext/Chrome</creatingApplicationName>
+    <lastmodified toolname="Exiftool" toolversion="11.54" status="CONFLICT">2019:05:09 13:46:07Z</lastmodified>
+    <lastmodified toolname="Tika" toolversion="1.21" status="CONFLICT">2019-05-09T13:46:07Z</lastmodified>
+    <created toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">2019:05:09 13:46:07Z</created>
+    <filepath toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">/opt/tomcat/webapps/fits/upload/1652880653657/sample_pdf_file.pdf</filepath>
+    <filename toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">sample_pdf_file.pdf</filename>
+    <md5checksum toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">a8c51080f743e20c6c4214433e68004d</md5checksum>
+    <fslastmodified toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">1652880653000</fslastmodified>
+  </fileinfo>
+  <filestatus>
+    <well-formed toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">true</well-formed>
+    <valid toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">true</valid>
+    <message toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">File header gives version as 1.4, but catalog dictionary gives version as 1.3 severity=info</message>
+  </filestatus>
+  <metadata>
+    <document>
+      <title toolname="Exiftool" toolversion="11.54" status="CONFLICT">The Code4Lib Journal – Visualizing Fedo...TEI and MEI documents within Islandora</title>
+      <title toolname="NLNZ Metadata Extractor" toolversion="3.6GA" status="CONFLICT">The Code4Lib Journal  Visualizing Fedo...TEI and MEI documents within Islandora</title>
+      <author toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">Chrome</author>
+      <pageCount toolname="Jhove" toolversion="1.20.1">7</pageCount>
+      <isTagged toolname="NLNZ Metadata Extractor" toolversion="3.6GA" status="SINGLE_RESULT">no</isTagged>
+      <hasOutline toolname="Jhove" toolversion="1.20.1">no</hasOutline>
+      <hasAnnotations toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">no</hasAnnotations>
+      <graphicsCount toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">7</graphicsCount>
+      <font toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">
+        <fontName>Arial-BoldMT</fontName>
+      </font>
+      <font toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">
+        <fontName>Arial-ItalicMT</fontName>
+      </font>
+      <font toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">
+        <fontName>ArialMT</fontName>
+      </font>
+      <font toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">
+        <fontName>Monaco</fontName>
+      </font>
+      <font toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">
+        <fontName>Times-Roman</fontName>
+      </font>
+      <hasForms toolname="NLNZ Metadata Extractor" toolversion="3.6GA" status="SINGLE_RESULT">no</hasForms>
+      <standard>
+        <docmd:document xmlns:docmd="http://www.fcla.edu/docmd">
+          <docmd:PageCount>7</docmd:PageCount>
+          <docmd:GraphicsCount>7</docmd:GraphicsCount>
+          <docmd:Font FontName="Arial-BoldMT" />
+          <docmd:Font FontName="Arial-ItalicMT" />
+          <docmd:Font FontName="ArialMT" />
+          <docmd:Font FontName="Monaco" />
+          <docmd:Font FontName="Times-Roman" />
+        </docmd:document>
+      </standard>
+    </document>
+  </metadata>
+  <statistics fitsExecutionTime="3345">
+    <tool toolname="MediaInfo" toolversion="20.09" status="did not run" />
+    <tool toolname="OIS Audio Information" toolversion="0.1" status="did not run" />
+    <tool toolname="ADL Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="VTT Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="Droid" toolversion="6.4" executionTime="190" />
+    <tool toolname="Jhove" toolversion="1.20.1" executionTime="2331" />
+    <tool toolname="file utility" toolversion="5.39" executionTime="721" />
+    <tool toolname="Exiftool" toolversion="11.54" executionTime="818" />
+    <tool toolname="NLNZ Metadata Extractor" toolversion="3.6GA" executionTime="2129" />
+    <tool toolname="OIS File Information" toolversion="1.0" executionTime="27" />
+    <tool toolname="OIS XML Metadata" toolversion="0.2" status="did not run" />
+    <tool toolname="ffident" toolversion="0.2" executionTime="62" />
+    <tool toolname="Tika" toolversion="1.21" executionTime="3028" />
+  </statistics>
+</fits>
+
+

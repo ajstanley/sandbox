@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: AgYuk3DOXEMx08W2TygZ1ghETsVKIonuVkVMuNoQks0
+algos:
+  md5: '0'
+  sha1: sha1
+  sha256: '0'
+dedupe: false

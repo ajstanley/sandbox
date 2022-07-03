@@ -1,0 +1,32 @@
+uuid:
+  -
+    value: 952fe9ff-72bf-4bb2-bb00-78e27639baa1
+langcode:
+  -
+    value: en
+shortcut_set:
+  -
+    target_id: default
+    target_type: shortcut_set
+    target_uuid: 3f534c1d-b30e-44f7-8ea9-663ae638e748
+title:
+  -
+    value: 'Add content'
+weight:
+  -
+    value: -20
+link:
+  -
+    uri: 'internal:/node/add'
+    title: null
+    options: {  }
+default_langcode:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/node/1'
+    title: '| Default'
+_content_sync:
+  entity_type: shortcut
+  entity_dependencies: {  }

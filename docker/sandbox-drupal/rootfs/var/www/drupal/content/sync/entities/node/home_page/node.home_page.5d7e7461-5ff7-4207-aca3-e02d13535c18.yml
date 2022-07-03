@@ -1,0 +1,99 @@
+uuid:
+  -
+    value: 5d7e7461-5ff7-4207-aca3-e02d13535c18
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: home_page
+    target_type: node_type
+    target_uuid: 135aff81-82a7-46a3-b95c-bbf574046192
+revision_timestamp:
+  -
+    value: '2022-05-18T13:28:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+revision_log: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+title:
+  -
+    value: 'Islandora Sandbox'
+created:
+  -
+    value: '2022-05-18T13:28:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:28:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: false
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/node/1'
+    title: 'Islandora Sandbox | Default'
+    description: 'Browse All Collections Browse All Collections Welcome to the Islandora Community! (Note that all communication in Islandora is subject to our code of conduct).'
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+field_display_title:
+  -
+    value: 'Islandora Sandbox'
+body:
+  -
+    value: "<div class=\"node__links\">\r\n<ul class=\"links inline\">\r\n\t<li class=\"node-readmore\"><span class=\"node-readmore__link-wrapper\"><a aria-label=\"Browse all collections\" class=\"node-readmore__link\" href=\"/browse-collections\" hreflang=\"en\" rel=\"tag\" title=\"Browse our collections\">Browse All Collections<span class=\"visually-hidden\"> Browse All Collections</span></a></span></li>\r\n</ul>\r\n</div>\r\n\r\n<p>Welcome to the Islandora Community! (Note that all communication in Islandora is subject to our <a href=\"https://islandora.ca/codeofconduct\">code of conduct</a>).</p>\r\n\r\n<p>This demo is loaded with sample content and configurations to demonstrate features of Islandora and provide a starting point for development.&nbsp;&nbsp;Additional information is provided on the <a href=\"http://islandora.ca/\">Islandora Website</a>.&nbsp;</p>\r\n\r\n<p>The <a href=\"https://groups.google.com/g/islandora\">Islandora Google groups mailing list</a> is open to Islandora users who connect to share information. <a href=\"https://join.slack.com/t/islandora/shared_invite/zt-x7e0jj1x-C1pNzKrR7Fvs4QdQziPZ~g\">Join Islandora Slack</a> to ask questions and learn more about community events where you can learn more about Islandora. <a href=\"https://www.drupal.org/slack\">Drupal also maintains a Slack community</a> where you can ask more general questions about Drupal configuration.&nbsp;</p>\r\n\r\n<p>We welcome you to visit and edit <a href=\"https://islandora.github.io/documentation/\">Islandora documentation</a> or submit issues and code to Islandora via repositories in our <a href=\"https://github.com/Islandora\">Github organization. &nbsp;</a></p>\r\n\r\n<p>Thanks, and happy building!</p>\r\n\r\n<p> <a href=\"https://github.com/Islandora/documentation/wiki/Sandbox.Islandora.ca-online-credentials\"> login credentials </a></p>\r\n"
+    format: full_html
+    processed: |
+      <div class="node__links">
+      <ul class="links inline">
+      	<li class="node-readmore"><span class="node-readmore__link-wrapper"><a aria-label="Browse all collections" class="node-readmore__link" href="/browse-collections" hreflang="en" rel="tag" title="Browse our collections">Browse All Collections<span class="visually-hidden"> Browse All Collections</span></a></span></li>
+      </ul>
+      </div>
+
+      <p>Welcome to the Islandora Community! (Note that all communication in Islandora is subject to our <a href="https://islandora.ca/codeofconduct">code of conduct</a>).</p>
+
+      <p>This demo is loaded with sample content and configurations to demonstrate features of Islandora and provide a starting point for development.  Additional information is provided on the <a href="http://islandora.ca/">Islandora Website</a>. </p>
+
+      <p>The <a href="https://groups.google.com/g/islandora">Islandora Google groups mailing list</a> is open to Islandora users who connect to share information. <a href="https://join.slack.com/t/islandora/shared_invite/zt-x7e0jj1x-C1pNzKrR7Fvs4QdQziPZ~g">Join Islandora Slack</a> to ask questions and learn more about community events where you can learn more about Islandora. <a href="https://www.drupal.org/slack">Drupal also maintains a Slack community</a> where you can ask more general questions about Drupal configuration. </p>
+
+      <p>We welcome you to visit and edit <a href="https://islandora.github.io/documentation/">Islandora documentation</a> or submit issues and code to Islandora via repositories in our <a href="https://github.com/Islandora">Github organization.  </a></p>
+
+      <p>Thanks, and happy building!</p>
+
+      <p> <a href="https://github.com/Islandora/documentation/wiki/Sandbox.Islandora.ca-online-credentials"> login credentials </a></p>
+    summary: ''
+    summary_processed: ''
+field_main_banner: {  }
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

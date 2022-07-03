@@ -1,0 +1,48 @@
+uuid: 1a1cb004-98a7-4dd0-b516-55950e9e1ad1
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - islandora
+    - system
+  theme:
+    - islandora_base_theme
+_core:
+  default_config_hash: GJ48foJq-uSEifafkYMMASVMaA_rJ1h0oJSc_08a0wI
+id: islandora_base_theme_content
+theme: islandora_base_theme
+region: content
+weight: -4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility:
+  node_has_implicit_parent:
+    id: node_has_implicit_parent
+    negate: false
+    context_mapping: {  }
+    model_uri: null
+    parent_reference_field: field_member_of
+    uri: null
+    logic: and
+    tid: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    context_mapping: {  }
+    view_inclusion: {  }
+  request_path_exclusion:
+    id: request_path_exclusion
+    negate: null
+    context_mapping: {  }
+    pages: ''
+  media_source_mimetype:
+    id: media_source_mimetype
+    mimetype: ''
+    negate: false
+    context_mapping: {  }

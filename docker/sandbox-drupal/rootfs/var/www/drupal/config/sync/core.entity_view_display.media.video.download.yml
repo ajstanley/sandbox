@@ -1,0 +1,51 @@
+uuid: ebf9f48b-80de-41aa-b0a8-3a7b66c7a185
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.download
+    - field.field.media.video.field_access_terms
+    - field.field.media.video.field_file_size
+    - field.field.media.video.field_media_of
+    - field.field.media.video.field_media_use
+    - field.field.media.video.field_media_video_file
+    - field.field.media.video.field_mime_type
+    - field.field.media.video.field_original_name
+    - field.field.media.video.field_track
+    - media.type.video
+  module:
+    - file_download_link
+_core:
+  default_config_hash: FDy3N6fNUz8a6b1V-MwmNZQPthenNhdxtFQYjb-WHdc
+id: media.video.download
+targetEntityType: media
+bundle: video
+mode: download
+content:
+  field_media_video_file:
+    type: file_download_link
+    label: hidden
+    settings:
+      link_text: Download
+      new_tab: true
+      force_download: true
+      custom_classes: 'button button-action fa-download'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  field_access_terms: true
+  field_file_size: true
+  field_gemini_uri: true
+  field_media_of: true
+  field_media_use: true
+  field_mime_type: true
+  field_original_name: true
+  field_track: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

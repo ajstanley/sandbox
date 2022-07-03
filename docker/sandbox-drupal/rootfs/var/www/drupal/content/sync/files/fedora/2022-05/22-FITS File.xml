@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fits xmlns="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hul.harvard.edu/ois/xml/ns/fits/fits_output http://hul.harvard.edu/ois/xml/xsd/fits/fits_output.xsd" version="1.5.0" timestamp="5/18/22 1:31 PM">
+  <identification status="SINGLE_RESULT">
+    <identity format="TIFF EXIF" mimetype="image/tiff" toolname="FITS" toolversion="1.5.0">
+      <tool toolname="Exiftool" toolversion="11.54" />
+    </identity>
+  </identification>
+  <fileinfo>
+    <size toolname="Jhove" toolversion="1.20.1">34632782</size>
+    <filepath toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">/opt/tomcat/webapps/fits/upload/1652880679555/photoservices_461.tiff</filepath>
+    <filename toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">photoservices_461.tiff</filename>
+    <md5checksum toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">d3bfbee83603f5b666739fb50c7da4a5</md5checksum>
+    <fslastmodified toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">1652880679000</fslastmodified>
+  </fileinfo>
+  <filestatus />
+  <metadata>
+    <image>
+      <compressionScheme toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">Uncompressed</compressionScheme>
+      <imageWidth toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">2861</imageWidth>
+      <imageHeight toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">4034</imageHeight>
+      <colorSpace toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">RGB</colorSpace>
+      <iccProfileName toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">EPSON  sRGB</iccProfileName>
+      <iccProfileVersion toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">2.2.0</iccProfileVersion>
+      <samplingFrequencyUnit toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">in.</samplingFrequencyUnit>
+      <xSamplingFrequency toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">600</xSamplingFrequency>
+      <ySamplingFrequency toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">600</ySamplingFrequency>
+      <bitsPerSample toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">8 8 8</bitsPerSample>
+      <samplesPerPixel toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">3</samplesPerPixel>
+      <standard>
+        <mix:mix xmlns:mix="http://www.loc.gov/mix/v20">
+          <mix:BasicDigitalObjectInformation>
+            <mix:Compression>
+              <mix:compressionScheme>Uncompressed</mix:compressionScheme>
+            </mix:Compression>
+          </mix:BasicDigitalObjectInformation>
+          <mix:BasicImageInformation>
+            <mix:BasicImageCharacteristics>
+              <mix:imageWidth>2861</mix:imageWidth>
+              <mix:imageHeight>4034</mix:imageHeight>
+              <mix:PhotometricInterpretation>
+                <mix:colorSpace>RGB</mix:colorSpace>
+                <mix:ColorProfile>
+                  <mix:IccProfile>
+                    <mix:iccProfileName>EPSON  sRGB</mix:iccProfileName>
+                    <mix:iccProfileVersion>2.2.0</mix:iccProfileVersion>
+                  </mix:IccProfile>
+                </mix:ColorProfile>
+              </mix:PhotometricInterpretation>
+            </mix:BasicImageCharacteristics>
+          </mix:BasicImageInformation>
+          <mix:ImageCaptureMetadata>
+            <mix:GeneralCaptureInformation />
+          </mix:ImageCaptureMetadata>
+          <mix:ImageAssessmentMetadata>
+            <mix:SpatialMetrics>
+              <mix:samplingFrequencyUnit>in.</mix:samplingFrequencyUnit>
+              <mix:xSamplingFrequency>
+                <mix:numerator>600</mix:numerator>
+                <mix:denominator>1</mix:denominator>
+              </mix:xSamplingFrequency>
+              <mix:ySamplingFrequency>
+                <mix:numerator>600</mix:numerator>
+                <mix:denominator>1</mix:denominator>
+              </mix:ySamplingFrequency>
+            </mix:SpatialMetrics>
+            <mix:ImageColorEncoding>
+              <mix:BitsPerSample>
+                <mix:bitsPerSampleValue>8</mix:bitsPerSampleValue>
+                <mix:bitsPerSampleValue>8</mix:bitsPerSampleValue>
+                <mix:bitsPerSampleValue>8</mix:bitsPerSampleValue>
+                <mix:bitsPerSampleUnit>integer</mix:bitsPerSampleUnit>
+              </mix:BitsPerSample>
+              <mix:samplesPerPixel>3</mix:samplesPerPixel>
+            </mix:ImageColorEncoding>
+          </mix:ImageAssessmentMetadata>
+        </mix:mix>
+      </standard>
+    </image>
+  </metadata>
+  <statistics fitsExecutionTime="2767">
+    <tool toolname="MediaInfo" toolversion="20.09" status="did not run" />
+    <tool toolname="OIS Audio Information" toolversion="0.1" status="did not run" />
+    <tool toolname="ADL Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="VTT Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="Droid" toolversion="6.4" executionTime="2301" />
+    <tool toolname="Jhove" toolversion="1.20.1" executionTime="1212" />
+    <tool toolname="file utility" toolversion="5.39" executionTime="1217" />
+    <tool toolname="Exiftool" toolversion="11.54" executionTime="1488" />
+    <tool toolname="NLNZ Metadata Extractor" toolversion="3.6GA" status="did not run" />
+    <tool toolname="OIS File Information" toolversion="1.0" executionTime="1918" />
+    <tool toolname="OIS XML Metadata" toolversion="0.2" status="did not run" />
+    <tool toolname="ffident" toolversion="0.2" executionTime="392" />
+    <tool toolname="Tika" toolversion="1.21" executionTime="2452" />
+  </statistics>
+</fits>
+
+

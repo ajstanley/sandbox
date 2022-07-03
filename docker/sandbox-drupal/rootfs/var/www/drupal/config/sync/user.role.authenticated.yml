@@ -1,0 +1,20 @@
+uuid: 53ff93eb-2300-4dbd-baa8-8e645325a839
+langcode: en
+status: true
+dependencies:
+  module:
+    - matomo
+    - media
+    - shortcut
+    - system
+_core:
+  default_config_hash: UU76Vdvc1sGMElB1gJP2ggbD52BD0Z1Um4iP7LHNwiY
+id: authenticated
+label: 'Authenticated user'
+weight: 2
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access shortcuts'
+  - 'opt-in or out of matomo tracking'
+  - 'view media'

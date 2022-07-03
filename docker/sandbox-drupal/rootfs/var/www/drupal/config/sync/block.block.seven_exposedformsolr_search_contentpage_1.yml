@@ -1,0 +1,25 @@
+uuid: 1691a4d4-fd55-49c2-95a6-760a6d242666
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.solr_search_content
+  module:
+    - views
+  theme:
+    - seven
+_core:
+  default_config_hash: '-Hwqi1kA6wzmDImmQkDAo8TS1zOv2mTbUfFfGZTJc0w'
+id: seven_exposedformsolr_search_contentpage_1
+theme: seven
+region: highlighted
+weight: -9
+provider: null
+plugin: 'views_exposed_filter_block:solr_search_content-page_1'
+settings:
+  id: 'views_exposed_filter_block:solr_search_content-page_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility: {  }

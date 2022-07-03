@@ -1,0 +1,48 @@
+uuid: bbd84c83-5ea2-4327-a455-a20134061f40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.file.field_access_terms
+    - field.field.media.file.field_file_size
+    - field.field.media.file.field_media_file
+    - field.field.media.file.field_media_of
+    - field.field.media.file.field_media_use
+    - field.field.media.file.field_mime_type
+    - field.field.media.file.field_original_name
+    - media.type.file
+  module:
+    - file_download_link
+_core:
+  default_config_hash: aXRtqMw5mr6_GeWzkuctRxz4nJoxCSTDHQToiNzMcCw
+id: media.file.default
+targetEntityType: media
+bundle: file
+mode: default
+content:
+  field_media_file:
+    type: file_download_link
+    label: hidden
+    settings:
+      link_text: Download
+      new_tab: true
+      force_download: true
+      custom_classes: 'button button-action fa-download'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  field_access_terms: true
+  field_file_size: true
+  field_gemini_uri: true
+  field_media_of: true
+  field_media_use: true
+  field_mime_type: true
+  field_original_name: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

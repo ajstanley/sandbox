@@ -1,0 +1,12 @@
+uuid: 39149b10-95d7-4981-8892-f6c201dc7795
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: EEgHQ1exf5X8VRQz0jH835DywUBISPbaZJZ5mzh4UeA
+id: media.download
+label: Download
+targetEntityType: media
+cache: true

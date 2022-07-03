@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: 40dc7c5b-a18a-48d3-8f5a-1f2e8d52865d
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: 19690121-001-010-002.tif
+uri:
+  -
+    value: 'fedora://2022-05/19690121-001-010-002.tif'
+    url: /_flysystem/fedora/2022-05/19690121-001-010-002.tif
+filemime:
+  -
+    value: image/tiff
+filesize:
+  -
+    value: 18085480
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:36:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:36:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

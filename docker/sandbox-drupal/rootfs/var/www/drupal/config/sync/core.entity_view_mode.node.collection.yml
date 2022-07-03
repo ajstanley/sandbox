@@ -1,0 +1,12 @@
+uuid: 879a8471-371c-45d0-9612-17bed5009174
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 2nMqZ2TdXciRGoU100b5lNZr4ct8is8PgTXVWddgQ88
+id: node.collection
+label: Collection
+targetEntityType: node
+cache: true

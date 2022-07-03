@@ -1,0 +1,9 @@
+# Editor configuration / Temporary files.
+.idea
+*~
+# Build outputs.
+.gradle
+build
+.terraform
+# Ignore per / user customizations.
+docker-compose.override.yml

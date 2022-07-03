@@ -1,0 +1,44 @@
+uuid: 1d3c1b72-2ba4-41e3-b381-e1a38021c67d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 6C1JHtdZdwmFyAZzByf5-UTPRpDGMlTSnMsWobTOzm0
+id: object_metadata_and_pages
+label: 'Object Metadata and Pages (for Books, newspapers)'
+renderer: ui_tabs
+hide_empty_tabs: true
+default_tab: 0
+options:
+  quick_tabs:
+    ajax: false
+    class: ''
+    style: ''
+  accordion_tabs:
+    jquery_ui:
+      collapsible: false
+      heightStyle: auto
+configuration_data:
+  -
+    title: 'Item Description'
+    weight: 0
+    type: block_content
+    content:
+      block_content:
+        options:
+          bid: 'views_block:islandora_object_metadata-block_metadata_object'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: compound_object_metadata
+      view_content:
+        options:
+          vid: block_content
+          display: default
+          args: '%1'
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true

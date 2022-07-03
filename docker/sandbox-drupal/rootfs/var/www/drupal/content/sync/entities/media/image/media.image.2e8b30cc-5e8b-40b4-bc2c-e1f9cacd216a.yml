@@ -1,0 +1,100 @@
+uuid:
+  -
+    value: 2e8b30cc-5e8b-40b4-bc2c-e1f9cacd216a
+langcode:
+  -
+    value: en
+bundle:
+  -
+    target_id: image
+    target_type: media_type
+    target_uuid: fbbd850a-7972-4e92-8c74-9796109ab7ea
+revision_created:
+  -
+    value: '2022-06-15T01:49:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+name:
+  -
+    value: 77.jpg
+thumbnail:
+  -
+    alt: 77.jpg
+    title: null
+    width: 334
+    height: 480
+    target_type: file
+    target_uuid: f4317bfc-b8bb-4f0b-839a-679cd96eb615
+created:
+  -
+    value: '2022-05-18T13:39:14+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:39:14+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/node/1'
+    title: '| Default'
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+field_access_terms: {  }
+field_file_size:
+  -
+    value: 62766
+field_height:
+  -
+    value: 480
+field_media_image:
+  -
+    alt: 77.jpg
+    title: null
+    width: 334
+    height: 480
+    target_type: file
+    target_uuid: f4317bfc-b8bb-4f0b-839a-679cd96eb615
+field_media_of:
+  -
+    target_type: node
+    target_uuid: d9d56cca-1e61-4eaf-8148-f98fed4193c7
+field_media_use:
+  -
+    target_type: taxonomy_term
+    target_uuid: 0f809124-7143-48bf-a242-5b7ab22499d5
+field_mime_type:
+  -
+    value: image/jpeg
+field_original_name: {  }
+field_width:
+  -
+    value: 334
+_content_sync:
+  entity_type: media
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0
+    file:
+      - file.file.f4317bfc-b8bb-4f0b-839a-679cd96eb615
+    node:
+      - node.islandora_object.d9d56cca-1e61-4eaf-8148-f98fed4193c7
+    taxonomy_term:
+      - taxonomy_term.islandora_media_use.0f809124-7143-48bf-a242-5b7ab22499d5

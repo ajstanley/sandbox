@@ -1,0 +1,39 @@
+uuid: 0af61b48-2c68-4d13-b185-d60faa00bc7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.subject.field_authority_link
+    - taxonomy.vocabulary.subject
+  module:
+    - controlled_access_terms
+    - text
+_core:
+  default_config_hash: MrUbFm3-wuDns_5F4hhzzBkA8p16Pvy5-YDvNJ95jok
+id: taxonomy_term.subject.default
+targetEntityType: taxonomy_term
+bundle: subject
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_authority_link:
+    type: authority_formatter_default
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: _blank
+    third_party_settings: {  }
+    weight: 103
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

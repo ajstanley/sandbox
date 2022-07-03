@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: e38bb319-0856-4498-a39b-1372623cc73e
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: 1970_pg7.tiff
+uri:
+  -
+    value: 'fedora://2022-05/1970_pg7.tiff'
+    url: /_flysystem/fedora/2022-05/1970_pg7.tiff
+filemime:
+  -
+    value: image/tiff
+filesize:
+  -
+    value: 54045012
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:38:47+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:38:53+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

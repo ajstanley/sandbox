@@ -1,0 +1,16 @@
+uuid: 57ee8cd4-f621-460b-894e-2af078439b0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.differential_access_open
+  module:
+    - user
+_core:
+  default_config_hash: ZTLabKtb5WBqc_mDqwZ5h9_HTJyDSEj7p_TTIN0Teu8
+id: user_add_role_action.differential_access_open
+label: 'Add the Differential access - open role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: differential_access_open

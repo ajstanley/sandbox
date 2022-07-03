@@ -1,0 +1,95 @@
+uuid: 4d44bd5e-abf6-4a4b-95fc-bd4092b67573
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.remote_video.field_access_terms
+    - field.field.media.remote_video.field_author_name
+    - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_media_of
+    - field.field.media.remote_video.field_media_use
+    - field.field.media.remote_video.field_original_name
+    - field.field.media.remote_video.field_tn_uri
+    - field.field.media.remote_video.field_video_height
+    - field.field.media.remote_video.field_video_width
+    - media.type.remote_video
+  module:
+    - media
+    - path
+_core:
+  default_config_hash: MQ4gkJkXnwcU7SlnDUtG_-wZVEbkHJPKplDFjekmxds
+id: media.remote_video.default
+targetEntityType: media
+bundle: remote_video
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_oembed_video:
+    type: oembed_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_of:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_use:
+    type: options_buttons
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_access_terms: true
+  field_author_name: true
+  field_file_size: true
+  field_original_name: true
+  field_tn_uri: true
+  field_video_height: true
+  field_video_width: true
+  langcode: true

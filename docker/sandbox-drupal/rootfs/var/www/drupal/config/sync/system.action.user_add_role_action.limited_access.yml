@@ -1,0 +1,16 @@
+uuid: ab3ccada-ad94-4280-b223-f5516276adab
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.limited_access
+  module:
+    - user
+_core:
+  default_config_hash: SzlYN8E6HnVabBQywopw_aMEcBq6moyHE7UpX1ss2FM
+id: user_add_role_action.limited_access
+label: 'Add the Limited access role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: limited_access

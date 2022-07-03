@@ -1,0 +1,39 @@
+uuid: cfd92481-b6a1-4812-abb5-d5317e880946
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.issuance_modes.field_authority_link
+    - taxonomy.vocabulary.issuance_modes
+  module:
+    - controlled_access_terms
+    - text
+_core:
+  default_config_hash: hhr_IYugOlO3Zi0zju0mnWBqf5hYdIOHeRm-0Hwpp2s
+id: taxonomy_term.issuance_modes.default
+targetEntityType: taxonomy_term
+bundle: issuance_modes
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_authority_link:
+    type: authority_formatter_default
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: _blank
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

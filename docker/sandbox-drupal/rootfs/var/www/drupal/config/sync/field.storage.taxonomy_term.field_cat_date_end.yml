@@ -1,0 +1,24 @@
+uuid: 5026e5d9-3495-4ae5-89da-3befea29f3f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - controlled_access_terms
+    - taxonomy
+_core:
+  default_config_hash: 2M95DbSWSjVyeR9LwLaKuQ7rIhdOWOPC8xbM4CIs1Rw
+id: taxonomy_term.field_cat_date_end
+field_name: field_cat_date_end
+entity_type: taxonomy_term
+type: edtf
+settings:
+  max_length: 60
+  is_ascii: false
+  case_sensitive: false
+module: controlled_access_terms
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

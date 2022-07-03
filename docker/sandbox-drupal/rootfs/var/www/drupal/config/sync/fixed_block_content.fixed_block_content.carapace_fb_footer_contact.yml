@@ -1,0 +1,14 @@
+uuid: 2d73a574-59d9-4f71-aac2-9835a1d6d1d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carapace_cb_footer_contact
+_core:
+  default_config_hash: XlS1R1kPNg0g58U-n3QdN7xzWkqGMOChITRBjfE4Kf8
+id: carapace_fb_footer_contact
+title: 'Footer: Contact'
+block_content_bundle: carapace_cb_footer_contact
+default_content: null
+auto_export: 1
+protected: true

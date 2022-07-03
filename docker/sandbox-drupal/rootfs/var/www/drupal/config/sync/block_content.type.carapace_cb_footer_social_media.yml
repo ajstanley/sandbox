@@ -1,0 +1,10 @@
+uuid: b8595bde-0793-43aa-8feb-911edbc47b15
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: EpuUra1S6lfJrIMjzOecSG6VMs48XafvNs4bywXZknM
+id: carapace_cb_footer_social_media
+label: 'Footer: Social Media'
+revision: 0
+description: 'Optional institutional social media links'

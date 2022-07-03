@@ -1,0 +1,14 @@
+uuid: 9cbceaf1-3304-423a-9077-86c34b869ba3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carapace_cb_copyright
+_core:
+  default_config_hash: vno-6NqRRyDq5HQTKu8X2IOp-iWyrdR3FWkNNo2FvNA
+id: carapace_fb_copyright
+title: 'Footer: Copyright'
+block_content_bundle: carapace_cb_copyright
+default_content: null
+auto_export: 1
+protected: true

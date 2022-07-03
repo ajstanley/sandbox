@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: a0abc3ff-4ff2-41b7-a830-d07f69767be5
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: '74-Service File.jpg'
+uri:
+  -
+    value: 'fedora://2022-05/74-Service File.jpg'
+    url: /_flysystem/fedora/2022-05/74-Service%20File.jpg
+filemime:
+  -
+    value: image/jpeg
+filesize:
+  -
+    value: 160382
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:38:36+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:38:36+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

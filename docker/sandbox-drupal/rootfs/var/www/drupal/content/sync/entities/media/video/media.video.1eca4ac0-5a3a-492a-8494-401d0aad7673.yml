@@ -1,0 +1,94 @@
+uuid:
+  -
+    value: 1eca4ac0-5a3a-492a-8494-401d0aad7673
+langcode:
+  -
+    value: en
+bundle:
+  -
+    target_id: video
+    target_type: media_type
+    target_uuid: 13a0b163-44d4-4c22-bdfb-f9df6cb8041b
+revision_created:
+  -
+    value: '2022-06-15T01:49:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+name:
+  -
+    value: Tamil_Video.mp4
+thumbnail:
+  -
+    alt: ''
+    title: null
+    width: 180
+    height: 180
+    target_type: file
+    target_uuid: 5c644843-3d4a-43e7-9070-687ec703e5a5
+created:
+  -
+    value: '2022-05-18T13:31:56+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:31:56+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/node/1'
+    title: '| Default'
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+field_access_terms: {  }
+field_file_size:
+  -
+    value: 30162211
+field_media_of:
+  -
+    target_type: node
+    target_uuid: 0e3d10be-96c7-470a-9094-ee5bf13e7e02
+field_media_use:
+  -
+    target_type: taxonomy_term
+    target_uuid: 0c087817-a0a9-417a-8415-2cb4b84fdfb4
+field_media_video_file:
+  -
+    display: null
+    description: null
+    target_type: file
+    target_uuid: 63240420-6adf-4c6b-87e4-ca45d23b2f9a
+field_mime_type:
+  -
+    value: video/mp4
+field_original_name: {  }
+field_track: {  }
+_content_sync:
+  entity_type: media
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0
+    file:
+      - file.file.5c644843-3d4a-43e7-9070-687ec703e5a5
+      - file.file.63240420-6adf-4c6b-87e4-ca45d23b2f9a
+    node:
+      - node.islandora_object.0e3d10be-96c7-470a-9094-ee5bf13e7e02
+    taxonomy_term:
+      - taxonomy_term.islandora_media_use.0c087817-a0a9-417a-8415-2cb4b84fdfb4

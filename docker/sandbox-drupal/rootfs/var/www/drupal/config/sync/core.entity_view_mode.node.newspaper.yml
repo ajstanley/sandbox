@@ -1,0 +1,12 @@
+uuid: fa4f4bfa-1a0f-40da-98be-f65998cf1be8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 4sI1nOfwLTyTb4pcpbiL5pHOTBJHXCO-BefEHluzxeQ
+id: node.newspaper
+label: Newspaper
+targetEntityType: node
+cache: true

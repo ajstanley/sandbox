@@ -1,0 +1,14 @@
+uuid: 931eef2c-6daf-463f-8cae-8d24daa584df
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: 2B5ejSwkga0bhlZvgJyTGMUmqgr_uqKWEpIdIw1W9hw
+id: user_add_role_action.differential_access_limited
+label: 'Add the Differential access - limited role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: ''

@@ -1,0 +1,25 @@
+uuid: c74e4ad8-7a3a-4674-b2e7-63a14091e44d
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.carapace_fb_footer_social_media
+  module:
+    - fixed_block_content
+  theme:
+    - islandora_base_theme
+_core:
+  default_config_hash: SjTiZctiTWwgv9i6Scac3FMC3lj4NEHfmSR5QSE72Fo
+id: islandora_base_theme_footersocialmedia
+theme: islandora_base_theme
+region: footer_second
+weight: -8
+provider: null
+plugin: 'fixed_block_content:carapace_fb_footer_social_media'
+settings:
+  id: 'fixed_block_content:carapace_fb_footer_social_media'
+  label: 'Footer: Social Media'
+  label_display: '0'
+  provider: fixed_block_content
+  view_mode: ''
+visibility: {  }

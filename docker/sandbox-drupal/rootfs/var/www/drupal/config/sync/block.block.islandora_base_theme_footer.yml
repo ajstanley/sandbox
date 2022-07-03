@@ -1,0 +1,27 @@
+uuid: 06733006-4e51-4460-a59d-213d07d18e8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - islandora_base_theme
+_core:
+  default_config_hash: P1p7cjTnhM1yIVConrrapbT_EcCGhJVBQqmDnPxwJwQ
+id: islandora_base_theme_footer
+theme: islandora_base_theme
+region: footer_second
+weight: -9
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

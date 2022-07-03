@@ -1,0 +1,110 @@
+variant: fcos
+version: 1.4.0
+passwd:
+  users:
+    - name: core
+      groups:
+        - docker
+      # Generate with: docker run -ti --rm quay.io/coreos/mkpasswd --method=yescrypt
+      # Currently set to "password"
+      password_hash: $y$j9T$Ernl9iT8fFB.mCP.9/QZE.$R/1Zw9XbBrqt.O3ibQwmdVhyFtyVBgvmOPGRxpo6vI3
+      # Paste the contents of package/vm_rsa.pub in this field.
+      ssh_authorized_keys:
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCl+na14YQyA0rXesVkea96G8lwsDdGX2k1lsmtNBV1KTrj+YJCFkeoag8Wo+1/IKdjareJlKCfellrED/Nx75pbMafWVcquzveHTXMAIxGpD0BTXAWX7tN6VQ+Y8xEdIumxPAFtMwmu4QzgAIXpohasdvHpKTX1IiJdwUTaiYM1AB5XSYNHrtTZqd1mEzDWwc+g5UVVh9ru8attLRKJCP9ao7L/iBxfvV7QUf4//2t/2G14B5GkPAUGqokdEbXTRvPF07d0FB2ES6DnCjOK514/PGh7yc9QDH+A/Rws/ebcli/1fG4IY+Ldy1eabG20KThs+DtVCkH36+m+5qzJwB3Z+jNq/r0pcG9rOKGwBFvYz267lyQXRwbnUR/+U4cu834AJyZMYe7fcr5Jad/pwZlraFg1l4sDHibb5M6ySpetfdW8iQzO4Zv8pIS/ERb4hjoEXWuULTEaA3ZuWrjNT8ZPPIwxHWt+m4MJxhyXoIWklV9N3e8NxO89rXNH3bR+Sc=
+systemd:
+  units:
+    - name: sandbox.service
+      enabled: true
+      contents: |
+        [Unit]
+        Description= Islandora Sandbox
+        PartOf=docker.service
+        After=docker.service
+
+        [Service]
+        User=core
+        Group=core
+        WorkingDirectory=/opt/sandbox
+        ExecStartPre=/usr/bin/docker compose down
+        ExecStart=/usr/bin/docker compose up
+        ExecStop=/usr/bin/docker compose down
+
+        [Install]
+        WantedBy=multi-user.target
+storage:
+  disks:
+    - device: /dev/sdb
+      wipe_table: true
+      partitions:
+        - number: 1
+          label: docker
+  filesystems:
+    - path: /var/lib/docker
+      device: /dev/disk/by-partlabel/docker
+      format: ext4
+      label: docker
+      wipe_filesystem: true
+      with_mount_unit: true
+  files:
+    # Disable auto-updates.
+    - path: /etc/zincati/config.d/90-disable-auto-updates.toml
+      mode: 0644
+      contents:
+        inline: |
+          [updates]
+          enabled = false
+    - path: /etc/sysctl.d/20-silence-audit.conf
+      mode: 0644
+      contents:
+        inline: |
+          # Raise console message logging level from DEBUG (7) to WARNING (4)
+          # to hide audit messages from the interactive console
+          kernel.printk=4
+    - path: /etc/ssh/sshd_config.d/40-disable-passwords.conf
+      overwrite: true
+      contents:
+        inline: |
+          PermitRootLogin no
+          AllowUsers core
+          PasswordAuthentication yes
+    - path: /etc/crypto-policies/state/current
+      overwrite: true
+      contents:
+        inline: LEGACY
+  links:
+    - path: /etc/crypto-policies/back-ends/bind.config
+      target: /usr/share/crypto-policies/LEGACY/bind.txt
+      overwrite: true
+    - path: /etc/crypto-policies/back-ends/gnutls.config
+      target: /usr/share/crypto-policies/LEGACY/gnutls.txt
+      overwrite: true
+    - path: /etc/crypto-policies/back-ends/java.config
+      target: /usr/share/crypto-policies/LEGACY/java.txt
+      overwrite: true
+    - path: /etc/crypto-policies/back-ends/javasystem.config
+      target: /usr/share/crypto-policies/LEGACY/javasystem.txt
+      overwrite: true
+    - path: /etc/crypto-policies/back-ends/krb5.config
+      target: /usr/share/crypto-policies/LEGACY/krb5.txt
+      overwrite: true
+    - path: /etc/crypto-policies/back-ends/libreswan.config
+      target: /usr/share/crypto-policies/LEGACY/libreswan.txt
+      overwrite: true
+    - path: /etc/crypto-policies/back-ends/libssh.config
+      target: /usr/share/crypto-policies/LEGACY/libssh.txt
+      overwrite: true
+    - path: /etc/crypto-policies/back-ends/nss.config
+      target: /usr/share/crypto-policies/LEGACY/nss.txt
+      overwrite: true
+    - path: /etc/crypto-policies/back-ends/openssh.config
+      target: /usr/share/crypto-policies/LEGACY/openssh.txt
+      overwrite: true
+    - path: /etc/crypto-policies/back-ends/opensshserver.config
+      target: /usr/share/crypto-policies/LEGACY/opensshserver.txt
+      overwrite: true
+    - path: /etc/crypto-policies/back-ends/openssl.config
+      target: /usr/share/crypto-policies/LEGACY/openssl.txt
+      overwrite: true
+    - path: /etc/crypto-policies/back-ends/opensslcnf.config
+      target: /usr/share/crypto-policies/LEGACY/opensslcnf.txt
+      overwrite: true

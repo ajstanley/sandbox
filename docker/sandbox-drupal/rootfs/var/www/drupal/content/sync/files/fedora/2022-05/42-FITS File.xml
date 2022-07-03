@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fits xmlns="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hul.harvard.edu/ois/xml/ns/fits/fits_output http://hul.harvard.edu/ois/xml/xsd/fits/fits_output.xsd" version="1.5.0" timestamp="5/18/22 1:34 PM">
+  <identification>
+    <identity format="JPEG 2000 JP2" mimetype="image/jp2" toolname="FITS" toolversion="1.5.0">
+      <tool toolname="Droid" toolversion="6.4" />
+      <tool toolname="Jhove" toolversion="1.20.1" />
+      <tool toolname="file utility" toolversion="5.39" />
+      <tool toolname="Exiftool" toolversion="11.54" />
+      <tool toolname="Tika" toolversion="1.21" />
+      <externalIdentifier toolname="Droid" toolversion="6.4" type="puid">x-fmt/392</externalIdentifier>
+    </identity>
+  </identification>
+  <fileinfo>
+    <size toolname="Jhove" toolversion="1.20.1">234688</size>
+    <filepath toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">/opt/tomcat/webapps/fits/upload/1652880852655/wildflowersofwes0000mcca_page_011.jp2</filepath>
+    <filename toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">wildflowersofwes0000mcca_page_011.jp2</filename>
+    <md5checksum toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">35d09c756ae37c700d2ff5133daeb212</md5checksum>
+    <fslastmodified toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">1652880852000</fslastmodified>
+  </fileinfo>
+  <filestatus>
+    <well-formed toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">true</well-formed>
+    <valid toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">true</valid>
+  </filestatus>
+  <metadata>
+    <image>
+      <byteOrder toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">big endian</byteOrder>
+      <compressionScheme toolname="Jhove" toolversion="1.20.1" status="CONFLICT">JPEG 2000 Lossy</compressionScheme>
+      <compressionScheme toolname="Exiftool" toolversion="11.54" status="CONFLICT">JPEG 2000</compressionScheme>
+      <imageWidth toolname="Jhove" toolversion="1.20.1">1621</imageWidth>
+      <imageHeight toolname="Jhove" toolversion="1.20.1">2625</imageHeight>
+      <colorSpace toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">sRGB</colorSpace>
+      <iccProfileName toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">Modified sRGB IEC61966-2.1</iccProfileName>
+      <tileWidth toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">256</tileWidth>
+      <tileHeight toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">256</tileHeight>
+      <qualityLayers toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">6</qualityLayers>
+      <resolutionLevels toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">5</resolutionLevels>
+      <samplingFrequencyUnit toolname="Jhove" toolversion="1.20.1" status="CONFLICT">cm</samplingFrequencyUnit>
+      <samplingFrequencyUnit toolname="Exiftool" toolversion="11.54" status="CONFLICT">m</samplingFrequencyUnit>
+      <xSamplingFrequency toolname="Jhove" toolversion="1.20.1" status="CONFLICT">118</xSamplingFrequency>
+      <xSamplingFrequency toolname="Exiftool" toolversion="11.54" status="CONFLICT">11811</xSamplingFrequency>
+      <ySamplingFrequency toolname="Jhove" toolversion="1.20.1" status="CONFLICT">118</ySamplingFrequency>
+      <ySamplingFrequency toolname="Exiftool" toolversion="11.54" status="CONFLICT">11811</ySamplingFrequency>
+      <bitsPerSample toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">8 8 8</bitsPerSample>
+      <samplesPerPixel toolname="Jhove" toolversion="1.20.1" status="SINGLE_RESULT">3</samplesPerPixel>
+      <iccProfileVersion toolname="Exiftool" toolversion="11.54" status="SINGLE_RESULT">2.1.0</iccProfileVersion>
+      <standard>
+        <mix:mix xmlns:mix="http://www.loc.gov/mix/v20">
+          <mix:BasicDigitalObjectInformation>
+            <mix:byteOrder>big endian</mix:byteOrder>
+            <mix:Compression>
+              <mix:compressionScheme>JPEG 2000 Lossy</mix:compressionScheme>
+            </mix:Compression>
+          </mix:BasicDigitalObjectInformation>
+          <mix:BasicImageInformation>
+            <mix:BasicImageCharacteristics>
+              <mix:imageWidth>1621</mix:imageWidth>
+              <mix:imageHeight>2625</mix:imageHeight>
+              <mix:PhotometricInterpretation>
+                <mix:colorSpace>sRGB</mix:colorSpace>
+                <mix:ColorProfile>
+                  <mix:IccProfile>
+                    <mix:iccProfileName>Modified sRGB IEC61966-2.1</mix:iccProfileName>
+                    <mix:iccProfileVersion>2.1.0</mix:iccProfileVersion>
+                  </mix:IccProfile>
+                </mix:ColorProfile>
+              </mix:PhotometricInterpretation>
+            </mix:BasicImageCharacteristics>
+            <mix:SpecialFormatCharacteristics>
+              <mix:JPEG2000>
+                <mix:EncodingOptions>
+                  <mix:Tiles>
+                    <mix:tileWidth>256</mix:tileWidth>
+                    <mix:tileHeight>256</mix:tileHeight>
+                  </mix:Tiles>
+                  <mix:qualityLayers>6</mix:qualityLayers>
+                  <mix:resolutionLevels>5</mix:resolutionLevels>
+                </mix:EncodingOptions>
+              </mix:JPEG2000>
+            </mix:SpecialFormatCharacteristics>
+          </mix:BasicImageInformation>
+          <mix:ImageCaptureMetadata>
+            <mix:GeneralCaptureInformation />
+          </mix:ImageCaptureMetadata>
+          <mix:ImageAssessmentMetadata>
+            <mix:SpatialMetrics>
+              <mix:samplingFrequencyUnit>cm</mix:samplingFrequencyUnit>
+              <mix:xSamplingFrequency>
+                <mix:numerator>118</mix:numerator>
+                <mix:denominator>1</mix:denominator>
+              </mix:xSamplingFrequency>
+              <mix:ySamplingFrequency>
+                <mix:numerator>118</mix:numerator>
+                <mix:denominator>1</mix:denominator>
+              </mix:ySamplingFrequency>
+            </mix:SpatialMetrics>
+            <mix:ImageColorEncoding>
+              <mix:BitsPerSample>
+                <mix:bitsPerSampleValue>8</mix:bitsPerSampleValue>
+                <mix:bitsPerSampleValue>8</mix:bitsPerSampleValue>
+                <mix:bitsPerSampleValue>8</mix:bitsPerSampleValue>
+                <mix:bitsPerSampleUnit>integer</mix:bitsPerSampleUnit>
+              </mix:BitsPerSample>
+              <mix:samplesPerPixel>3</mix:samplesPerPixel>
+            </mix:ImageColorEncoding>
+          </mix:ImageAssessmentMetadata>
+        </mix:mix>
+      </standard>
+    </image>
+  </metadata>
+  <statistics fitsExecutionTime="1244">
+    <tool toolname="MediaInfo" toolversion="20.09" status="did not run" />
+    <tool toolname="OIS Audio Information" toolversion="0.1" status="did not run" />
+    <tool toolname="ADL Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="VTT Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="Droid" toolversion="6.4" executionTime="227" />
+    <tool toolname="Jhove" toolversion="1.20.1" executionTime="1209" />
+    <tool toolname="file utility" toolversion="5.39" executionTime="1109" />
+    <tool toolname="Exiftool" toolversion="11.54" executionTime="1138" />
+    <tool toolname="NLNZ Metadata Extractor" toolversion="3.6GA" status="did not run" />
+    <tool toolname="OIS File Information" toolversion="1.0" executionTime="53" />
+    <tool toolname="OIS XML Metadata" toolversion="0.2" status="did not run" />
+    <tool toolname="ffident" toolversion="0.2" executionTime="56" />
+    <tool toolname="Tika" toolversion="1.21" executionTime="656" />
+  </statistics>
+</fits>
+
+

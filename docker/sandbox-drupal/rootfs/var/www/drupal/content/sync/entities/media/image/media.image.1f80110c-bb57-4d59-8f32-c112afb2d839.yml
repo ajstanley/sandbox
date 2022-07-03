@@ -1,0 +1,100 @@
+uuid:
+  -
+    value: 1f80110c-bb57-4d59-8f32-c112afb2d839
+langcode:
+  -
+    value: en
+bundle:
+  -
+    target_id: image
+    target_type: media_type
+    target_uuid: fbbd850a-7972-4e92-8c74-9796109ab7ea
+revision_created:
+  -
+    value: '2022-06-15T01:49:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+name:
+  -
+    value: Wildflowers_TN.png
+thumbnail:
+  -
+    alt: Wildflowers_TN.png
+    title: null
+    width: 1218
+    height: 1364
+    target_type: file
+    target_uuid: 56c6b3b5-2b28-4100-a522-623095276f9a
+created:
+  -
+    value: '2022-05-18T13:32:47+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:32:47+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/node/1'
+    title: '| Default'
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+field_access_terms: {  }
+field_file_size:
+  -
+    value: 3885522
+field_height:
+  -
+    value: 1364
+field_media_image:
+  -
+    alt: Wildflowers_TN.png
+    title: null
+    width: 1218
+    height: 1364
+    target_type: file
+    target_uuid: 56c6b3b5-2b28-4100-a522-623095276f9a
+field_media_of:
+  -
+    target_type: node
+    target_uuid: dc524796-305b-4572-889c-a9a3d2886ddf
+field_media_use:
+  -
+    target_type: taxonomy_term
+    target_uuid: 0f809124-7143-48bf-a242-5b7ab22499d5
+field_mime_type:
+  -
+    value: image/png
+field_original_name: {  }
+field_width:
+  -
+    value: 1218
+_content_sync:
+  entity_type: media
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0
+    file:
+      - file.file.56c6b3b5-2b28-4100-a522-623095276f9a
+    node:
+      - node.islandora_object.dc524796-305b-4572-889c-a9a3d2886ddf
+    taxonomy_term:
+      - taxonomy_term.islandora_media_use.0f809124-7143-48bf-a242-5b7ab22499d5

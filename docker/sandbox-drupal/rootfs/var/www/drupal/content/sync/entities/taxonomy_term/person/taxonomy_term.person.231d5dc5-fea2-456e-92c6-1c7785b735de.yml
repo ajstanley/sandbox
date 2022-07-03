@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 231d5dc5-fea2-456e-92c6-1c7785b735de
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: person
+    target_type: taxonomy_vocabulary
+    target_uuid: 5ccd302c-61fb-4ad6-a21f-9c3b8c3d09bb
+revision_created:
+  -
+    value: '2022-05-18T13:30:30+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Ken Jones'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2022-05-18T13:30:30+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/term/person/ken-jones'
+    title: 'Ken Jones | Default'
+path:
+  -
+    alias: /term/person/ken-jones
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+content_translation_uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+content_translation_created:
+  -
+    value: '2022-05-18T13:30:30+00:00'
+    format: 'Y-m-d\TH:i:sP'
+field_alternate_name: {  }
+field_authority_link: {  }
+field_cat_date_begin: {  }
+field_cat_date_end: {  }
+field_relationships: {  }
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

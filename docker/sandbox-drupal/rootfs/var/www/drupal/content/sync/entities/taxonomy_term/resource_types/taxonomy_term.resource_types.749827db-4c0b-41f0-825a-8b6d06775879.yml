@@ -1,0 +1,78 @@
+uuid:
+  -
+    value: 749827db-4c0b-41f0-825a-8b6d06775879
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: resource_types
+    target_type: taxonomy_vocabulary
+    target_uuid: 761673cf-24f3-407c-872c-8d88fc56a6bf
+revision_created:
+  -
+    value: '2022-05-18T13:28:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: Dataset
+description:
+  -
+    value: 'Data encoded in a defined structure'
+    format: null
+    processed: |
+      <p>Data encoded in a defined structure</p>
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2022-05-18T13:28:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/term/resource-types/dataset'
+    title: 'Dataset | Default'
+    description: 'Data encoded in a defined structure'
+path:
+  -
+    alias: /term/resource-types/dataset
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+content_translation_uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+content_translation_created:
+  -
+    value: '2022-05-18T13:28:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+field_authority_link: {  }
+field_external_uri:
+  -
+    uri: 'http://purl.org/dc/dcmitype/Dataset'
+    title: null
+    options: {  }
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

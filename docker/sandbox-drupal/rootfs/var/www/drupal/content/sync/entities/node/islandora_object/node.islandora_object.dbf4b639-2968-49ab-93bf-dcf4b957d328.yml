@@ -1,0 +1,163 @@
+uuid:
+  -
+    value: dbf4b639-2968-49ab-93bf-dcf4b957d328
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: islandora_object
+    target_type: node_type
+    target_uuid: b892aa80-baa5-4e6d-b955-4a6eaa0f0357
+revision_timestamp:
+  -
+    value: '2022-05-18T13:30:32+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+revision_log: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+title:
+  -
+    value: 'Library circulation desk'
+created:
+  -
+    value: '2022-05-18T13:30:32+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:30:32+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: true
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/islandora/library-circulation-desk'
+    title: 'Library circulation desk | Default'
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+field_display_title:
+  -
+    value: 'Library circulation desk'
+field_abstract: {  }
+field_access_terms: {  }
+field_alternative_title: {  }
+field_alt_title: {  }
+field_classification: {  }
+field_coordinates: {  }
+field_coordinates_text: {  }
+field_copyright_date: {  }
+field_date_captured: {  }
+field_date_modified: {  }
+field_date_valid: {  }
+field_description:
+  -
+    value: 'Depicts the Library Circulation desk of the University of Toronto Scarborough Library'
+field_description_long: {  }
+field_dewey_classification: {  }
+field_display_hints:
+  -
+    target_type: taxonomy_term
+    target_uuid: 6b08de6d-d9be-4ffd-9751-9ca535c7a0ff
+field_edition: {  }
+field_edtf_date: {  }
+field_edtf_date_created: {  }
+field_edtf_date_issued: {  }
+field_extent:
+  -
+    value: '1 item'
+field_frequency: {  }
+field_full_title: {  }
+field_genre: {  }
+field_geographic_subject: {  }
+field_identifier:
+  -
+    value: 61220/utsc10223
+field_isbn: {  }
+field_language: {  }
+field_lcc_classification: {  }
+field_linked_agent:
+  -
+    rel_type: 'relators:pbl'
+    target_type: taxonomy_term
+    target_uuid: 10d68e73-8efe-41d8-84f1-183200b75140
+  -
+    rel_type: 'relators:pht'
+    target_type: taxonomy_term
+    target_uuid: 231d5dc5-fea2-456e-92c6-1c7785b735de
+field_local_identifier: {  }
+field_main_banner: {  }
+field_member_of:
+  -
+    target_type: node
+    target_uuid: bbb0261c-ac7d-4c56-b946-bb46243f231e
+field_model:
+  -
+    target_type: taxonomy_term
+    target_uuid: 6871ec38-a6cd-49b0-8327-9f7365ba4e15
+field_mode_of_issuance: {  }
+field_note: {  }
+field_oclc_number: {  }
+field_physical_form: {  }
+field_pid: {  }
+field_place_published: {  }
+field_place_published_country: {  }
+field_resource_type:
+  -
+    target_type: taxonomy_term
+    target_uuid: 00393320-0936-4f1f-bbd5-ddb9a49322d9
+field_rights:
+  -
+    value: 'Digital files found in the UTSC Library''s Digital Collections are meant for research and private study used in compliance with copyright legislation. Access to digital images and text found on this website and the technical capacity to download or copy it'
+field_subject: {  }
+field_subjects_name: {  }
+field_subject_general:
+  -
+    target_type: taxonomy_term
+    target_uuid: 8f07c286-434c-4f8a-835b-66cf1905e411
+  -
+    target_type: taxonomy_term
+    target_uuid: 7e076b86-2c81-48dd-8051-927272157798
+field_table_of_contents: {  }
+field_temporal_subject: {  }
+field_weight: {  }
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0
+    taxonomy_term:
+      - taxonomy_term.islandora_display.6b08de6d-d9be-4ffd-9751-9ca535c7a0ff
+      - taxonomy_term.corporate_body.10d68e73-8efe-41d8-84f1-183200b75140
+      - taxonomy_term.person.231d5dc5-fea2-456e-92c6-1c7785b735de
+      - taxonomy_term.islandora_models.6871ec38-a6cd-49b0-8327-9f7365ba4e15
+      - taxonomy_term.resource_types.00393320-0936-4f1f-bbd5-ddb9a49322d9
+      - taxonomy_term.subject.8f07c286-434c-4f8a-835b-66cf1905e411
+      - taxonomy_term.subject.7e076b86-2c81-48dd-8051-927272157798
+    node:
+      - node.islandora_object.bbb0261c-ac7d-4c56-b946-bb46243f231e
+path:
+  -
+    alias: /islandora/library-circulation-desk

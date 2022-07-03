@@ -1,0 +1,54 @@
+uuid: 30980d94-b6e7-4c71-bec2-6419d6218b8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.audio
+  module:
+    - media
+  enforced:
+    module:
+      - islandora_core_feature
+_core:
+  default_config_hash: BSP29888MyVBrGIJvxrUP60nzcXCExrJRIwMV_kpEcc
+id: media.audio
+targetEntityType: media
+bundle: audio
+types:
+  - 'pcdm:File'
+fieldMappings:
+  name:
+    properties:
+      - 'dcterms:title'
+      - 'rdf:label'
+  created:
+    properties:
+      - 'schema:dateCreated'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+  changed:
+    properties:
+      - 'schema:dateModified'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+  uid:
+    properties:
+      - 'schema:author'
+    mapping_type: rel
+  field_mime_type:
+    properties:
+      - 'ebucore:hasMimeType'
+  field_media_of:
+    properties:
+      - 'pcdm:fileOf'
+    mapping_type: rel
+  field_original_name:
+    properties:
+      - 'premis3:originalName'
+  field_tags:
+    properties:
+      - 'schema:additionalType'
+    mapping_type: rel
+  field_file_size:
+    properties:
+      - 'premis:hasSize'

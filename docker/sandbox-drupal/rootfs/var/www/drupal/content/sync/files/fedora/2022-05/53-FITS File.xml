@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fits xmlns="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hul.harvard.edu/ois/xml/ns/fits/fits_output http://hul.harvard.edu/ois/xml/xsd/fits/fits_output.xsd" version="1.5.0" timestamp="5/18/22 1:35 PM">
+  <identification>
+    <identity format="MPEG 1/2 Audio Layer 3" mimetype="audio/mpeg" toolname="FITS" toolversion="1.5.0">
+      <tool toolname="Droid" toolversion="6.4" />
+      <tool toolname="Exiftool" toolversion="11.54" />
+      <tool toolname="NLNZ Metadata Extractor" toolversion="3.6GA" />
+      <tool toolname="ffident" toolversion="0.2" />
+      <tool toolname="Tika" toolversion="1.21" />
+      <version toolname="NLNZ Metadata Extractor" toolversion="3.6GA">2</version>
+      <externalIdentifier toolname="Droid" toolversion="6.4" type="puid">fmt/134</externalIdentifier>
+    </identity>
+  </identification>
+  <fileinfo>
+    <filepath toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">/opt/tomcat/webapps/fits/upload/1652880934659/lmm_shortstory1.mp3</filepath>
+    <filename toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">lmm_shortstory1.mp3</filename>
+    <size toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">9760048</size>
+    <md5checksum toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">3626e94f21a4ec4d9fc521060e2c44d9</md5checksum>
+    <fslastmodified toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">1652880934000</fslastmodified>
+  </fileinfo>
+  <filestatus />
+  <metadata>
+    <audio>
+      <duration toolname="NLNZ Metadata Extractor" toolversion="3.6GA" status="SINGLE_RESULT">0:20:19:981</duration>
+      <bitRate toolname="Exiftool" toolversion="11.54" status="CONFLICT">64 kbps</bitRate>
+      <bitRate toolname="NLNZ Metadata Extractor" toolversion="3.6GA" status="CONFLICT">64000</bitRate>
+      <sampleRate toolname="Exiftool" toolversion="11.54">22050</sampleRate>
+      <channels toolname="Exiftool" toolversion="11.54" status="CONFLICT">1</channels>
+      <channels toolname="NLNZ Metadata Extractor" toolversion="3.6GA" status="CONFLICT">2</channels>
+      <milliseconds toolname="NLNZ Metadata Extractor" toolversion="3.6GA" status="SINGLE_RESULT">1219981</milliseconds>
+      <author toolname="Tika" toolversion="1.21" status="SINGLE_RESULT">Lucy Maud Montgomery</author>
+      <title toolname="Tika" toolversion="1.21" status="SINGLE_RESULT">01 - A Case of Trespass</title>
+      <sampleRate toolname="Tika" toolversion="1.21" status="SINGLE_RESULT">22050</sampleRate>
+      <standard>
+        <aes:audioObject xmlns:aes="http://www.aes.org/audioObject" xsi:schemaLocation="http://www.aes.org/audioObject http://www.aes.org/standards/schemas/aes57-2011-08-27.xsd" disposition="" schemaVersion="1.0.0" analogDigitalFlag="FILE_DIGITAL" ID="AUDIO_OBJECT_9501c7a1-cd5b-4470-ad99-ae6530284024">
+          <aes:format specificationVersion="2">MPEG 1/2 Audio Layer 3</aes:format>
+          <aes:use useType="OTHER" otherType="unknown" />
+          <aes:primaryIdentifier identifierType="FILE_NAME">lmm_shortstory1.mp3</aes:primaryIdentifier>
+          <aes:face audioObjectRef="AUDIO_OBJECT_9501c7a1-cd5b-4470-ad99-ae6530284024" label="face 1" ID="FACE_e3feeed0-c9df-4eff-9b9e-275bb027184a" direction="NONE">
+            <aes:timeline>
+              <aes:startTime editRate="1">0</aes:startTime>
+              <aes:duration editRate="1000">1219981</aes:duration>
+            </aes:timeline>
+            <aes:region faceRef="FACE_e3feeed0-c9df-4eff-9b9e-275bb027184a" formatRef="FORMAT_REGION_883ec2fa-7cd3-4f7a-825b-4a0de94a99d6" ID="REGION_b1cd6bd6-9c63-4197-9e0d-800a75cc1332" label="region 1">
+              <aes:timeRange>
+                <aes:startTime editRate="1">0</aes:startTime>
+                <aes:duration editRate="1000">1219981</aes:duration>
+              </aes:timeRange>
+              <aes:numChannels>1</aes:numChannels>
+              <aes:stream ID="STREAM_96593876-221f-4473-84dd-cd434cfa9222" label="stream 0" faceRegionRef="REGION_b1cd6bd6-9c63-4197-9e0d-800a75cc1332">
+                <aes:channelAssignment leftRightPosition="0.0" channelNum="0" frontRearPosition="0.0" />
+              </aes:stream>
+            </aes:region>
+          </aes:face>
+          <aes:formatList>
+            <aes:formatRegion ownerRef="REGION_b1cd6bd6-9c63-4197-9e0d-800a75cc1332" xsi:type="aes:formatRegionType" ID="FORMAT_REGION_883ec2fa-7cd3-4f7a-825b-4a0de94a99d6" label="format region 1">
+              <aes:sampleRate>22050.0</aes:sampleRate>
+              <aes:soundField>MONO</aes:soundField>
+              <aes:bitrateReduction>
+                <aes:codecName />
+                <aes:codecNameVersion />
+                <aes:codecCreatorApplication />
+                <aes:codecCreatorApplicationVersion />
+                <aes:codecQuality>LOSSY</aes:codecQuality>
+                <aes:dataRate>64 kbps</aes:dataRate>
+                <aes:dataRateMode>FIXED</aes:dataRateMode>
+              </aes:bitrateReduction>
+            </aes:formatRegion>
+          </aes:formatList>
+        </aes:audioObject>
+      </standard>
+    </audio>
+  </metadata>
+  <statistics fitsExecutionTime="920">
+    <tool toolname="MediaInfo" toolversion="20.09" status="did not run" />
+    <tool toolname="OIS Audio Information" toolversion="0.1" status="did not run" />
+    <tool toolname="ADL Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="VTT Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="Droid" toolversion="6.4" executionTime="276" />
+    <tool toolname="Jhove" toolversion="1.20.1" status="did not run" />
+    <tool toolname="file utility" toolversion="5.39" executionTime="721" />
+    <tool toolname="Exiftool" toolversion="11.54" executionTime="865" />
+    <tool toolname="NLNZ Metadata Extractor" toolversion="3.6GA" executionTime="150" />
+    <tool toolname="OIS File Information" toolversion="1.0" executionTime="557" />
+    <tool toolname="OIS XML Metadata" toolversion="0.2" status="did not run" />
+    <tool toolname="ffident" toolversion="0.2" executionTime="65" />
+    <tool toolname="Tika" toolversion="1.21" executionTime="618" />
+  </statistics>
+</fits>
+
+

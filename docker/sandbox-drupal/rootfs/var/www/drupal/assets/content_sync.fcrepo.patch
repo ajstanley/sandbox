@@ -1,0 +1,19 @@
+diff --git a/src/Commands/ContentSyncCommands.php b/src/Commands/ContentSyncCommands.php
+index d16b6ef..d8c361e 100644
+--- a/src/Commands/ContentSyncCommands.php
++++ b/src/Commands/ContentSyncCommands.php
+@@ -168,6 +168,14 @@ class ContentSyncCommands extends DrushCommands {
+     $this->moduleInstaller = $moduleInstaller;
+     $this->themeHandler = $themeHandler;
+     $this->stringTranslation = $stringTranslation;
++
++    # Must be user 1 to interact with fcrepo.
++    //\Drupal::currentUser()->setAccount(\Drupal\user\Entity\User::load(1));
++    $user = \Drupal\user\Entity\User::load(1);
++    # Disable validation so we can update user 1.
++    $user->_skipProtectedUserFieldConstraint = TRUE;
++    $accountSwitcher = \Drupal::service('account_switcher');
++    $accountSwitcher->switchTo($user);
+   }
+ 
+   /**

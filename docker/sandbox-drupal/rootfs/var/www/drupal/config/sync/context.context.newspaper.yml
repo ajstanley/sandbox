@@ -1,0 +1,52 @@
+uuid: 322858cb-1f5d-4981-9c2c-0cfb03e7616c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.newspaper
+  module:
+    - islandora
+    - views
+_core:
+  default_config_hash: WsnLJ9MAJvjLD9m89H1_0Rx5keVSgR56Ee0DV-S8AVw
+label: Newspaper
+name: newspaper
+group: Display
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  node_has_term:
+    id: node_has_term
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uri: 'http://purl.org/dc/dcmitype/Collection,https://schema.org/Newspaper'
+    logic: and
+reactions:
+  blocks:
+    id: blocks
+    blocks:
+      91c77937-7442-463e-935b-dda16a7c876a:
+        id: 'views_block:newspaper-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        region: content
+        weight: '0'
+        custom_id: views_block_newspaper_block_1
+        theme: islandora_starter_theme
+        css_class: ''
+        unique: 0
+        context_id: newspaper
+        context_mapping:
+          field_member_of_target_id: '@node.node_route_context:node'
+        views_label: ''
+        items_per_page: '48'
+    include_default_blocks: 1
+    saved: false
+  view_mode_alter:
+    id: view_mode_alter
+    mode: node.newspaper
+    saved: false
+weight: 0

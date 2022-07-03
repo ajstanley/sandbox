@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fits xmlns="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hul.harvard.edu/ois/xml/ns/fits/fits_output http://hul.harvard.edu/ois/xml/xsd/fits/fits_output.xsd" version="1.5.0" timestamp="5/18/22 1:31 PM">
+  <identification status="CONFLICT">
+    <identity format="ZIP Format" mimetype="application/zip" toolname="FITS" toolversion="1.5.0">
+      <tool toolname="Droid" toolversion="6.4" />
+      <tool toolname="Exiftool" toolversion="11.54" />
+      <tool toolname="ffident" toolversion="0.2" />
+      <externalIdentifier toolname="Droid" toolversion="6.4" type="puid">x-fmt/263</externalIdentifier>
+    </identity>
+    <identity format="Microsoft PowerPoint 2007+" mimetype="application/vnd.openxmlformats-officedocument.presentationml.presentation" toolname="FITS" toolversion="1.5.0">
+      <tool toolname="file utility" toolversion="5.39" />
+    </identity>
+    <identity format="Office Open XML Presentation" mimetype="application/vnd.openxmlformats-officedocument.presentationml.presentation" toolname="FITS" toolversion="1.5.0">
+      <tool toolname="Tika" toolversion="1.21" />
+    </identity>
+  </identification>
+  <fileinfo>
+    <filepath toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">/opt/tomcat/webapps/fits/upload/1652880659964/islandora-content-modeler.pptx</filepath>
+    <filename toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">islandora-content-modeler.pptx</filename>
+    <size toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">3499084</size>
+    <md5checksum toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">ce5f5c119883044ec283e8a257c98c41</md5checksum>
+    <fslastmodified toolname="OIS File Information" toolversion="1.0" status="SINGLE_RESULT">1652880659000</fslastmodified>
+  </fileinfo>
+  <filestatus />
+  <metadata />
+  <statistics fitsExecutionTime="7945">
+    <tool toolname="MediaInfo" toolversion="20.09" status="did not run" />
+    <tool toolname="OIS Audio Information" toolversion="0.1" status="did not run" />
+    <tool toolname="ADL Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="VTT Tool" toolversion="0.1" status="did not run" />
+    <tool toolname="Droid" toolversion="6.4" executionTime="15" />
+    <tool toolname="Jhove" toolversion="1.20.1" executionTime="7920" />
+    <tool toolname="file utility" toolversion="5.39" executionTime="710" />
+    <tool toolname="Exiftool" toolversion="11.54" executionTime="636" />
+    <tool toolname="NLNZ Metadata Extractor" toolversion="3.6GA" status="did not run" />
+    <tool toolname="OIS File Information" toolversion="1.0" executionTime="34" />
+    <tool toolname="OIS XML Metadata" toolversion="0.2" status="did not run" />
+    <tool toolname="ffident" toolversion="0.2" executionTime="111" />
+    <tool toolname="Tika" toolversion="1.21" executionTime="4019" />
+  </statistics>
+</fits>
+
+

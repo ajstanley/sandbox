@@ -1,0 +1,146 @@
+uuid:
+  -
+    value: 7f213ae3-e9d1-4b21-9491-5fc34109493a
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: islandora_object
+    target_type: node_type
+    target_uuid: b892aa80-baa5-4e6d-b955-4a6eaa0f0357
+revision_timestamp:
+  -
+    value: '2022-05-18T13:30:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+revision_log: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+title:
+  -
+    value: 'Adding a Child Collection using the Islandora Content Modeler Module'
+created:
+  -
+    value: '2022-05-18T13:30:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:30:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: true
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/islandora/adding-child-collection-using-islandora-content-modeler-module'
+    title: 'Adding a Child Collection using the Islandora Content Modeler Module | Default'
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+field_display_title:
+  -
+    value: 'Adding a Child Collection using the Islandora Content Modeler Module'
+field_abstract: {  }
+field_access_terms: {  }
+field_alternative_title: {  }
+field_alt_title: {  }
+field_classification: {  }
+field_coordinates: {  }
+field_coordinates_text: {  }
+field_copyright_date: {  }
+field_date_captured: {  }
+field_date_modified: {  }
+field_date_valid: {  }
+field_description:
+  -
+    value: 'Slides walking through the functionality of an early content modeling module for Islandora'
+field_description_long: {  }
+field_dewey_classification: {  }
+field_display_hints: {  }
+field_edition: {  }
+field_edtf_date: {  }
+field_edtf_date_created: {  }
+field_edtf_date_issued:
+  -
+    value: '2013-09-23'
+field_extent:
+  -
+    value: '1 item'
+field_frequency: {  }
+field_full_title: {  }
+field_genre: {  }
+field_geographic_subject: {  }
+field_identifier: {  }
+field_isbn: {  }
+field_language: {  }
+field_lcc_classification: {  }
+field_linked_agent:
+  -
+    rel_type: 'relators:pbl'
+    target_type: taxonomy_term
+    target_uuid: 3d52143b-4951-4ebe-836d-ab536b639788
+field_local_identifier: {  }
+field_main_banner: {  }
+field_member_of:
+  -
+    target_type: node
+    target_uuid: f6f71f5d-bf22-444e-ba5e-fc38c7a637c6
+field_model:
+  -
+    target_type: taxonomy_term
+    target_uuid: d9c66a5b-b40f-4dc1-80a2-ed11ab154ef0
+field_mode_of_issuance: {  }
+field_note: {  }
+field_oclc_number: {  }
+field_physical_form: {  }
+field_pid: {  }
+field_place_published: {  }
+field_place_published_country: {  }
+field_resource_type:
+  -
+    target_type: taxonomy_term
+    target_uuid: b1a787fa-5363-4400-8901-5de0e159c8c8
+field_rights:
+  -
+    value: '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="ht'
+field_subject: {  }
+field_subjects_name: {  }
+field_subject_general: {  }
+field_table_of_contents: {  }
+field_temporal_subject: {  }
+field_weight: {  }
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0
+    taxonomy_term:
+      - taxonomy_term.corporate_body.3d52143b-4951-4ebe-836d-ab536b639788
+      - taxonomy_term.islandora_models.d9c66a5b-b40f-4dc1-80a2-ed11ab154ef0
+      - taxonomy_term.resource_types.b1a787fa-5363-4400-8901-5de0e159c8c8
+    node:
+      - node.islandora_object.f6f71f5d-bf22-444e-ba5e-fc38c7a637c6
+path:
+  -
+    alias: /islandora/adding-child-collection-using-islandora-content-modeler-module

@@ -1,0 +1,93 @@
+uuid:
+  -
+    value: 518a7abc-ad40-4d77-a9a5-aa8bf7649aab
+langcode:
+  -
+    value: en
+bundle:
+  -
+    target_id: file
+    target_type: media_type
+    target_uuid: f89b233a-611c-4fb8-a4a0-ac03f5cf9544
+revision_created:
+  -
+    value: '2022-06-15T01:49:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+name:
+  -
+    value: 1970_pg8.tiff
+thumbnail:
+  -
+    alt: ''
+    title: null
+    width: 180
+    height: 180
+    target_type: file
+    target_uuid: 02eec738-577e-4dfd-87f4-59771d314f1d
+created:
+  -
+    value: '2022-05-18T13:39:03+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:39:03+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/node/1'
+    title: '| Default'
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+field_access_terms: {  }
+field_file_size:
+  -
+    value: 54982308
+field_media_file:
+  -
+    display: null
+    description: null
+    target_type: file
+    target_uuid: fdd5977e-37ff-4188-b87c-40257d2b48f7
+field_media_of:
+  -
+    target_type: node
+    target_uuid: d9d56cca-1e61-4eaf-8148-f98fed4193c7
+field_media_use:
+  -
+    target_type: taxonomy_term
+    target_uuid: 0c087817-a0a9-417a-8415-2cb4b84fdfb4
+field_mime_type:
+  -
+    value: image/tiff
+field_original_name: {  }
+_content_sync:
+  entity_type: media
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0
+    file:
+      - file.file.02eec738-577e-4dfd-87f4-59771d314f1d
+      - file.file.fdd5977e-37ff-4188-b87c-40257d2b48f7
+    node:
+      - node.islandora_object.d9d56cca-1e61-4eaf-8148-f98fed4193c7
+    taxonomy_term:
+      - taxonomy_term.islandora_media_use.0c087817-a0a9-417a-8415-2cb4b84fdfb4

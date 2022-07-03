@@ -1,0 +1,25 @@
+uuid: f3a75db2-9e15-44e6-86f6-4c719f5122fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.carapace_fb_disclaimer
+  module:
+    - fixed_block_content
+  theme:
+    - seven
+_core:
+  default_config_hash: aS-Fqr0lZUhvz34Y5vYeDryjBuIVr1m9nRJ_m9D1E_A
+id: seven_disclaimer
+theme: seven
+region: header
+weight: -9
+provider: null
+plugin: 'fixed_block_content:carapace_fb_disclaimer'
+settings:
+  id: 'fixed_block_content:carapace_fb_disclaimer'
+  label: Disclaimer
+  label_display: '0'
+  provider: fixed_block_content
+  view_mode: ''
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: 5afb94d1-a916-4831-aefa-1ea320d73d4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+_core:
+  default_config_hash: RQWbbP0cUA6b-l3wL7RMKETPGMtLYe1bFZKeYqNa7is
+label: 'Large Image'
+name: large_image
+group: Display
+description: 'tiff, jp2, etc'
+requireAllConditions: false
+disabled: false
+conditions:
+  media_has_term:
+    id: media_has_term
+    negate: false
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+    uri: 'http://purl.org/coar/resource_type/c_c513,http://purl.org/dc/dcmitype/StillImage'
+    logic: and
+reactions: {  }
+weight: -12

@@ -1,0 +1,16 @@
+_core:
+  default_config_hash: Zska1Ph9MKRm27XDwYAl-I2_aa2cuWqA1m79v92FfKg
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: ''
+  use_default: true
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  path: 'public://full_horizontal_on-dark_rgb_800px_1.png'
+  url: ''
+  use_default: false

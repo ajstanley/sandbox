@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: 46ac0edb-a1df-4ed8-a04f-6206f6cd51d6
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: 1970_pg2.tiff
+uri:
+  -
+    value: 'fedora://2022-05/1970_pg2.tiff'
+    url: /_flysystem/fedora/2022-05/1970_pg2.tiff
+filemime:
+  -
+    value: image/tiff
+filesize:
+  -
+    value: 53580180
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:37:50+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:37:56+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

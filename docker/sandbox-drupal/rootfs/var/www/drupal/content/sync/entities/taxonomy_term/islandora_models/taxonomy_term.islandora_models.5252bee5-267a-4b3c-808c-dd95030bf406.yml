@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 5252bee5-267a-4b3c-808c-dd95030bf406
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: islandora_models
+    target_type: taxonomy_vocabulary
+    target_uuid: 41d15e29-9429-4435-93cd-1e904b539840
+revision_created:
+  -
+    value: '2022-05-18T13:28:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: Video
+description:
+  -
+    value: 'A recording of visual images, usually in motion and with sound accompaniment'
+    format: null
+    processed: |
+      <p>A recording of visual images, usually in motion and with sound accompaniment</p>
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2022-05-18T13:28:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+metatag:
+  value:
+    canonical_url: 'http://default/term/islandora-models/video'
+    title: 'Video | Default'
+    description: 'A recording of visual images, usually in motion and with sound accompaniment'
+path:
+  -
+    alias: /term/islandora-models/video
+content_translation_source:
+  -
+    value: und
+content_translation_outdated:
+  -
+    value: false
+content_translation_uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+content_translation_created:
+  -
+    value: '2022-05-18T13:28:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+field_external_uri:
+  -
+    uri: 'http://purl.org/coar/resource_type/c_12ce'
+    title: null
+    options: {  }
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0

@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: 829ca150-de9a-4534-ae5c-d19877612903
+langcode:
+  -
+    value: en
+uid:
+  -
+    target_type: user
+    target_uuid: 2b939a79-0f98-444d-8de6-435d40eefbd0
+filename:
+  -
+    value: book_collection.png
+uri:
+  -
+    value: 'fedora://2022-05/book_collection.png'
+    url: /_flysystem/fedora/2022-05/book_collection.png
+filemime:
+  -
+    value: image/png
+filesize:
+  -
+    value: 8583
+status:
+  -
+    value: true
+created:
+  -
+    value: '2022-05-18T13:28:57+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2022-05-18T13:28:58+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.2b939a79-0f98-444d-8de6-435d40eefbd0
