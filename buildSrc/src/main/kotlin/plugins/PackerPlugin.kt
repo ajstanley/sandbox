@@ -123,22 +123,16 @@ class PackerPlugin : Plugin<Project> {
         }
 
     override fun apply(project: Project): Unit = project.run {
-        execCaptureOutput(listOf("packer", "init", "."))
-
         val packer = extensions.create<PackerExtension>("packer")
-        val inspect = execCaptureOutput(listOf("packer", "inspect", "."))
 
-        val sources by extra {
-            Pattern.compile("""sources:(.*)provisioners:""", Pattern.MULTILINE or Pattern.DOTALL)
-                .matcher(inspect)
-                .results()
-                .findFirst()
-                .get()
-                .group(1)
-                .replace("""[ \t]""".toRegex(), "")
-                .lines()
-                .filterNot { it.isEmpty() }
-        }
+        val contents = fileTree(projectDir)
+            .matching { include("*.pkr.hcl") }
+            .joinToString("\n") { it.readText() }
+
+        val sources = """source\s+["']([\w_-]+)['"]\s+['"](\w+)['"]"""
+            .toRegex(RegexOption.MULTILINE)
+            .findAll(contents)
+            .map { "${it.groupValues[1]}.${it.groupValues[2]}" }
 
         val compileIgnition by tasks.registering(CompileIgnition::class) {
             configs.from(packer.butane.files)
