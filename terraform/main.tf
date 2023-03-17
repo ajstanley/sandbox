@@ -25,6 +25,11 @@ data "digitalocean_reserved_ip" "sandbox" {
   ip_address = "159.203.49.92"
 }
 
+data "digitalocean_reserved_ip" "test" {
+  // Should match the wildcard A record in Hover.
+  ip_address = "174.138.114.200"
+}
+
 data "digitalocean_ssh_keys" "keys" {
   filter {
     key    = "name"

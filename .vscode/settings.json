@@ -1,6 +1,9 @@
 {
   "cSpell.words": [
+    "Blazegraph",
     "buildkit",
+    "buildx",
+    "crayfits",
     "docroot",
     "drush",
     "fcos",
@@ -25,5 +28,5 @@
   ],
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
-  "cSpell.enabled": true
+  "cSpell.enabled": true,
 }

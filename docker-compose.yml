@@ -3,575 +3,211 @@ version: "3.8"
 
 # Common to all services
 x-common: &common
-  restart: unless-stopped
-  tty: true # Required for non-root users with selinux enabled.
-  volumes:
-    # Allow access to services across https.
-    - &cert-file ./build/certs/generated/cert.pem:/usr/local/share/ca-certificates/cert.pem:z
-    - &cert-root ./build/certs/generated/rootCA.pem:/usr/local/share/ca-certificates/rootCA.pem:z
+    restart: "no"
 
-x-traefik-certresolver: &traefik-certresolver resolver
+x-password: &password "password"
 
-x-traefik-https-redirect-middleware: &traefik-https-redirect-middleware
-  traefik.enable: true
-  traefik.http.middlewares.https-redirect.redirectscheme.permanent: true
-  traefik.http.middlewares.https-redirect.redirectscheme.scheme: https
-
-x-traefik-https-redirect: &traefik-https-redirect https-redirect
+networks:
+    default:
 
 volumes:
-  activemq-data: {}
-  blazegraph-data: {}
-  cantaloupe-data: {}
-  code-server-data: {}
-  drupal-private-files: {}
-  drupal-public-files: {}
-  drupal-root: {}
-  fcrepo-data: {}
-  mariadb-data: {}
-  mariadb-files: {}
-  matomo-config-data: {}
-  solr-data: {}
-  traefik-acme: {}
+    activemq-data: {}
+    blazegraph-data: {}
+    cantaloupe-data: {}
+    code-server-data: {}
+    drupal-private-files: {}
+    drupal-public-files: {}
+    drupal-root: {}
+    drupal-solr-config: {}
+    fcrepo-data: {}
+    mariadb-data: {}
+    matomo-data: {}
+    solr-data: {}
 
 services:
-  #----------------------------------------------------------------------------
-  # Profile independent Services.
-  #
-  # They are not publically accessible and do not require local bind mounts.
-  #----------------------------------------------------------------------------
-  alpaca:
-    <<: *common
-    container_name: alpaca
-    image: ${ISLE_BUILDKIT_REPOSITORY}/alpaca:${ISLE_BUILDKIT_TAG}
-    environment:
-      ALPACA_ACTIVEMQ_CONNECTIONS: 20
-      ALPACA_ACTIVEMQ_CONSUMERS: 8
-  crayfits:
-    <<: *common
-    container_name: crayfits
-    image: ${ISLE_BUILDKIT_REPOSITORY}/crayfits:${ISLE_BUILDKIT_TAG}
-  fits:
-    <<: *common
-    container_name: fits
-    image: ${ISLE_BUILDKIT_REPOSITORY}/fits:${ISLE_BUILDKIT_TAG}
-  homarus:
-    <<: *common
-    container_name: homarus
-    image: ${ISLE_BUILDKIT_REPOSITORY}/homarus:${ISLE_BUILDKIT_TAG}
-  houdini:
-    <<: *common
-    container_name: houdini
-    image: ${ISLE_BUILDKIT_REPOSITORY}/houdini:${ISLE_BUILDKIT_TAG}
-  hypercube:
-    <<: *common
-    container_name: hypercube
-    image: ${ISLE_BUILDKIT_REPOSITORY}/hypercube:${ISLE_BUILDKIT_TAG}
-  mariadb:
-    <<: *common
-    container_name: mariadb
-    image: ${ISLE_BUILDKIT_REPOSITORY}/mariadb:${ISLE_BUILDKIT_TAG}
-    volumes:
-      - mariadb-data:/var/lib/mysql:rw
-      - mariadb-files:/var/lib/mysql-files:rw
-  milliner:
-    <<: *common
-    container_name: milliner
-    image: ${ISLE_BUILDKIT_REPOSITORY}/milliner:${ISLE_BUILDKIT_TAG}
-  #----------------------------------------------------------------------------
-  # Services for 'local' and 'vm' profiles.
-  #
-  # 'local' and 'vm' are publically accessible in a development context.
-  # Exclusively 'local' is only suitable for local bind mounts and builds.
-  #----------------------------------------------------------------------------
-  activemq: &activemq
-    <<: *common
-    container_name: activemq
-    image: ${ISLE_BUILDKIT_REPOSITORY}/activemq:${ISLE_BUILDKIT_TAG}
-    profiles: [local, vm]
-    labels:
-      <<: *traefik-https-redirect-middleware
-      traefik.http.routers.activemq_http.entrypoints: http
-      traefik.http.routers.activemq_http.middlewares: *traefik-https-redirect
-      traefik.http.routers.activemq_http.rule: &traefik-host-activemq Host(`activemq.islandora.ca"`, `activemq.islandora.dev`)
-      traefik.http.routers.activemq_http.service: activemq
-      traefik.http.routers.activemq_https.entrypoints: https
-      traefik.http.routers.activemq_https.rule: *traefik-host-activemq
-      traefik.http.routers.activemq_https.tls: true
-      traefik.http.services.activemq.loadbalancer.server.port: 8161
-      traefik.subdomain: activemq
-    volumes:
-      - activemq-data:/opt/activemq/data:rw
-  blazegraph:
-    <<: *common
-    container_name: blazegraph
-    image: ${ISLE_BUILDKIT_REPOSITORY}/blazegraph:${ISLE_BUILDKIT_TAG}
-    profiles: [local, vm]
-    labels:
-      <<: *traefik-https-redirect-middleware
-      traefik.http.routers.blazegraph_http.entrypoints: http
-      traefik.http.routers.blazegraph_http.middlewares: *traefik-https-redirect
-      traefik.http.routers.blazegraph_http.rule: &traefik-host-blazegraph Host(`blazegraph.islandora.ca"`, `blazegraph.islandora.dev`)
-      traefik.http.routers.blazegraph_http.service: blazegraph
-      traefik.http.routers.blazegraph_https.entrypoints: https
-      traefik.http.routers.blazegraph_https.rule: *traefik-host-blazegraph
-      traefik.http.routers.blazegraph_https.tls: true
-      traefik.http.services.blazegraph.loadbalancer.server.port: 8080
-    volumes:
-      # Allow access to services across https.
-      - *cert-file
-      - *cert-root
-      # Triplestore storage.
-      - blazegraph-data:/data:rw
-  cantaloupe: &cantaloupe
-    <<: *common
-    container_name: cantaloupe
-    image: ${ISLE_BUILDKIT_REPOSITORY}/cantaloupe:${ISLE_BUILDKIT_TAG}
-    profiles: [local, vm]
-    labels: &cantaloupe-labels
-      <<: *traefik-https-redirect-middleware
-      traefik.http.routers.cantaloupe_http.entrypoints: http
-      traefik.http.routers.cantaloupe_http.middlewares: *traefik-https-redirect
-      traefik.http.routers.cantaloupe_http.rule: &traefik-host-cantaloupe Host(`sandbox.islandora.ca"`, `sandbox.islandora.dev`) && PathPrefix(`/cantaloupe`)
-      traefik.http.routers.cantaloupe_http.service: cantaloupe
-      traefik.http.routers.cantaloupe_https.entrypoints: https
-      traefik.http.routers.cantaloupe_https.rule: *traefik-host-cantaloupe
-      traefik.http.routers.cantaloupe_https.tls: true
-      traefik.http.services.cantaloupe.loadbalancer.server.port: 8080
-    volumes:
-      # Allow access to services across https.
-      - *cert-file
-      - *cert-root
-      - cantaloupe-data:/data:rw
-  drupal: &drupal
-    <<: *common
-    container_name: drupal
-    image: ${REPOSITORY}/sandbox-drupal:${TAG}
-    profiles: [local]
-    labels: &drupal-labels
-      <<: *traefik-https-redirect-middleware
-      traefik.http.routers.drupal_http.entrypoints: http
-      traefik.http.routers.drupal_http.middlewares: *traefik-https-redirect
-      traefik.http.routers.drupal_http.rule: &traefik-host-drupal Host(`sandbox.islandora.ca`, `sandbox.islandora.dev`)
-      traefik.http.routers.drupal_http.service: drupal
-      traefik.http.routers.drupal_https.entrypoints: https
-      traefik.http.routers.drupal_https.rule: *traefik-host-drupal
-      traefik.http.routers.drupal_https.service: drupal
-      traefik.http.routers.drupal_https.tls: true
-      traefik.http.services.drupal.loadbalancer.server.port: 80
-    environment: &drupal-environment
-      DRUPAL_DEFAULT_ACCOUNT_EMAIL: "community@islandora.ca"
-      DRUPAL_DEFAULT_ACCOUNT_PASSWORD: "7mNWe6Gp8wH71SFXD6GZAJmlx2z68315BLaUPzX5DRkp248t"
-      DRUPAL_DEFAULT_BROKER_URL: "tcp://activemq:61613"
-      DRUPAL_DEFAULT_CANTALOUPE_URL: "https://sandbox.islandora.dev/cantaloupe/iiif/2"
-      DRUPAL_DEFAULT_CONFIGDIR: "/var/www/drupal/config/sync"
-      DRUPAL_DEFAULT_FCREPO_HOST: "fcrepo"
-      DRUPAL_DEFAULT_FCREPO_PORT: 8080
-      DRUPAL_DEFAULT_FCREPO_URL: "https://fcrepo.islandora.dev/fcrepo/rest/"
-      DRUPAL_DEFAULT_INSTALL_EXISTING_CONFIG: "true"
-      DRUPAL_DEFAULT_MATOMO_URL: "https://sandbox.islandora.dev/matomo/"
-      DRUPAL_DEFAULT_NAME: "Islandora Digital Collections"
-      DRUPAL_DEFAULT_PROFILE: "islandora_install_profile_demo"
-      DRUPAL_DEFAULT_SALT: "9PPaL0CxZAIcq0l9wxgDGlCZrp7JdT_x7v9gVzpdbUjMt1PqDz3uD0Zy-i16DuJ1-Htuq5hqeg"
-      DRUPAL_DEFAULT_SITE_URL: "sandbox.islandora.dev"
-      DRUPAL_DEFAULT_SOLR_CORE: "default"
-      DRUPAL_DRUSH_URI: "https://sandbox.islandora.dev"
-    volumes:
-      # Allow access to services across https.
-      - *cert-file
-      - *cert-root
-      # Allow code-server to serve Drupal / override it.
-      - &drupal-root
-        type: volume
-        source: drupal-root
-        target: /var/www/drupal
-      - &drupal-public-files
-        type: volume
-        source: drupal-public-files
-        target: /var/www/drupal/web/sites/default/files
-      - &drupal-private-files
-        type: volume
-        source: drupal-public-files
-        target: /var/www/drupal/private
-      # Reflect changes from running composer updated or modifying configuration
-      # and custom modules in the container.
-      - &drupal-assets ./docker/sandbox-drupal/rootfs/var/www/drupal/assets:/var/www/drupal/assets:${CONSISTENCY}
-      - &drupal-composer-json ./docker/sandbox-drupal/rootfs/var/www/drupal/composer.json:/var/www/drupal/composer.json:${CONSISTENCY}
-      - &drupal-composer-lock ./docker/sandbox-drupal/rootfs/var/www/drupal/composer.lock:/var/www/drupal/composer.lock:${CONSISTENCY}
-      - &drupal-config ./docker/sandbox-drupal/rootfs/var/www/drupal/config:/var/www/drupal/config:${CONSISTENCY}
-      - &drupal-content ./docker/sandbox-drupal/rootfs/var/www/drupal/content:/var/www/drupal/content:${CONSISTENCY}
-    build:
-      context: ./docker/sandbox-drupal
-      args:
-        repository: ${ISLE_BUILDKIT_REPOSITORY}
-        tag: ${ISLE_BUILDKIT_TAG}
-  fcrepo: &fcrepo
-    <<: *common
-    container_name: fcrepo
-    image: ${ISLE_BUILDKIT_REPOSITORY}/fcrepo6:${ISLE_BUILDKIT_TAG}
-    profiles: [local]
-    environment:
-      FCREPO_ALLOW_EXTERNAL_DEFAULT: "http://default/"
-      FCREPO_ALLOW_EXTERNAL_SANDBOX: "http://sandbox.islandora.dev/"
-      FCREPO_ALLOW_EXTERNAL_SANDBOX_HTTPS: "https://sandbox.islandora.dev/"
-    labels: &fcrepo-labels
-      <<: *traefik-https-redirect-middleware
-      # Due to weird logic in `fcrepo/static/js/common.js`, do not use https
-      # as it assumes it always needs to append /fcr:metadata to every request
-      # breaking the links. Though for files we do want that page to be accessed
-      # so check for a file extension.
-      traefik.http.middlewares.fcrepo-strip-suffix.replacepathregex.regex: "^(.*/fcrepo/rest/[^.]*)/fcr:metadata$$"
-      traefik.http.middlewares.fcrepo-strip-suffix.replacepathregex.replacement: "$$1"
-      traefik.http.routers.fcrepo_http.entrypoints: http
-      traefik.http.routers.fcrepo_http.middlewares: *traefik-https-redirect
-      traefik.http.routers.fcrepo_http.rule: &traefik-host-fcrepo Host(`fcrepo.islandora.ca"`, `fcrepo.islandora.dev`)
-      traefik.http.routers.fcrepo_http.service: fcrepo
-      traefik.http.routers.fcrepo_https.entrypoints: https
-      traefik.http.routers.fcrepo_https.middlewares: fcrepo-strip-suffix
-      traefik.http.routers.fcrepo_https.rule: *traefik-host-fcrepo
-      traefik.http.routers.fcrepo_https.tls: true
-      traefik.http.services.fcrepo.loadbalancer.server.port: 8080
-    volumes:
-      # Allow access to services across https.
-      - *cert-file
-      - *cert-root
-      # Repository data.
-      - fcrepo-data:/data
-    depends_on:
-      - activemq
-  matomo: &matomo
-    <<: *common
-    container_name: matomo
-    image: ${ISLE_BUILDKIT_REPOSITORY}/matomo:${ISLE_BUILDKIT_TAG}
-    profiles: [local, vm]
-    labels: &matomo-labels
-      <<: *traefik-https-redirect-middleware
-      traefik.http.middlewares.matomo-customrequestheaders.headers.customrequestheaders.X-Forwarded-Uri: /matomo
-      traefik.http.middlewares.matomo-stripprefix.stripprefix.prefixes: /matomo
-      traefik.http.middlewares.matomo.chain.middlewares: matomo-stripprefix,matomo-customrequestheaders
-      traefik.http.routers.matomo_http.entrypoints: http
-      traefik.http.routers.matomo_http.middlewares: *traefik-https-redirect
-      traefik.http.routers.matomo_http.rule: &traefik-host-matomo Host(`sandbox.islandora.ca`, `sandbox.islandora.dev`) && PathPrefix(`/matomo`)
-      traefik.http.routers.matomo_http.service: matomo
-      traefik.http.routers.matomo_https.entrypoints: https
-      traefik.http.routers.matomo_https.middlewares: matomo
-      traefik.http.routers.matomo_https.rule: *traefik-host-matomo
-      traefik.http.routers.matomo_https.tls: true
-      traefik.http.services.matomo.loadbalancer.server.port: 80
-    environment:
-      - MATOMO_DEFAULT_HOST="https://sandbox.islandora.dev"
-    volumes:
-      - matomo-config-data:/var/www/matomo:rw
-  solr: &solr
-    <<: *common
-    container_name: solr
-    image: ${REPOSITORY}/sandbox-solr:${TAG}
-    profiles: [local, vm]
-    labels:
-      <<: *traefik-https-redirect-middleware
-      traefik.http.routers.solr_http.entrypoints: http
-      traefik.http.routers.solr_http.middlewares: *traefik-https-redirect
-      traefik.http.routers.solr_http.rule: &traefik-host-solr Host(`solr.islandora.ca"`, `solr.islandora.dev`)
-      traefik.http.routers.solr_http.service: solr
-      traefik.http.routers.solr_https.entrypoints: https
-      traefik.http.routers.solr_https.rule: *traefik-host-solr
-      traefik.http.routers.solr_https.tls: true
-      traefik.http.services.solr.loadbalancer.server.port: 8983
-    networks:
-      default:
-        aliases:
-          - solr.islandora.dev
-    volumes:
-      - solr-data:/data:rw
-    build:
-      context: ./docker/sandbox-solr
-      args:
-        repository: ${ISLE_BUILDKIT_REPOSITORY}
-        tag: ${ISLE_BUILDKIT_TAG}
-  traefik: &traefik
-    <<: *common
-    container_name: traefik
-    image: traefik:v2.6.1
-    profiles: [local]
-    command: >-
-      --api.insecure=true
-      --api.dashboard=true
-      --api.debug=true
-      --entryPoints.http.address=:80
-      --entryPoints.https.address=:443
-      --providers.docker
-      --providers.docker.network=default
-      --providers.docker.exposedByDefault=false
-      --providers.file.filename=/etc/traefik/tls.yml
-    labels:
-      <<: *traefik-https-redirect-middleware
-      traefik.http.routers.traefik_http.entrypoints: http
-      traefik.http.routers.traefik_http.middlewares: *traefik-https-redirect
-      traefik.http.routers.traefik_http.rule: &traefik-host-traefik Host(`traefik.islandora.dev`)
-      traefik.http.routers.traefik_http.service: traefik
-      traefik.http.routers.traefik_https.entrypoints: https
-      traefik.http.routers.traefik_https.rule: *traefik-host-traefik
-      traefik.http.routers.traefik_https.tls: true
-      traefik.http.services.traefik.loadbalancer.server.port: 8080
-    ports:
-      - published: 80
-        target: 80
-      - published: 443
-        target: 443
-    volumes:
-      - &traefik-certs ./build/certs/generated:/etc/ssl/traefik:Z
-      - &traefik-tls ./tls.yml:/etc/traefik/tls.yml:Z
-      - &traefik-docker /var/run/docker.sock:/var/run/docker.sock:z
-    security_opt:
-      - label=type:container_runtime_t # Required for selinux to access the docker socket.
-    networks:
-      default:
-        # Allow derivative services to connect to the drupal service via https.
-        aliases:
-          - sandbox.islandora.dev
-          - fcrepo.islandora.dev
-  #----------------------------------------------------------------------------
-  # Services for 'vm' profiles.
-  #
-  # VM does not have access to files in this repository so remove bind mounts.
-  #
-  # Additionally its is not meant for development use so mounts related to
-  # code-server are removed.
-  #----------------------------------------------------------------------------
-  vm-drupal:
-    <<: *drupal
-    profiles: [vm]
-    build: {} # Can't build without this git repository.
-    environment:
-      <<: *drupal-environment
-      DRUPAL_DEFAULT_CANTALOUPE_URL: "https://sandbox.islandora.dev:8443/cantaloupe/iiif/2"
-      DRUPAL_DEFAULT_FCREPO_URL: "https://fcrepo.islandora.dev:8443/fcrepo/rest/"
-      DRUPAL_DEFAULT_MATOMO_URL: "https://sandbox.islandora.dev:8443/matomo/"
-      DRUPAL_DRUSH_URI: "https://sandbox.islandora.dev:8443"
-    labels:
-      <<: *drupal-labels
-      traefik.http.middlewares.https-redirect.redirectscheme.port: 8443
-    volumes:
-      - *cert-file
-      - *cert-root
-      - *drupal-public-files
-      - *drupal-private-files
-  vm-fcrepo:
-    <<: *fcrepo
-    profiles: [vm]
-    labels:
-      <<: *fcrepo-labels
-      traefik.http.middlewares.https-redirect.redirectscheme.port: 8443
-    environment:
-      FCREPO_ALLOW_EXTERNAL_DEFAULT: "http://default/"
-      FCREPO_ALLOW_EXTERNAL_SANDBOX: "http://sandbox.islandora.dev:8443/"
-      FCREPO_ALLOW_EXTERNAL_SANDBOX_HTTPS: "https://sandbox.islandora.dev:8443/"
-  vm-traefik:
-    <<: *traefik
-    profiles: [vm]
-    # Have to rely on hacks to get any of this to work...
-    command: >-
-      --api.insecure=true
-      --api.dashboard=true
-      --api.debug=true
-      --entryPoints.http.address=:80
-      --entryPoints.https.address=:8443
-      --providers.docker
-      --providers.docker.network=default
-      --providers.docker.exposedByDefault=false
-      --providers.file.filename=/etc/traefik/tls.yml
-    ports:
-      - published: 80
-        target: 80
-      - published: 8443
-        target: 8443
-  #----------------------------------------------------------------------------
-  # Services for 'prod' profile.
-  #
-  # Only public facing services use labels to provide access via traefik.
-  #----------------------------------------------------------------------------
-  prod-activemq:
-    <<: *activemq
-    profiles: [prod]
-    labels: [] # Do not expose in production.
-  prod-cantaloupe:
-    <<: *cantaloupe
-    profiles: [prod]
-    labels:
-      # Labels are shared as the service is public facing.
-      # Accept for the cert provider as that is only applicable to the sandbox itself.
-      <<: *cantaloupe-labels
-      traefik.http.routers.cantaloupe_https.tls.certresolver: *traefik-certresolver
-  prod-drupal:
-    <<: *drupal
-    profiles: [prod]
-    labels:
-      # Labels are shared as the service is public facing.
-      # Accept for the cert provider as that is only applicable to the sandbox itself.
-      <<: *drupal-labels
-      traefik.http.routers.drupal_https.tls.certresolver: *traefik-certresolver
-    environment:
-      <<: *drupal-environment
-      DRUPAL_DEFAULT_CANTALOUPE_URL: "https://sandbox.islandora.ca/cantaloupe/iiif/2"
-      DRUPAL_DEFAULT_FCREPO_URL: "https://fcrepo.islandora.ca/fcrepo/rest/"
-      DRUPAL_DEFAULT_MATOMO_URL: "https://sandbox.islandora.ca/matomo/"
-      DRUPAL_DEFAULT_SITE_URL: "sandbox.islandora.ca"
-      DRUPAL_DRUSH_URI: "https://sandbox.islandora.ca"
-  prod-fcrepo:
-    <<: *fcrepo
-    profiles: [prod]
-    environment:
-      FCREPO_ALLOW_EXTERNAL_DEFAULT: "http://default/"
-      FCREPO_ALLOW_EXTERNAL_SANDBOX: "http://sandbox.islandora.ca/"
-      FCREPO_ALLOW_EXTERNAL_SANDBOX_HTTPS: "https://sandbox.islandora.ca/"
-    depends_on:
-      - prod-activemq
-  prod-matomo:
-    <<: *matomo
-    profiles: [prod]
-    labels:
-      # Labels are shared as the service is public facing.
-      # Accept for the cert provider as that is only applicable to the sandbox itself.
-      <<: *matomo-labels
-      traefik.http.routers.matomo_https.tls.certresolver: *traefik-certresolver
-    environment:
-      - MATOMO_DEFAULT_HOST="https://sandbox.islandora.ca"
-  prod-solr:
-    <<: *solr
-    profiles: [prof]
-    labels: [] # Do not expose in production.
-  prod-traefik:
-    <<: *traefik
-    profiles: [prod]
-    labels: [] # Do not expose in production.
-    command: >-
-      --api.insecure=false
-      --api.dashboard=false
-      --api.debug=false
-      --entryPoints.http.address=:80
-      --entryPoints.https.address=:443
-      --providers.docker
-      --providers.docker.network=default
-      --providers.docker.exposedByDefault=false
-      --providers.file.filename=/etc/traefik/tls.yml
-      --certificatesresolvers.resolver.acme.httpchallenge=true
-      --certificatesresolvers.resolver.acme.httpchallenge.entrypoint=http
-      --certificatesresolvers.resolver.acme.email=community@islandora.ca
-      --certificatesresolvers.resolver.acme.storage=/acme/acme.json
-      --certificatesResolvers.resolver.acme.caServer=${ACME_SERVER-https://acme-staging-v02.api.letsencrypt.org/directory}
-    volumes:
-      - *traefik-certs
-      - *traefik-tls
-      - *traefik-docker
-      - type: volume
-        source: traefik-acme
-        target: /acme
-    networks:
-      default:
-        # Allow derivative services to connect to the drupal service via https.
-        aliases:
-          - sandbox.islandora.ca
-          - fcrepo.islandora.ca
-  #----------------------------------------------------------------------------
-  # Services for 'code-server' are host platform dependant.
-  #
-  # Use `--profile $(uname)` to get the appropriate code-server.
-  #
-  # By default the code-server does not start if its appropriate profile is not
-  # specified.
-  #----------------------------------------------------------------------------
-  # To be able to access the hosts `ssh-agent` we need platform specific behavior.
-  code-server-linux: &code-server
-    <<: *common
-    container_name: ide
-    image: ${ISLE_BUILDKIT_REPOSITORY}/code-server:${ISLE_BUILDKIT_TAG}
-    profiles: [Linux]
-    labels:
-      <<: *drupal-labels
-      traefik.http.routers.ide_http.entrypoints: http
-      traefik.http.routers.ide_http.middlewares: *traefik-https-redirect
-      traefik.http.routers.ide_http.rule: &traefik-host-ide Host(`ide.islandora.dev`)
-      traefik.http.routers.ide_http.service: ide
-      traefik.http.routers.ide_https.entrypoints: https
-      traefik.http.routers.ide_https.rule: *traefik-host-ide
-      traefik.http.routers.ide_https.service: ide
-      traefik.http.routers.ide_https.tls: true
-      traefik.http.services.ide.loadbalancer.server.port: 8443
-    environment: &code-server-environment
-      <<: *drupal-environment
-      CODE_SERVER_AUTHENTICATION: none
-      NGINX_CLIENT_BODY_TIMEOUT: 600s
-      NGINX_FASTCGI_CONNECT_TIMEOUT: 600s
-      NGINX_FASTCGI_READ_TIMEOUT: 1200s
-      NGINX_FASTCGI_SEND_TIMEOUT: 600s
-      NGINX_KEEPALIVE_TIMEOUT: 750s
-      NGINX_LINGERING_TIMEOUT: 50s
-      NGINX_PROXY_CONNECT_TIMEOUT: 600s
-      NGINX_PROXY_READ_TIMEOUT: 600s
-      NGINX_PROXY_SEND_TIMEOUT: 600s
-      NGINX_SEND_TIMEOUT: 600s
-      PHP_DEFAULT_SOCKET_TIMEOUT: 600
-      PHP_MAX_EXECUTION_TIME: 300
-      PHP_MAX_INPUT_TIME: 600
-      PHP_PROCESS_CONTROL_TIMEOUT: 600
-      PHP_REQUEST_TERMINATE_TIMEOUT: 600
-      SSH_AUTH_SOCK: ${SSH_AUTH_SOCK}
-    volumes:
-      # Generated Cert
-      - *cert-file
-      - *cert-root
-      # Mount and serve contents of Drupal site.
-      - &code-server-drupal-root
-        <<: *drupal-root
-        volume:
-          nocopy: true
-      # Mount and serve Drupal public files.
-      - &code-server-drupal-public-files
-        <<: *drupal-public-files
-        volume:
-          nocopy: true
-      # Mount and serve Drupal private files.
-      - &code-server-drupal-private-files
-        <<: *drupal-private-files
-        volume:
-          nocopy: true
-      # Volumes for code-server cache.
-      - &code-server-data
-        type: volume
-        source: code-server-data
-        target: /opt/code-server/data
-      # Volumes shared with Drupal.
-      - *drupal-assets
-      - *drupal-composer-json
-      - *drupal-composer-lock
-      - *drupal-config
-      - *drupal-content
-      # Mount SSH agent so we can authenticate against github inside of the IDE container.
-      - type: bind
-        source: ${SSH_AUTH_SOCK:-ignore}
-        target: ${SSH_AUTH_SOCK:-ignore}
-  code-server-darwin:
-    <<: *code-server
-    profiles: [Darwin]
-    environment:
-      <<: *code-server-environment
-      SSH_AUTH_SOCK: /run/host-services/ssh-auth.sock
-    volumes:
-      # Generated Cert
-      - *cert-file
-      - *cert-root
-      # Code server volumes from above (extend Drupal data volumes with nocopy).
-      - *code-server-drupal-root
-      - *code-server-drupal-public-files
-      - *code-server-drupal-private-files
-      - *code-server-data
-      # Volumes shared with Drupal.
-      - *drupal-assets
-      - *drupal-composer-json
-      - *drupal-composer-lock
-      - *drupal-config
-      - *drupal-content
-      # Mount SSH agent so we can authenticate against github inside of the IDE container.
-      - type: bind
-        source: /run/host-services/ssh-auth.sock
-        target: /run/host-services/ssh-auth.sock
+    alpaca:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/alpaca:${ISLANDORA_TAG}
+        environment:
+          ALPACA_ACTIVEMQ_CONNECTIONS: 20
+          ALPACA_ACTIVEMQ_CONSUMERS: 8
+    crayfits:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/crayfits:${ISLANDORA_TAG}
+    fits:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/fits:${ISLANDORA_TAG}
+    homarus:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/homarus:${ISLANDORA_TAG}
+    houdini:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/houdini:${ISLANDORA_TAG}
+    hypercube:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/hypercube:${ISLANDORA_TAG}
+    mariadb:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/mariadb:${ISLANDORA_TAG}
+        volumes:
+            - mariadb-data:/var/lib/mysql:rw
+    milliner:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/milliner:${ISLANDORA_TAG}
+    activemq:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/activemq:${ISLANDORA_TAG}
+        labels:
+            traefik.enable: true
+            traefik.http.routers.activemq_http.entrypoints: http
+            traefik.http.routers.activemq_http.rule: Host(`activemq.islandora.io`)
+            traefik.http.routers.activemq_http.service: activemq
+            traefik.http.services.activemq.loadbalancer.server.port: 8161
+        environment:
+          ACTIVEMQ_WEB_ADMIN_PASSWORD: *password
+        volumes:
+            - activemq-data:/opt/activemq/data:rw
+    blazegraph:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/blazegraph:${ISLANDORA_TAG}
+        labels:
+            traefik.enable: true
+            traefik.http.routers.blazegraph_http.entrypoints: http
+            traefik.http.routers.blazegraph_http.rule: Host(`blazegraph.islandora.io`)
+            traefik.http.routers.blazegraph_http.service: blazegraph
+            traefik.http.services.blazegraph.loadbalancer.server.port: 8080
+        volumes:
+            - blazegraph-data:/data:rw
+    cantaloupe:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/cantaloupe:${ISLANDORA_TAG}
+        labels:
+            traefik.enable: true
+            traefik.http.middlewares.cantaloupe-custom-request-headers.headers.customrequestheaders.X-Forwarded-Path: /cantaloupe
+            traefik.http.middlewares.cantaloupe-strip-prefix.stripprefix.prefixes: /cantaloupe
+            traefik.http.middlewares.cantaloupe.chain.middlewares: cantaloupe-strip-prefix,cantaloupe-custom-request-headers
+            traefik.http.routers.cantaloupe_http.entrypoints: http
+            traefik.http.routers.cantaloupe_http.middlewares: cantaloupe
+            traefik.http.routers.cantaloupe_http.rule: Host(`islandora.io`) && PathPrefix(`/cantaloupe`)
+            traefik.http.routers.cantaloupe_http.service: cantaloupe
+            traefik.http.services.cantaloupe.loadbalancer.server.port: 8182
+        volumes:
+            - cantaloupe-data:/data:rw
+    drupal:
+        <<: *common
+        image: ${REPOSITORY}/sandbox:${TAG}
+        labels:
+            traefik.enable: true
+            traefik.http.routers.drupal_http.entrypoints: http
+            traefik.http.routers.drupal_http.rule: Host(`islandora.io`)
+            traefik.http.routers.drupal_http.service: drupal
+            traefik.http.services.drupal.loadbalancer.server.port: 80
+        environment:
+            DRUPAL_ACTIVEMQ_WEB_ADMIN_PASSWORD: *password
+            DRUPAL_DEFAULT_ACCOUNT_PASSWORD: *password
+            DRUPAL_DEFAULT_BROKER_URL: "tcp://activemq:61613"
+            DRUPAL_DEFAULT_CANTALOUPE_URL: "http://islandora.io/cantaloupe/iiif/2"
+            DRUPAL_DEFAULT_CONFIGDIR: "/var/www/drupal/config/sync"
+            DRUPAL_DEFAULT_FCREPO_HOST: "fcrepo"
+            DRUPAL_DEFAULT_FCREPO_PORT: 8080
+            DRUPAL_DEFAULT_FCREPO_URL: "http://fcrepo.islandora.io/fcrepo/rest/"
+            DRUPAL_DEFAULT_INSTALL_EXISTING_CONFIG: "true"
+            DRUPAL_DEFAULT_MATOMO_URL: "http://islandora.io/matomo/"
+            DRUPAL_DEFAULT_NAME: "Islandora Sandbox"
+            DRUPAL_DEFAULT_PROFILE: "minimal"
+            DRUPAL_DEFAULT_SITE_URL: "islandora.io"
+            DRUPAL_DEFAULT_SOLR_CORE: "default"
+            DRUPAL_DRUSH_URI: "http://islandora.io" # Used by docker/drupal/rootfs/usr/local/share/custom/install.sh
+        volumes:
+            - type: volume
+              source: drupal-public-files
+              target: /var/www/drupal/web/sites/default/files
+            - type: volume
+              source: drupal-private-files
+              target: /var/www/drupal/private
+            - drupal-solr-config:/opt/solr/server/solr/default:ro
+    fcrepo:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/fcrepo6:${ISLANDORA_TAG}
+        environment:
+            FCREPO_ALLOW_EXTERNAL_DEFAULT: "http://default/"
+            FCREPO_ALLOW_EXTERNAL_DRUPAL: "http://islandora.io/"
+        labels:
+            traefik.enable: true
+            traefik.http.routers.fcrepo_http.entrypoints: http
+            traefik.http.routers.fcrepo_http.rule: Host(`fcrepo.islandora.io`)
+            traefik.http.routers.fcrepo_http.service: fcrepo
+            traefik.http.services.fcrepo.loadbalancer.server.port: 8080
+        volumes:
+            - fcrepo-data:/data:rw
+    matomo:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/matomo:${ISLANDORA_TAG}
+        labels:
+            traefik.enable: true
+            traefik.http.middlewares.matomo-custom-request-headers.headers.customrequestheaders.X-Forwarded-Uri: /matomo
+            traefik.http.middlewares.matomo-append-slash.redirectregex.regex: ^(https?://[^/]+/matomo)$$
+            traefik.http.middlewares.matomo-append-slash.redirectregex.replacement: $${1}/
+            traefik.http.middlewares.matomo-strip-prefix.stripprefix.prefixes: /matomo
+            traefik.http.middlewares.matomo.chain.middlewares: matomo-append-slash,matomo-strip-prefix,matomo-custom-request-headers
+            traefik.http.routers.matomo_http.entrypoints: http
+            traefik.http.routers.matomo_http.middlewares: matomo
+            traefik.http.routers.matomo_http.rule: Host(`islandora.io`) && PathPrefix(`/matomo`)
+            traefik.http.routers.matomo_http.service: matomo
+            traefik.http.services.matomo.loadbalancer.server.port: 80
+        environment:
+            MATOMO_DEFAULT_HOST: "http://islandora.io"
+        volumes:
+            - matomo-data:/var/www/matomo:rw
+    solr:
+        <<: *common
+        image: ${ISLANDORA_REPOSITORY}/solr:${ISLANDORA_TAG}
+        labels:
+            traefik.enable: true
+            traefik.http.routers.solr_http.entrypoints: http
+            traefik.http.routers.solr_http.rule: Host(`solr.islandora.io`)
+            traefik.http.routers.solr_http.service: solr
+            traefik.http.services.solr.loadbalancer.server.port: 8983
+        volumes:
+            - solr-data:/data:rw
+            - type: volume
+              source: drupal-solr-config
+              target: /opt/solr/server/solr/default
+              volume:
+                  nocopy: true
+    traefik:
+        <<: *common
+        image: traefik:v2.8.3
+        command: >-
+            --api.insecure=true
+            --api.dashboard=true
+            --api.debug=true
+            --entryPoints.http.address=:80
+            --providers.docker=true
+            --providers.docker.network=default
+            --providers.docker.exposedByDefault=false
+            '--providers.docker.defaultRule=Host(`{{index .Labels "com.docker.compose.service" }}.islandora.io`)'
+        labels:
+            traefik.enable: true
+            traefik.http.routers.traefik_http.entrypoints: http
+            traefik.http.routers.traefik_http.service: traefik
+            traefik.http.services.traefik.loadbalancer.server.port: 8080
+        ports:
+            - "80:80"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+        networks:
+            default:
+                aliases:
+                    # Allow services to connect on the same name/port as the outside.
+                    - blazegraph.islandora.io
+                    - fcrepo.islandora.io
+                    - islandora.io
+                    - solr.islandora.io
+        depends_on:
+            # Sometimes traefik doesn't pick up on new containers so make sure they are started before traefik.
+            - activemq
+            - blazegraph
+            - drupal
+            - fcrepo
+            - solr

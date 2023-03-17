@@ -1,0 +1,15 @@
+task: create
+host: "{{ getenv "DRUPAL_DRUSH_URI" }}"
+username: admin
+password: "{{ getenv "DRUPAL_DEFAULT_ACCOUNT_PASSWORD" }}"
+input_csv: '/var/www/drupal/islandora_demo_objects/create_islandora_objects.csv'
+content_type: islandora_object
+subdelimiter: "|"
+allow_adding_terms: true
+input_dir: /var/www/drupal/islandora_demo_objects
+ignore_csv_columns: ["Transcript", "Supplemental_PDF", "field_display_hints"]
+additional_files:
+ - extracted: {{ getenv "DRUPAL_EXTRACTED_TERM_ID" }}
+ - fits: {{ getenv "DRUPAL_FITS_TERM_ID" }}
+ - service: {{ getenv "DRUPAL_SERVICE_TERM_ID" }}
+ - thumbnail: {{ getenv "DRUPAL_THUMBNAIL_TERM_ID" }}
