@@ -1,0 +1,25 @@
+name: Package Release
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  package:
+    name: Package Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Create zip
+        run: |
+          TAG=${{ github.event.release.tag_name }} docker compose config > package/docker-compose.yml
+          mv package islandora-sandbox-${{ github.event.release.tag_name }}
+          zip -r islandora-sandbox.${{ github.event.release.tag_name }}.zip islandora-sandbox-${{ github.event.release.tag_name }}/*
+      - name: Attach zip to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: "Islandora Sandbox ${{ github.event.release.tag_name }}"
+          files: islandora-sandbox.${{ github.event.release.tag_name }}.zip
+          tag_name: ${{ github.event.release.tag_name }}
+          token: ${{ secrets.GITHUB_TOKEN }}

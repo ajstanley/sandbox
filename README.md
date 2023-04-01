@@ -26,8 +26,6 @@ use either [isle-dc] or [isle-site-template] to deploy via Docker or the
 - [GNU Make 4.3+](https://www.gnu.org/software/make/)
 - [jq 1.6+](https://stedolan.github.io/jq/)
 - [mkcert 1.4+](https://github.com/FiloSottile/mkcert)
-- [Packer 1.8+](https://learn.hashicorp.com/tutorials/packer/get-started-install-cli)
-- [Terraform 1.0+](https://www.terraform.io/downloads)
 
 > N.B The version of `make` that comes with OSX is to old, please update
 > using `brew` etc.
@@ -77,3 +75,8 @@ This repository makes use of [Github Actions] to perform a number of tasks.
 [islandora-starter-site]: https://github.com/Islandora/islandora-starter-site
 [isle-site-template]: https://github.com/Islandora-Devops/isle-site-template
 [official documentation]: https://islandora.github.io/documentation/
+
+
+@todo document github actions
+
+Note that Create Fedora CoreOS snapshot does not wait and may take a long time 1h+.

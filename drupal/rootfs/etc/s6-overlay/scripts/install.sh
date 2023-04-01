@@ -79,6 +79,38 @@ function configure {
     drush --root=/var/www/drupal --uri="${DRUPAL_DRUSH_URI}" cache:rebuild
 }
 
+function wait_for_valid_certificate {
+  # Set the start time
+  start_time=$(date +%s)
+
+  # Set the maximum time to wait (5 minutes)
+  max_time=300
+
+  # Loop until the request is successful or the maximum time has passed
+  while true; do
+    # Make the curl request and save the response status
+    response=$(timeout $max_time curl --silent --output /dev/null --write-out "%{http_code}" -X HEAD  "${DRUPAL_DEFAULT_FCREPO_URL}")
+
+    # If the response status is 200, exit the loop and return 0
+    if [ "$response" -eq 200 ]; then
+      echo "Valid certificate"
+      return 0
+    fi
+
+    # Get the current time
+    current_time=$(date +%s)
+
+    # If 5 minutes have passed, exit the loop and return 1
+    if [ "$((current_time - start_time))" -ge "$max_time" ]; then
+      echo "Request failed after 5 minutes."
+      return 1
+    fi
+
+    # Wait for 1 second before making the next request
+    sleep 1
+  done
+}
+
 function install {
     wait_for_service "${SITE}" db
     create_database "${SITE}"
@@ -90,11 +122,8 @@ function install {
     wait_for_service "${SITE}" triplestore
     create_blazegraph_namespace_with_default_properties "${SITE}"
     if [[ "${DRUPAL_DEFAULT_FCREPO_URL}" == https* ]]; then
-      # Certificates might need to be generated which can take a minute or more.
-      if timeout 300 curl -X HEAD "${DRUPAL_DEFAULT_FCREPO_URL}" &>/dev/null; then
-          echo "Valid certificate"
-      else
-          echo "Invalid certificate"
+      # Certificates might need to be generated which can take many minutes to be issued.
+      if ! wait_for_valid_certificate; then
           exit 1
       fi
     fi

@@ -115,6 +115,7 @@ services:
             DRUPAL_DEFAULT_MATOMO_URL: "http://islandora.io/matomo/"
             DRUPAL_DEFAULT_NAME: "Islandora Sandbox"
             DRUPAL_DEFAULT_PROFILE: "minimal"
+            DRUPAL_DEFAULT_SITE_ALIAS_SANDBOX: "sandbox.islandora.io"
             DRUPAL_DEFAULT_SITE_URL: "islandora.io"
             DRUPAL_DEFAULT_SOLR_CORE: "default"
             DRUPAL_DRUSH_URI: "http://islandora.io" # Used by docker/drupal/rootfs/usr/local/share/custom/install.sh

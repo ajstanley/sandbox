@@ -1,11 +1,14 @@
 {
   "cSpell.words": [
+    "allexport",
     "Blazegraph",
     "buildkit",
     "buildx",
     "crayfits",
     "docroot",
+    "doctl",
     "drush",
+    "envsubst",
     "fcos",
     "fcrepo",
     "gnutls",
@@ -21,12 +24,17 @@
     "printk",
     "Pubkey",
     "publickey",
+    "softprops",
     "tids",
     "traefik",
     "updatedb",
-    "updb"
+    "updb",
+    "vcpu"
   ],
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "cSpell.enabled": true,
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file://.github/workflows/deploy.yml"
+  },
 }

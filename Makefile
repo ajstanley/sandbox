@@ -222,14 +222,6 @@ stop: | docker-compose
 down: | docker-compose
 	docker compose down -v
 
-.PHONY: package
-## Packages the Sandbox for distribution.
-package: | build docker-compose zip
-	-rm -fr build/islandora-sandbox build/islandora-sandbox.*.zip
-	cp -r package build/islandora-sandbox
-	docker compose config > build/islandora-sandbox/docker-compose.yml
-	cd build && zip -r islandora-sandbox.$(TAG).zip islandora-sandbox/*
-
 # Marked as phony
 build/buildkitd.toml: build/certs/cert.pem build/certs/privkey.pem build/certs/rootCA.pem
 	@contents=( \
@@ -321,73 +313,3 @@ builder-destroy: | docker-buildx
 	then \
 		docker buildx rm "isle-sandbox"; \
 	fi
-
-.PHONY: doctl-add-coreos-image
-doctl-add-coreos-image: | doctl
-	doctl compute image create fedora-coreos-$(COREOS_VERSION)-digitalocean.x86_64.qcow2.gz \
-		--verbose \
-		--region TOR1 \
-		--image-distribution "Fedora" \
-		--image-description "Base image for Islandora Sandbox. Does not include docker images." \
-		--tag-names coreos \
-		--image-url "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/$(COREOS_VERSION)/x86_64/fedora-coreos-$(COREOS_VERSION)-digitalocean.x86_64.qcow2.gz" \
-		--access-token $(TOKEN)
-
-.PHONY: terraform-init
-terraform-init: | terraform
-	cd terraform && \
-	terraform init \
-		-backend-config=access_key=$(SPACES_KEY) \
-		-backend-config=secret_key=$(SPACES_SECRET)
-
-.PHONY: terraform-plan
-terraform-plan: | terraform
-	cd terraform && \
-	terraform plan \
-		-var token=$(TOKEN) \
-		-var image=sandbox-$(TAG)
-
-.PHONY: terraform-apply
-terraform-apply: | terraform
-	cd terraform && \
-	terraform plan \
-		-auto-approve \
-		-var token=$(TOKEN) \
-		-var image=sandbox-$(TAG)
-
-.PHONY: terraform-destroy
-terraform-destroy: | terraform
-	cd terraform && \
-	terraform plan \
-		-auto-approve \
-		-var token=$(TOKEN) \
-		-var image=sandbox-$(TAG)
-
-.PHONY: build/packer/deploy
-build/packer/deploy: | build docker-compose sed
-	-rm -fr build/packer/deploy
-	mkdir -p build/packer/deploy
-	cp -r packer/deploy build/packer
-	DO_AUTH_TOKEN=${DO_AUTH_TOKEN} \
-	docker compose --env-file .env -f packer/deploy/docker-compose.yml config > build/packer/deploy/docker-compose.yml
-
-build/packer/ignition/digital-ocean.ign: packer/butane/digital-ocean.yml | build docker
-	mkdir -p build/packer/ignition
-	docker run --rm -i quay.io/coreos/butane:v0.14.0 --pretty --strict < packer/butane/digital-ocean.yml > build/packer/ignition/digital-ocean.ign
-
-.PHONY: packer-init
-packer-init: | build packer
-	packer init \
-		-var version="$(TAG)" \
-		-var token="$(DO_AUTH_TOKEN)" \
-		-var packer_ssh_private_key_file="$(PACKER_SSH_PRIVATE_KEY)" \
-		packer
-
-.PHONY: packer-build
-packer-build: build/packer/deploy build/packer/ignition/digital-ocean.ign | build packer
-	PACKER_LOG=1 packer build \
-		-var version="$(TAG)" \
-		-var token="$(DO_AUTH_TOKEN)" \
-		-var packer_ssh_private_key_file="$(PACKER_SSH_PRIVATE_KEY)" \
-		-force \
-		packer
