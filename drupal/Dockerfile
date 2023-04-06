@@ -32,8 +32,11 @@ RUN --mount=type=cache,id=sandbox-downloads-${TARGETARCH},sharing=locked,target=
         --dest "/var/www/drupal"
 
 RUN --mount=type=bind,source=rootfs/var/www/drupal/assets/patches/default_settings.txt,target=/tmp/default_settings.txt \
+    --mount=type=bind,source=rootfs/var/www/drupal/assets/patches/olivero.theme,target=/tmp/olivero.theme \
     --mount=type=cache,id=test-drupal-composer-${TARGETARCH},sharing=locked,target=/root/.composer/cache \
     cp /tmp/default_settings.txt /var/www/drupal/assets/patches/default_settings.txt && \
+    cp /tmp/olivero.theme /var/www/drupal/assets/patches/olivero.theme && \
+    composer config extra.drupal-scaffold.file-mapping --merge --json '{"[web-root]/core/themes/olivero/olivero.theme":{"mode":"append","default":"web/core/themes/olivero/olivero.theme","append":"assets/patches/olivero.theme"}}' && \
     composer install -d /var/www/drupal && \
     chown -R nginx:nginx /var/www/drupal
 

@@ -183,6 +183,10 @@ EOT
 }
 
 function main() {
+    # Used to display progress.
+    date +%s > /install-started
+    chmod a+r /install-started
+    # Setup.
     cd /var/www/drupal
     drush_cache_setup
     for_all_sites setup

@@ -17,6 +17,7 @@
     "islandora",
     "matomo",
     "mkpasswd",
+    "nbsp",
     "nids",
     "openseadragon",
     "opensslcnf",
@@ -36,5 +37,5 @@
   "cSpell.enabled": true,
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": "file://.github/workflows/deploy.yml"
-  },
+  }
 }
