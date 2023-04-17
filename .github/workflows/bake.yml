@@ -21,6 +21,7 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v2
         with:
+          use: true
           driver-opts: |
             image=moby/buildkit:v0.11.1
             network=host
@@ -33,4 +34,15 @@ jobs:
         name: Build and push
         run: |
           set -ex
-          make push manifest "BUILDER=${{ steps.buildx.outputs.name }}" "TARGET=ci" "TAG=${{ github.ref_name }}"
+          source .env
+          export TAG=${{ github.ref_name }}
+          docker buildx build \
+            --push \
+            --platform linux/arm64,linux/amd64 \
+            --build-arg "REPOSITORY=${ISLANDORA_REPOSITORY}" \
+            --build-arg "TAG=${ISLANDORA_TAG}" \
+            --cache-to type=inline \
+            --cache-from ${REPOSITORY}/sandbox:main \
+            --cache-from ${REPOSITORY}/sandbox:${TAG}\
+            --output "type=image,push=true" \
+            --tag ${REPOSITORY}/sandbox:${TAG} drupal

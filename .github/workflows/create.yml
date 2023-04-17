@@ -37,7 +37,7 @@ jobs:
           export DOMAIN="${{ vars.DOMAIN }}"
           export TAG="${{ github.ref_name }}"
           export VOLUME_NAME="${{ vars.VOLUME_NAME }}"
-          
+
           envsubst < ./deploy/butane.template.yml > ./deploy/butane.yml
           cat ./deploy/butane.yml
       - name: Build Ignition Config

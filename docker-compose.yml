@@ -96,6 +96,11 @@ services:
     drupal:
         <<: *common
         image: ${REPOSITORY}/sandbox:${TAG}
+        build:
+          context: drupal
+          args:
+              REPOSITORY: ${ISLANDORA_REPOSITORY}
+              TAG: ${ISLANDORA_TAG}
         labels:
             traefik.enable: true
             traefik.http.routers.drupal_http.entrypoints: http

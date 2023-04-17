@@ -68,10 +68,10 @@ services:
             <<: *traefik-https-redirect-middleware
             traefik.http.routers.blazegraph_http.entrypoints: http
             traefik.http.routers.blazegraph_http.middlewares: *traefik-https-redirect
-            traefik.http.routers.blazegraph_http.rule: &traefik-host-drupal Host(`blazegraph.${DOMAIN}`)
+            traefik.http.routers.blazegraph_http.rule: &traefik-host-blazegraph Host(`blazegraph.${DOMAIN}`)
             traefik.http.routers.blazegraph_http.service: blazegraph
             traefik.http.routers.blazegraph_https.entrypoints: https
-            traefik.http.routers.blazegraph_https.rule: *traefik-host-drupal
+            traefik.http.routers.blazegraph_https.rule: *traefik-host-blazegraph
             traefik.http.routers.blazegraph_https.service: blazegraph
             traefik.http.services.blazegraph.loadbalancer.server.port: 8080
     cantaloupe:

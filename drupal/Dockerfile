@@ -1,5 +1,35 @@
 # syntax=docker/dockerfile:1.5.1
-FROM drupal AS demo
+ARG REPOSITORY
+ARG TAG
+FROM ${REPOSITORY}/drupal:${TAG} AS workbench
+
+ARG TARGETARCH
+ARG WORKBENCH_COMMIT=542325fb6d44c2ac84a4e2965289bb9f9ed9bf68
+ARG WORKBENCH_FILE=${WORKBENCH_COMMIT}.tar.gz
+ARG WORKBENCH_URL=https://github.com/mjordan/islandora_workbench/archive/${WORKBENCH_FILE}
+ARG WORKBENCH_SHA256=27bf8973faadf11eaf83d43327fdf057592fe5f03580dc8eb66352f8dfae5e42
+
+RUN --mount=type=cache,id=sandbox-apk-${TARGETARCH},sharing=locked,target=/var/cache/apk \
+    apk add \
+      build-base \
+      py3-setuptools \
+      py3-urllib3 \
+      py3-pip \
+      python3 \
+      python3-dev
+
+RUN --mount=type=cache,id=sandbox-downloads-${TARGETARCH},sharing=locked,target=/opt/downloads \
+    download.sh \
+        --url "${WORKBENCH_URL}" \
+        --sha256 "${WORKBENCH_SHA256}" \
+        --strip \
+        --dest "/var/www/drupal/islandora_workbench" \
+    && \
+    cd /var/www/drupal/islandora_workbench && \
+    pip install --target=. . && \
+    chown -R nginx:nginx /var/www/drupal/islandora_workbench
+
+FROM ${REPOSITORY}/drupal:${TAG} AS demo
 
 ARG TARGETARCH
 ARG DEMO_OBJECTS_COMMIT=e0de7b1eee54f52404593e608841bcdc29da0f1f
@@ -16,7 +46,7 @@ RUN --mount=type=cache,id=sandbox-downloads-${TARGETARCH},sharing=locked,target=
     && \
     chown -R nginx:nginx /var/www/drupal/islandora_demo_objects
 
-FROM drupal AS starter
+FROM ${REPOSITORY}/drupal:${TAG} AS starter
 
 ARG TARGETARCH
 ARG STARTER_SITE_COMMIT=0.5.2
@@ -40,45 +70,21 @@ RUN --mount=type=bind,source=rootfs/var/www/drupal/assets/patches/default_settin
     composer install -d /var/www/drupal && \
     chown -R nginx:nginx /var/www/drupal
 
-FROM drupal AS workbench
+FROM ${REPOSITORY}/drupal:${TAG}
 
 ARG TARGETARCH
-ARG WORKBENCH_COMMIT=542325fb6d44c2ac84a4e2965289bb9f9ed9bf68
-ARG WORKBENCH_FILE=${WORKBENCH_COMMIT}.tar.gz
-ARG WORKBENCH_URL=https://github.com/mjordan/islandora_workbench/archive/${WORKBENCH_FILE}
-ARG WORKBENCH_SHA256=27bf8973faadf11eaf83d43327fdf057592fe5f03580dc8eb66352f8dfae5e42
-
-RUN --mount=type=cache,id=sandbox-downloads-${TARGETARCH},sharing=locked,target=/opt/downloads \
-    download.sh \
-        --url "${WORKBENCH_URL}" \
-        --sha256 "${WORKBENCH_SHA256}" \
-        --strip \
-        --dest "/var/www/drupal/islandora_workbench" \ 
-    && \
-    chown -R nginx:nginx /var/www/drupal/islandora_workbench
-
-FROM drupal
-
-ARG TARGETARCH
-
-COPY --link --from=demo /var/www/drupal/islandora_demo_objects /var/www/drupal/islandora_demo_objects
-COPY --link --from=starter /var/www/drupal /var/www/drupal
-COPY --link --from=workbench /var/www/drupal/islandora_workbench /var/www/drupal/islandora_workbench
 
 RUN --mount=type=cache,id=sandbox-apk-${TARGETARCH},sharing=locked,target=/var/cache/apk \
     apk add \
-      build-base \
-      py3-setuptools \
       py3-urllib3 \
-      python3 \
-      python3-dev \
-    && \
-    cd /var/www/drupal/islandora_workbench && \
-    python setup.py install
-
-COPY --link rootfs /
-COPY --chown=nginx:nginx rootfs/var/www/drupal /var/www/drupal
+      python3
 
 # 30 minutes to startup on slower hardware.
 # It can take a long time for workbench to ingest content.
 ENV S6_CMD_WAIT_FOR_SERVICES_MAXTIME=1800000
+
+COPY --link --from=workbench /var/www/drupal/islandora_workbench /var/www/drupal/islandora_workbench
+COPY --link --from=demo /var/www/drupal/islandora_demo_objects /var/www/drupal/islandora_demo_objects
+COPY --link --from=starter /var/www/drupal /var/www/drupal
+COPY --link rootfs /
+COPY --chown=nginx:nginx rootfs/var/www/drupal /var/www/drupal
