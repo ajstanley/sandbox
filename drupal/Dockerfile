@@ -78,3 +78,7 @@ RUN --mount=type=cache,id=sandbox-apk-${TARGETARCH},sharing=locked,target=/var/c
 
 COPY --link rootfs /
 COPY --chown=nginx:nginx rootfs/var/www/drupal /var/www/drupal
+
+# 30 minutes to startup on slower hardware.
+# It can take a long time for workbench to ingest content.
+ENV S6_CMD_WAIT_FOR_SERVICES_MAXTIME=1800000
