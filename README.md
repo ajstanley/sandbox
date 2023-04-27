@@ -87,9 +87,9 @@ You can change the commit used for external dependencies:
 - [islandora_demo_objects]
 - [islandora-starter-site]
 
-By modifying the appropriate `XXX_COMMIT` build argument in the
-[Dockerfile](./drupal/Dockerfile). You can then update the `XXX_SHA256` with the
-following commands (replacing `var` with the appropriate prefix for the
+By modifying the appropriate `XXX_COMMIT` build argument in
+[drupal/Dockerfile](./drupal/Dockerfile). Then, update the `XXX_SHA256` with the
+following commands (replacing `var=STARTER_SITE` with the appropriate prefix for the
 dependency you are updating):
 
 ```bash
@@ -100,6 +100,9 @@ url=$(grep -E "^ARG ${var}_URL" drupal/Dockerfile | awk -F= '{print $2}' | tr -d
 sha256=$(curl -sL $url | shasum -a 256 | awk '{print $1}')
 sed -e "s/ARG ${var}_SHA256=.*/ARG ${var}_SHA256=${sha256}/" -i '' drupal/Dockerfile
 ```
+
+The sandbox will only use the updated values once a release is cut
+(see next section).
 
 ## Releases
 
