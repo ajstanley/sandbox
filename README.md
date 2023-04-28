@@ -106,12 +106,12 @@ The sandbox will only use the updated values once a release is cut
 
 ## Releases
 
-Creating a new release will trigger two [actions](#github-actions):
+Creating a new release will trigger two [Actions](#github-actions):
 
 1. Push a new deployment to [Digital Ocean] performed by [deploy.yml].
 2. Package a zip file for local use and attach it to the release, performed by [package.yml].
 
-To create a new release, follow these steps in the GitHub repository:
+To create a new release, follow the usual release steps in GitHub:
 
 1. Go to [releases].
 2. Select `Draft new release`.
@@ -122,14 +122,16 @@ To create a new release, follow these steps in the GitHub repository:
 7. Make sure `Set as the latest release` is selected.
 8. Click `Publish release`.
 
-These steps will trigger the aforementioned actions.
+These steps will trigger the aforementioned Github Actions, which
+will not complete without committer approval.
 
-The release will first deploy to: https://test.sandbox.islandora.ca
+The release will first deploy to https://test.islandora.ca where 
+you can review the deployment. 
 
-You can then visit and review the deployment. If necessary, you can cancel the
-workflow [here](https://github.com/Islandora-Devops/sandbox/actions/workflows/deploy.yml).
+Once verified, you can visit the [Deploy action's page](https://github.com/Islandora-Devops/sandbox/actions/workflows/deploy.yml)
+to either approve or cancel the workflow. 
 
-Alternatively, you can approve the deployment, which will then deploy to:
+When approved, the sandbox will then deploy to:
 <https://sandbox.islandora.ca>. Afterward, the deployment at
 <https://test.sandbox.islandora.ca> will be destroyed.
 
