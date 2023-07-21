@@ -162,7 +162,9 @@ services:
             traefik.http.routers.matomo_http.service: matomo
             traefik.http.services.matomo.loadbalancer.server.port: 80
         environment:
+            MATOMO_ASSUME_SECURE_PROTOCOL: 0
             MATOMO_DEFAULT_HOST: "http://islandora.io"
+            MATOMO_FORCE_SSL: 0
         volumes:
             - matomo-data:/var/www/matomo:rw
     solr:
