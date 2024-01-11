@@ -4,10 +4,10 @@ ARG TAG
 FROM ${REPOSITORY}/drupal:${TAG} AS workbench
 
 ARG TARGETARCH
-ARG WORKBENCH_COMMIT=a6404eabb32fe4b54374e40b5149cfcd847ec5e3
+ARG WORKBENCH_COMMIT=b38d37e7ec0e606b55e6545b33859708861e533d
 ARG WORKBENCH_FILE=${WORKBENCH_COMMIT}.tar.gz
 ARG WORKBENCH_URL=https://github.com/mjordan/islandora_workbench/archive/${WORKBENCH_FILE}
-ARG WORKBENCH_SHA256=3f397ad1aef8d3c41893950f10da6d66b37faf46c7757673557cb347362a549c
+ARG WORKBENCH_SHA256=9292c1e89aa879affe990a5b531777ba0b6f7108033c452b31abb1f661816c57
 
 RUN --mount=type=cache,id=sandbox-apk-${TARGETARCH},sharing=locked,target=/var/cache/apk \
     apk add \
@@ -32,10 +32,10 @@ RUN --mount=type=cache,id=sandbox-downloads-${TARGETARCH},sharing=locked,target=
 FROM ${REPOSITORY}/drupal:${TAG} AS demo
 
 ARG TARGETARCH
-ARG DEMO_OBJECTS_COMMIT=e0de7b1eee54f52404593e608841bcdc29da0f1f
+ARG DEMO_OBJECTS_COMMIT=fb587d4cf55bbc48b5015bfcefed4d297ed06494
 ARG DEMO_OBJECTS_FILE=${DEMO_OBJECTS_COMMIT}.tar.gz
 ARG DEMO_OBJECTS_URL=https://github.com/Islandora-Devops/islandora_demo_objects/archive/${DEMO_OBJECTS_FILE}
-ARG DEMO_OBJECTS_SHA256=3af7655a63d69017104ca55098319e288879bd13c197e00a7b2ffe51d9aa5d10
+ARG DEMO_OBJECTS_SHA256=740c175297e9a9ed25b374affe540245263a3b61cb0c3856269ed1f3207da521
 
 RUN --mount=type=cache,id=sandbox-downloads-${TARGETARCH},sharing=locked,target=/opt/downloads \
     download.sh \
@@ -49,10 +49,10 @@ RUN --mount=type=cache,id=sandbox-downloads-${TARGETARCH},sharing=locked,target=
 FROM ${REPOSITORY}/drupal:${TAG} AS starter
 
 ARG TARGETARCH
-ARG STARTER_SITE_COMMIT=0.8.0
+ARG STARTER_SITE_COMMIT=1.2.0
 ARG STARTER_SITE_FILE=${STARTER_SITE_COMMIT}.tar.gz
 ARG STARTER_SITE_URL=https://github.com/Islandora-Devops/islandora-starter-site/archive/${STARTER_SITE_FILE}
-ARG STARTER_SITE_SHA256=47b077efb46005fcfc8e96e9cf2af5db13ef53265a01f429a52460d9d0c74962
+ARG STARTER_SITE_SHA256=439d78184f63dbf82d5d04fecd5c33388fa29ab9b4d4d054d3bb7bd17c9566a3
 
 RUN --mount=type=cache,id=sandbox-downloads-${TARGETARCH},sharing=locked,target=/opt/downloads \
     download.sh \
