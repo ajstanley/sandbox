@@ -8,8 +8,11 @@ subdelimiter: "|"
 allow_adding_terms: true
 input_dir: /var/www/drupal/islandora_demo_objects
 ignore_csv_columns: ["Transcript", "Supplemental_PDF", "field_display_hints"]
+field_text_format_ids:
+  - field_rights: full_html
 additional_files:
  - extracted: {{ getenv "DRUPAL_EXTRACTED_TERM_ID" }}
  - fits: {{ getenv "DRUPAL_FITS_TERM_ID" }}
  - service: {{ getenv "DRUPAL_SERVICE_TERM_ID" }}
  - thumbnail: {{ getenv "DRUPAL_THUMBNAIL_TERM_ID" }}
+
