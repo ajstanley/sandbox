@@ -32,10 +32,10 @@ RUN --mount=type=cache,id=sandbox-downloads-${TARGETARCH},sharing=locked,target=
 FROM ${REPOSITORY}/drupal:${TAG} AS demo
 
 ARG TARGETARCH
-ARG DEMO_OBJECTS_COMMIT=1d244a2
+ARG DEMO_OBJECTS_COMMIT=ccecaf8
 ARG DEMO_OBJECTS_FILE=${DEMO_OBJECTS_COMMIT}.tar.gz
 ARG DEMO_OBJECTS_URL=https://github.com/Islandora-Devops/islandora_demo_objects/archive/${DEMO_OBJECTS_FILE}
-ARG DEMO_OBJECTS_SHA256=7d16be65dd4e1fed8da46dbb031232b514900658294e2567ecc8caec61cabc9a
+ARG DEMO_OBJECTS_SHA256=4841a9c27403f1b48a69523937006a83c8b3059bf1c56ed61ce1d5494d298b3e
 
 RUN --mount=type=cache,id=sandbox-downloads-${TARGETARCH},sharing=locked,target=/opt/downloads \
     download.sh \
