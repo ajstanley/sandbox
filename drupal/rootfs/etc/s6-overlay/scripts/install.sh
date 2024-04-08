@@ -46,11 +46,6 @@ function purge_queues {
 	wait
 }
 
-function tid() {
-	local name="${1}"
-	drush sql-query "select tid from taxonomy_term_field_data where name = '${name}';"
-}
-
 function configure {
 	# Starter site post install steps.
 	drush --root=/var/www/drupal --uri="${DRUPAL_DRUSH_URI}" cache:rebuild
@@ -59,16 +54,6 @@ function configure {
 	drush --root=/var/www/drupal --uri="${DRUPAL_DRUSH_URI}" migrate:import --userid=1 islandora_tags,islandora_defaults_tags,islandora_fits_tags
 	# Pause queue consumption during import.
 	pause_queues
-	# Figure out TID's and regenerate create_islandora_objects.yml
-	DRUPAL_EXTRACTED_TERM_ID=$(tid "Extracted Text")
-	DRUPAL_FITS_TERM_ID=$(tid "FITS File")
-	DRUPAL_SERVICE_TERM_ID=$(tid "Service File")
-	DRUPAL_THUMBNAIL_TERM_ID=$(tid "Thumbnail Image")
-	export DRUPAL_EXTRACTED_TERM_ID
-	export DRUPAL_FITS_TERM_ID
-	export DRUPAL_SERVICE_TERM_ID
-	export DRUPAL_THUMBNAIL_TERM_ID
-	confd-render-templates.sh -- -onetime -sync-only
 	# Ingest Content via Workbench.
 	cd /var/www/drupal/islandora_workbench
 	./workbench --config /var/www/drupal/islandora_demo_objects/create_islandora_objects.yml
