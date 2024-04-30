@@ -50,10 +50,10 @@ RUN --mount=type=cache,id=sandbox-downloads-${TARGETARCH},sharing=locked,target=
 FROM ${REPOSITORY}/drupal:${TAG} AS starter
 
 ARG TARGETARCH
-ARG STARTER_SITE_COMMIT=1.7.0
+ARG STARTER_SITE_COMMIT=1.7.1
 ARG STARTER_SITE_FILE=${STARTER_SITE_COMMIT}.tar.gz
 ARG STARTER_SITE_URL=https://github.com/Islandora-Devops/islandora-starter-site/archive/${STARTER_SITE_FILE}
-ARG STARTER_SITE_SHA256=7362de1d60b79b60ad3ce0c5bc1b25c5cc418eb2ff59e59afe3d1f817a1754e5
+ARG STARTER_SITE_SHA256=217fab4dc9d15184f6bc11c11f66c316bf08be03d9c0937b64ca90a0057350de
 
 RUN --mount=type=cache,id=sandbox-downloads-${TARGETARCH},sharing=locked,target=/opt/downloads \
     download.sh \
