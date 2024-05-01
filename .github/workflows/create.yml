@@ -60,12 +60,12 @@ jobs:
         run: |
           droplet_id="${{ steps.get_droplet.outputs.droplet_id }}"
           doctl compute droplet delete "$droplet_id" --force
-      - name: Get snapshot ID
-        id: get_snapshot
+      - name: Get image ID
+        id: get_image
         run: |
-          snapshot_name="${{ vars.SNAPSHOT_NAME }}"
-          snapshot_id=$(doctl compute snapshot list --format ID,Name --no-header | grep " $snapshot_name\$" | awk '{print $1}')
-          echo "snapshot_id=$snapshot_id" >> $GITHUB_OUTPUT
+          image_name="${{ vars.IMAGE_NAME }}"
+          image_id=$(doctl compute image list --format ID,Name --no-header | grep " $image_name\$" | awk '{print $1}')
+          echo "image_id=$image_id" >> $GITHUB_OUTPUT
       - name: Get ssh key ID
         id: get_ssh_key
         run: |
@@ -84,11 +84,11 @@ jobs:
           name="${{ inputs.environment }}"
           size="${{ vars.SIZE }}"
           region="${{ vars.REGION }}"
-          snapshot_id="${{ steps.get_snapshot.outputs.snapshot_id }}"
+          image_id="${{ steps.get_image.outputs.image_id }}"
           ssh_key_id="${{ steps.get_ssh_key.outputs.ssh_key_id }}"
           volume_id="${{ steps.get_volume.outputs.volume_id }}"
           data_file="${{ steps.build_ignition.outputs.file }}"
-          droplet_id=$(doctl compute droplet create "${name}" --size "${size}" --region "${region}" --image "${snapshot_id}" --ssh-keys "${ssh_key_id}" --volumes "${volume_id}" --user-data-file "${data_file}" --format ID --no-header --wait)
+          droplet_id=$(doctl compute droplet create "${name}" --size "${size}" --region "${region}" --image "${image_id}" --ssh-keys "${ssh_key_id}" --volumes "${volume_id}" --user-data-file "${data_file}" --format ID --no-header --wait)
           echo "droplet_id=${droplet_id}" >> $GITHUB_OUTPUT
       - name: Bind Reserved IP address to droplet
         run: |
