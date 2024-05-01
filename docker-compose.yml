@@ -124,6 +124,19 @@ services:
             DRUPAL_DEFAULT_SITE_URL: "islandora.io"
             DRUPAL_DEFAULT_SOLR_CORE: "default"
             DRUPAL_DRUSH_URI: "http://islandora.io" # Used by docker/drupal/rootfs/usr/local/share/custom/install.sh
+            NGINX_FASTCGI_CONNECT_TIMEOUT: ${PHP_MAX_EXECUTION_TIME}s
+            NGINX_FASTCGI_READ_TIMEOUT: ${PHP_MAX_EXECUTION_TIME}s
+            NGINX_FASTCGI_SEND_TIMEOUT: ${PHP_MAX_EXECUTION_TIME}s
+            NGINX_KEEPALIVE_TIMEOUT: ${PHP_MAX_EXECUTION_TIME}s
+            NGINX_PROXY_CONNECT_TIMEOUT: ${PHP_MAX_EXECUTION_TIME}s
+            NGINX_PROXY_READ_TIMEOUT: ${PHP_MAX_EXECUTION_TIME}s
+            NGINX_PROXY_SEND_TIMEOUT: ${PHP_MAX_EXECUTION_TIME}s
+            NGINX_SEND_TIMEOUT: ${PHP_MAX_EXECUTION_TIME}s
+            PHP_DEFAULT_SOCKET_TIMEOUT: ${PHP_MAX_EXECUTION_TIME}
+            PHP_MAX_EXECUTION_TIME: ${PHP_MAX_EXECUTION_TIME}
+            PHP_MAX_INPUT_TIME: ${PHP_MAX_EXECUTION_TIME}
+            PHP_PROCESS_CONTROL_TIMEOUT: ${PHP_MAX_EXECUTION_TIME}
+            PHP_REQUEST_TERMINATE_TIMEOUT: ${PHP_MAX_EXECUTION_TIME}
         volumes:
             - type: volume
               source: drupal-public-files
@@ -219,3 +232,4 @@ services:
             - drupal
             - fcrepo
             - solr
+
