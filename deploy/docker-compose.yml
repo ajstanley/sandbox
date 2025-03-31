@@ -178,7 +178,6 @@ services:
           --certificatesresolvers.resolver.acme.httpchallenge=false
           --certificatesresolvers.resolver.acme.dnschallenge.provider=digitalocean
           --certificatesresolvers.resolver.acme.dnschallenge.delaybeforecheck=30
-          --certificatesresolvers.resolver.acme.dnschallenge.resolvers=173.245.58.51:53,173.245.59.41:53,198.41.222.173:53
           --certificatesresolvers.resolver.acme.email=community@islandora.ca
           --certificatesresolvers.resolver.acme.storage=/acme/acme.json
           --certificatesResolvers.resolver.acme.caServer=https://acme-v02.api.letsencrypt.org/directory
