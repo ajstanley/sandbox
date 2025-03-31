@@ -67,7 +67,6 @@ Additionally all other services and be found at their respective sub-domains.
 | ActiveMQ   | http://activemq.islandora.io            |
 | Blazegraph | http://blazegraph.islandora.io/bigdata/ |
 | Fedora     | http://fcrepo.islandora.io/fcrepo/rest/ |
-| Matomo     | http://islandora.io/matomo/index.php    |
 | Cantaloupe | http://islandora.io/cantaloupe          |
 | Solr       | http://solr.islandora.io                |
 | Traefik    | http://traefik.islandora.io             |
