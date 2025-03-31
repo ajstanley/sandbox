@@ -20,7 +20,6 @@ volumes:
     drupal-solr-config: {}
     fcrepo-data: {}
     mariadb-data: {}
-    matomo-data: {}
     solr-data: {}
 
 services:
@@ -116,7 +115,6 @@ services:
             DRUPAL_DEFAULT_FCREPO_PORT: 8080
             DRUPAL_DEFAULT_FCREPO_URL: "http://fcrepo.islandora.io/fcrepo/rest/"
             DRUPAL_DEFAULT_INSTALL_EXISTING_CONFIG: "true"
-            DRUPAL_DEFAULT_MATOMO_URL: "http://islandora.io/matomo/"
             DRUPAL_DEFAULT_NAME: "Islandora Sandbox"
             DRUPAL_DEFAULT_PROFILE: "minimal"
             DRUPAL_DEFAULT_SITE_ALIAS_SANDBOX: "sandbox.islandora.io"
