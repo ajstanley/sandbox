@@ -176,7 +176,7 @@ services:
                   nocopy: true
     traefik:
         <<: *common
-        image: traefik:v2.8.3
+        image: traefik:v3.6.9
         command: >-
             --api.insecure=true
             --api.dashboard=true
